@@ -70,19 +70,27 @@ label {
 
 body {
   font-family: 'roboto', serif; }
-  body h1 {
-    font-size: 38px;
-    font-weight: 700;
-    line-height: 76px;
-    color: #ffffff;
-    margin-bottom: 0; }
 
 header {
   position: relative;
   height: 90vh;
   overflow: hidden;
-  font-family: 'proxima', serif;
-  color: #ffffff; }
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center; }
+  header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 76px;
+    color: #ffffff;
+    margin-top: 30vh;
+    margin-bottom: 0;
+    font-family: 'proxima-bold', serif; }
+  header p {
+    font-family: 'proxima', serif;
+    font-size: 20.5px;
+    line-height: 41px;
+    margin-bottom: 0; }
   header video {
     position: absolute;
     top: 0;
