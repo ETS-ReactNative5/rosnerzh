@@ -14,8 +14,8 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar sass/ -o src/components/css",
-    "watch-css": "npm run build-css && node-sass-chokidar sass/ -o src/components/css --watch --recursive",
+    "build-css": "node-sass-chokidar sass/ -o src/css",
+    "watch-css": "npm run build-css && node-sass-chokidar sass/ -o src/css --watch --recursive",
     "start-js": "react-scripts start dotenv_config_path=.env",
     "build-js": "react-scripts build",
     "start": "npm-run-all -p watch-css start-js",

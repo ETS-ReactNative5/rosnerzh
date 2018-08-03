@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import MenuSrc from './img/Menu.jpg';
+import './css/main.css';
 
 // Root component;
 class Root extends Component {

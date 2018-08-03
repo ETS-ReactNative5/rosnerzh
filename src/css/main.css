@@ -67,3 +67,7 @@ legend {
 
 label {
   cursor: pointer; }
+
+body {
+  font-family: 'roboto', serif;
+  font-family: 'proxima'; }
