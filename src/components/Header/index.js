@@ -1,5 +1,7 @@
 import React, {Component, Fragment} from 'react'
+
 import Video from './Video'
+import Menu from '../MenuButton';
 
 // Header component;
 class Header extends Component {
@@ -13,6 +15,7 @@ class Header extends Component {
   render() {
     return (
       <header>
+        <Menu />
         <Video src={this._getVideoSrc()} />
         <h1>Полотенцесушитель для вашей ваны</h1>
         <p>Мы поможем найти идеальную сушку для вас</p>
