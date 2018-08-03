@@ -69,5 +69,23 @@ label {
   cursor: pointer; }
 
 body {
-  font-family: 'roboto', serif;
-  font-family: 'proxima'; }
+  font-family: 'roboto', serif; }
+  body h1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 76px;
+    color: #ffffff;
+    margin-bottom: 0; }
+
+header {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  font-family: 'proxima', serif;
+  color: #ffffff; }
+  header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1; }
