@@ -68,9 +68,6 @@ legend {
 label {
   cursor: pointer; }
 
-body {
-  font-family: 'roboto', serif; }
-
 .menu-toggler {
   width: 80px;
   height: 80px;
@@ -122,6 +119,9 @@ body {
   .menu-toggler.open:hover .menu-toggler__inner > span:nth-child(2) {
     width: 100%; }
 
+body {
+  font-family: 'roboto', serif; }
+
 header {
   position: relative;
   height: 90vh;
@@ -144,7 +144,7 @@ header {
   header p {
     font-family: 'proxima', serif;
     font-size: 20.5px;
-    line-height: 41px;
+    line-height: 32px;
     margin-bottom: 0; }
   header video {
     position: absolute;
