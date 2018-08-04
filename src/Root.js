@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react'
 
 import Header from './components/Header'
+import Menu from './components/MenuButton';
 import './css/main.css'
 
 export const MenuButtonContext = React.createContext({
@@ -22,8 +23,9 @@ class Root extends Component {
         <MenuButtonContext.Provider
           value={{isOpen: this.state.menu !== 'close' ? true : false, toggleMenu: this.toggleMenu}}
         >
-          <Header isMobile={false} />
+          <Menu />
         </MenuButtonContext.Provider>
+        <Header isMobile={false} />
         <h1>Root component</h1>
       </Fragment>
     )

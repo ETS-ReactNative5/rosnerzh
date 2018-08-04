@@ -2,25 +2,29 @@ $accent: #fe4365
 $green: #96BBAA
 $light: #D6D6BF
 
+$roboto: 'roboto', serif
+
 @import _reset
 @import _humburger
+@import _logo
 
 
 body
-  font-family: 'roboto', serif
-// _________ T O G G L E R
+  font-family: $roboto
+  nav
+    display: flex
+    position: fixed
+    z-index: 10
+    top: 0
+    left: 0
 // _________ H E A D E R
-header 
+header
   position: relative
   height: 90vh
   overflow: hidden
   color: #ffffff
   text-transform: uppercase
   text-align: center
-  nav
-    position: fixed
-    top: 0
-    left: 0
   h1
     font-size: 38px
     font-weight: 700
