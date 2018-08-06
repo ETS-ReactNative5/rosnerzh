@@ -1,0 +1,48 @@
+
+.rz_btn
+  position: relative
+  cursor: pointer
+  padding: 0
+  margin-left: 21px
+  background-color: $accent
+  border: none
+  font-size: 24px
+  height: 42px
+  width: 17px
+  transition: width 170ms ease-in-out
+  span
+    color: #ffffff
+  &::after, &::before
+    content: ''
+    background-color: inherit
+    position: absolute 
+    top: 0
+    bottom: 0
+    width: 42px
+    background-color: $accent
+  &::after
+    z-index: 2
+    left: calc(100% - 21px)
+    border-radius: 50%
+  &::before
+    right: calc(100% - 21px)
+    border-radius: 50%
+  &:hover
+    width: 207px
+    svg
+      transform: rotate(180deg)
+  &:hover:active
+    svg
+      transform: rotate(180deg) translateX(10px)
+  & > span
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    span
+      position: absolute
+      z-index: 1
+      left: 16px
+      white-space: nowrap
+      top: -7px

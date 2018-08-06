@@ -184,26 +184,19 @@ label {
     .logo.open span:last-child {
       animation: logoToggle .6s ease-out forwards; }
 
-body {
-  font-family: "roboto", serif; }
-  body nav {
-    display: flex;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0; }
-
 .rz_btn {
   position: relative;
   cursor: pointer;
   padding: 0;
+  margin-left: 21px;
   background-color: #fe4365;
-  color: #ffffff;
   border: none;
   font-size: 24px;
   height: 42px;
   width: 17px;
   transition: width 170ms ease-in-out; }
+  .rz_btn span {
+    color: #ffffff; }
   .rz_btn::after, .rz_btn::before {
     content: '';
     background-color: inherit;
@@ -238,6 +231,18 @@ body {
       white-space: nowrap;
       top: -7px; }
 
+body {
+  font-family: "roboto", serif;
+  color: #323232; }
+  body h1, body h2, body h3, body h4, body h5, body p, body span {
+    color: #323232; }
+  body nav {
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0; }
+
 svg.arrowRight {
   z-index: 3;
   margin-left: auto;
@@ -256,7 +261,7 @@ svg.towelDryer {
 
 header {
   position: relative;
-  height: 90vh;
+  height: 87vh;
   overflow: hidden;
   color: #ffffff;
   text-transform: uppercase;
@@ -270,6 +275,7 @@ header {
     margin-bottom: 0;
     font-family: 'proxima-bold', serif; }
   header p {
+    color: #ffffff;
     font-family: 'proxima', serif;
     font-size: 20.5px;
     line-height: 32px;
@@ -286,15 +292,36 @@ header {
   flex-wrap: wrap;
   justify-content: space-between; }
   .preview legend {
-    flex: 55% 0 0;
+    flex: 50% 1 1;
     background-color: #fff;
-    padding-left: 10%; }
+    padding: 130px 100px 50px;
+    padding-left: calc((100vw - 1200px) / 2);
+    margin-bottom: 0; }
+    .preview legend h2 {
+      font-size: 28.5px;
+      line-height: 57.5px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-transform: uppercase; }
+    .preview legend p {
+      font-size: 24px;
+      line-height: 36px;
+      font-weight: 400; }
+    .preview legend .rz_btn {
+      float: right; }
   .preview__constructor {
-    flex: 45% 0 0; }
+    flex: 612px 0 0;
+    max-width: 612px; }
     .preview__constructor hgroup {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 10vh;
+      height: 13vh;
       padding: 0 20%;
       background-color: #96BBAA; }
+      .preview__constructor hgroup svg {
+        cursor: pointer; }
+    .preview__constructor main {
+      min-height: 380px;
+      background: url("../img/preview_bg.jpg");
+      background-size: cover; }

@@ -15,6 +15,7 @@ class Constructor extends Component {
           <Svg id="towelDryer" />
           <Svg id="towelDryer" />
         </hgroup>
+        <main></main>
       </section>
     );
   }
