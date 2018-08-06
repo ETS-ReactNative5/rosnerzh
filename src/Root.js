@@ -1,7 +1,8 @@
 import React, {Component, Fragment} from 'react'
 
 import Header from './components/Header'
-import Menu from './components/MenuButton';
+import Menu from './components/MenuButton'
+import Preview from './components/Preview';
 import './css/main.css'
 
 export const MenuButtonContext = React.createContext({
@@ -26,7 +27,7 @@ class Root extends Component {
           <Menu />
         </MenuButtonContext.Provider>
         <Header isMobile={false} />
-        <h1>Root component</h1>
+        <Preview />
       </Fragment>
     )
   }

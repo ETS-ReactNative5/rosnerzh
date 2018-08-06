@@ -17,6 +17,67 @@ body
     z-index: 10
     top: 0
     left: 0
+// _________ B U T T O N
+.rz_btn
+  position: relative
+  cursor: pointer
+  padding: 0
+  background-color: $accent
+  color: #ffffff
+  border: none
+  font-size: 24px
+  height: 42px
+  width: 17px
+  transition: width 170ms ease-in-out
+  &::after, &::before
+    content: ''
+    background-color: inherit
+    position: absolute 
+    top: 0
+    bottom: 0
+    width: 42px
+    background-color: $accent
+  &::after
+    z-index: 2
+    left: calc(100% - 21px)
+    border-radius: 50%
+  &::before
+    right: calc(100% - 21px)
+    border-radius: 50%
+  &:hover
+    width: 207px
+    svg
+      transform: rotate(180deg)
+  &:hover:active
+    svg
+      transform: rotate(180deg) translateX(10px)
+  & > span
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    span
+      position: absolute
+      z-index: 1
+      left: 16px
+      white-space: nowrap
+      top: -7px
+// _________ S V G
+svg.arrowRight
+  z-index: 3
+  margin-left: auto
+  background-color: $accent
+  width: 17px
+  transition: transform 440ms cubic-bezier(.2,.85,.4,1.275)
+  & > *
+    fill: #ffffff
+svg.towelDryer
+  width: 36px
+  height: 42px
+  & > *
+    fill: #ffffff
+    stroke: #ffffff
 // _________ H E A D E R
 header
   position: relative
@@ -44,3 +105,21 @@ header
     left: 0
     width: 100%
     z-index: -1
+// ________  C O N S T R U C T O R   P R E V I E W
+.preview
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  legend
+    flex: 55% 0 0
+    background-color: #fff
+    padding-left: 10%
+  &__constructor
+    flex: 45% 0 0
+    hgroup
+      display: flex
+      justify-content: space-between
+      align-items: center
+      height: 10vh
+      padding: 0 20%
+      background-color: $green
