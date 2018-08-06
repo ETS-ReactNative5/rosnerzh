@@ -3,6 +3,7 @@ import React, {Component, Fragment} from 'react'
 import Header from './components/Header'
 import Menu from './components/MenuButton'
 import Preview from './components/Preview';
+import Benefits from './components/Benefits';
 import './css/main.css'
 
 export const MenuButtonContext = React.createContext({
@@ -28,6 +29,7 @@ class Root extends Component {
         </MenuButtonContext.Provider>
         <Header isMobile={false} />
         <Preview />
+        <Benefits />
       </Fragment>
     )
   }

@@ -242,6 +242,8 @@ body {
     z-index: 10;
     top: 0;
     left: 0; }
+  body figure {
+    margin-bottom: 0; }
 
 svg.arrowRight {
   z-index: 3;
@@ -325,3 +327,35 @@ header {
       min-height: 380px;
       background: url("../img/preview_bg.jpg");
       background-size: cover; }
+
+.benefits {
+  padding: 140px calc((100vw - 1200px) / 2); }
+  .benefits__wrap {
+    position: relative;
+    min-height: 750px; }
+  .benefits__dryer {
+    position: absolute;
+    top: 0;
+    left: 0; }
+    .benefits__dryer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: #96BBAA;
+      transform: translate(25px, 25px); }
+    .benefits__dryer img {
+      position: relative; }
+  .benefits__bathroom {
+    position: absolute;
+    top: 150px;
+    right: 0; }
+  .benefits__legend {
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+    max-width: 680px;
+    background-color: #fff;
+    padding: 40px 80px; }

@@ -5,6 +5,8 @@ $font: #323232
 
 $roboto: 'roboto', serif
 
+$sidePadding: calc((100vw - 1200px) / 2)
+
 @import _reset
 @import _humburger
 @import _logo
@@ -22,6 +24,8 @@ body
     z-index: 10
     top: 0
     left: 0
+  figure
+    margin-bottom: 0
 // _________ S V G
 svg.arrowRight
   z-index: 3
@@ -74,7 +78,7 @@ header
     flex: 50% 1 1
     background-color: #fff
     padding: 130px 100px 50px
-    padding-left: calc((100vw - 1200px) / 2)
+    padding-left: $sidePadding
     margin-bottom: 0
     h2
       font-size: 28.5px
@@ -104,3 +108,35 @@ header
       min-height: 380px
       background: url("../img/preview_bg.jpg")
       background-size: cover
+// ________  B E N E F I T S
+.benefits
+  padding: 140px $sidePadding
+  &__wrap
+    position: relative
+    min-height: 750px
+  &__dryer
+    position: absolute 
+    top: 0
+    left: 0
+    &::before
+      content: ''
+      position: absolute 
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      background-color: $green
+      transform: translate(25px, 25px)
+    img
+      position: relative
+  &__bathroom
+    position: absolute 
+    top: 150px
+    right: 0
+  &__legend
+    position: absolute 
+    bottom: 0
+    right: 100px
+    max-width: 680px
+    background-color: #fff
+    padding: 40px 80px
