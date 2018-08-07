@@ -11,13 +11,19 @@ $sidePadding: calc((100vw - 1100px) / 2)
 @import _humburger
 @import _logo
 @import _button
+@import _sectionGrid
 
 
 body
   font-family: $roboto
   color: $font
-  h1, h2, h3, h4, h5, p, span
+  h1, h2, h3, h4, h5, p, span, legend
     color: $font
+  h2
+    font-size: 28.5px
+    line-height: 57.5px
+    font-weight: 700
+    text-transform: uppercase
   nav
     display: flex
     position: fixed
@@ -81,11 +87,7 @@ header
     padding-left: $sidePadding
     margin-bottom: 0
     h2
-      font-size: 28.5px
-      line-height: 57.5px
-      font-weight: 700
       margin-bottom: 30px
-      text-transform: uppercase
     p
       font-size: 24px
       line-height: 36px
@@ -143,73 +145,47 @@ header
     font-size: 24px
     line-height: 36px
     font-weight: 400
-// ________  G R I D
-.grid
-  display: flex
-  flex-wrap: wrap
-  justify-content: center
-  padding: 140px $sidePadding
-  h2
-    text-transform: uppercase
-    font-size: 28.5px
-    line-height: 57.5px
-    font-weight: 700
-  p
-    font-size: 18px
-    line-height: 28px
-    font-weight: 400
-  &__item
+// ________  F O O T E R
+.footer
+  padding: 100px $sidePadding 400px
+  background-image: linear-gradient(transparent 35%, $green 0)
+  &__map
     position: relative
-    &--design, &--size
-      &::before
-        z-index: -1
-        content: ''
-        position: absolute 
-        background-color: $light
-    &--size::before
-      top: 0
-      left: 35px
-      bottom: 50px
-      right: 0
-    &--design::before
-      top: -30px
-      bottom: -45px
-      right: -30px
-      left: 0
-    &--energy-img, &--design-img
-      img
-        position: relative
-      &::before
-        content: ''
-        position: absolute 
-        background-color: $green
-    &--design-img::before
+    &::before
+      content: ''
+      background-color: $light
+      position: absolute 
       bottom: 0
       left: 0
-      width: 365px
-      height: 365px
-      transform: translate(-27px, 27px)
-    &--energy-img::before
-      top: 0
-      right: 0
-      width: 192px
-      height: 192px
-      transform: translate(27px, -27px)
-    &--design-img
-      margin-top: -30px
-    &--energy, &--size
-      .rz_btn
-        float: right
-    &--energy, &--design, &--size
-      padding: 75px 80px 65px
-      &-img
-        img
-          width: 100%
-    &--energy-img, &--design
-      flex: 45% 0 0
-    &--design-img, &--energy
-      flex: 55% 0 0
-    &--size
-      flex: 52% 0 0
-      &-img
-        flex: 48% 0 0
+      width: 260px
+      height: 471px
+      transform: translate(-30px, 45px)
+  &__copy
+    padding: 60px 80px
+    display: flex
+    justify-content: space-between
+    p
+      color: #ffffff
+  &__wrap
+    position: relative
+  &__about
+    background-color: #fff
+    padding: 60px 80px
+  &__main
+    width: 840px
+    position: absolute
+    top: 400px
+    right: 60px
+    p, li
+      font-size: 18px
+      line-height: 28px
+      font-weight: 500
+    ul
+      padding-left: 0
+    li
+      list-style: none
+      color: $font
+      a
+        color: inherit
+      address
+        margin-bottom: 0

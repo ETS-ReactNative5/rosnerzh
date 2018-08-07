@@ -2,9 +2,10 @@ import React, {Component, Fragment} from 'react'
 
 import Header from './components/Header'
 import Menu from './components/MenuButton'
-import Preview from './components/Preview';
-import Benefits from './components/Benefits';
-import Grid from './components/Gird';
+import Preview from './components/Preview'
+import Benefits from './components/Benefits'
+import Grid from './components/Gird'
+import Footer from './components/footer'
 import './css/main.css'
 
 export const MenuButtonContext = React.createContext({
@@ -32,6 +33,7 @@ class Root extends Component {
         <Preview />
         <Benefits />
         <Grid />
+        <Footer />
       </Fragment>
     )
   }
