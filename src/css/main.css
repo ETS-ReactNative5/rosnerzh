@@ -297,7 +297,7 @@ header {
     flex: 50% 1 1;
     background-color: #fff;
     padding: 130px 100px 50px;
-    padding-left: calc((100vw - 1200px) / 2);
+    padding-left: calc((100vw - 1100px) / 2);
     margin-bottom: 0; }
     .preview legend h2 {
       font-size: 28.5px;
@@ -329,7 +329,7 @@ header {
       background-size: cover; }
 
 .benefits {
-  padding: 140px calc((100vw - 1200px) / 2); }
+  padding: 140px calc((100vw - 1100px) / 2) 50px; }
   .benefits__wrap {
     position: relative;
     min-height: 750px; }
@@ -358,4 +358,38 @@ header {
     right: 100px;
     max-width: 680px;
     background-color: #fff;
-    padding: 40px 80px; }
+    padding: 40px 80px;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400; }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 140px calc((100vw - 1100px) / 2); }
+  .grid h2 {
+    text-transform: uppercase;
+    font-size: 28.5px;
+    line-height: 57.5px;
+    font-weight: 700; }
+  .grid p {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400; }
+  .grid__item--design-img {
+    margin-top: -30px; }
+  .grid__item--energy .rz_btn, .grid__item--size .rz_btn {
+    float: right; }
+  .grid__item--energy, .grid__item--design, .grid__item--size {
+    padding: 75px 80px 65px; }
+    .grid__item--energy-img img, .grid__item--design-img img, .grid__item--size-img img {
+      width: 100%; }
+  .grid__item--energy-img, .grid__item--design {
+    flex: 45% 0 0; }
+  .grid__item--design-img, .grid__item--energy {
+    flex: 55% 0 0; }
+  .grid__item--size {
+    flex: 52% 0 0; }
+    .grid__item--size-img {
+      flex: 48% 0 0; }

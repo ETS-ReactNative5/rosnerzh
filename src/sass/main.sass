@@ -5,7 +5,7 @@ $font: #323232
 
 $roboto: 'roboto', serif
 
-$sidePadding: calc((100vw - 1200px) / 2)
+$sidePadding: calc((100vw - 1100px) / 2)
 
 @import _reset
 @import _humburger
@@ -110,7 +110,7 @@ header
       background-size: cover
 // ________  B E N E F I T S
 .benefits
-  padding: 140px $sidePadding
+  padding: 140px $sidePadding 50px
   &__wrap
     position: relative
     min-height: 750px
@@ -140,3 +140,40 @@ header
     max-width: 680px
     background-color: #fff
     padding: 40px 80px
+    font-size: 24px
+    line-height: 36px
+    font-weight: 400
+// ________  G R I D
+.grid
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  padding: 140px $sidePadding
+  h2
+    text-transform: uppercase
+    font-size: 28.5px
+    line-height: 57.5px
+    font-weight: 700
+  p
+    font-size: 18px
+    line-height: 28px
+    font-weight: 400
+  &__item
+    &--design-img
+      margin-top: -30px
+    &--energy, &--size
+      .rz_btn
+        float: right
+    &--energy, &--design, &--size
+      padding: 75px 80px 65px
+      &-img
+        img
+          width: 100%
+    &--energy-img, &--design
+      flex: 45% 0 0
+    &--design-img, &--energy
+      flex: 55% 0 0
+    &--size
+      flex: 52% 0 0
+      &-img
+        flex: 48% 0 0
