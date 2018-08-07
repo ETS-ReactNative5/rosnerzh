@@ -159,6 +159,42 @@ header
     line-height: 28px
     font-weight: 400
   &__item
+    position: relative
+    &--design, &--size
+      &::before
+        z-index: -1
+        content: ''
+        position: absolute 
+        background-color: $light
+    &--size::before
+      top: 0
+      left: 35px
+      bottom: 50px
+      right: 0
+    &--design::before
+      top: -30px
+      bottom: -45px
+      right: -30px
+      left: 0
+    &--energy-img, &--design-img
+      img
+        position: relative
+      &::before
+        content: ''
+        position: absolute 
+        background-color: $green
+    &--design-img::before
+      bottom: 0
+      left: 0
+      width: 365px
+      height: 365px
+      transform: translate(-27px, 27px)
+    &--energy-img::before
+      top: 0
+      right: 0
+      width: 192px
+      height: 192px
+      transform: translate(27px, -27px)
     &--design-img
       margin-top: -30px
     &--energy, &--size

@@ -377,19 +377,54 @@ header {
     font-size: 18px;
     line-height: 28px;
     font-weight: 400; }
-  .grid__item--design-img {
-    margin-top: -30px; }
-  .grid__item--energy .rz_btn, .grid__item--size .rz_btn {
-    float: right; }
-  .grid__item--energy, .grid__item--design, .grid__item--size {
-    padding: 75px 80px 65px; }
-    .grid__item--energy-img img, .grid__item--design-img img, .grid__item--size-img img {
-      width: 100%; }
-  .grid__item--energy-img, .grid__item--design {
-    flex: 45% 0 0; }
-  .grid__item--design-img, .grid__item--energy {
-    flex: 55% 0 0; }
-  .grid__item--size {
-    flex: 52% 0 0; }
-    .grid__item--size-img {
-      flex: 48% 0 0; }
+  .grid__item {
+    position: relative; }
+    .grid__item--design::before, .grid__item--size::before {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      background-color: #D6D6BF; }
+    .grid__item--size::before {
+      top: 0;
+      left: 35px;
+      bottom: 50px;
+      right: 0; }
+    .grid__item--design::before {
+      top: -30px;
+      bottom: -45px;
+      right: -30px;
+      left: 0; }
+    .grid__item--energy-img img, .grid__item--design-img img {
+      position: relative; }
+    .grid__item--energy-img::before, .grid__item--design-img::before {
+      content: '';
+      position: absolute;
+      background-color: #96BBAA; }
+    .grid__item--design-img::before {
+      bottom: 0;
+      left: 0;
+      width: 365px;
+      height: 365px;
+      transform: translate(-27px, 27px); }
+    .grid__item--energy-img::before {
+      top: 0;
+      right: 0;
+      width: 192px;
+      height: 192px;
+      transform: translate(27px, -27px); }
+    .grid__item--design-img {
+      margin-top: -30px; }
+    .grid__item--energy .rz_btn, .grid__item--size .rz_btn {
+      float: right; }
+    .grid__item--energy, .grid__item--design, .grid__item--size {
+      padding: 75px 80px 65px; }
+      .grid__item--energy-img img, .grid__item--design-img img, .grid__item--size-img img {
+        width: 100%; }
+    .grid__item--energy-img, .grid__item--design {
+      flex: 45% 0 0; }
+    .grid__item--design-img, .grid__item--energy {
+      flex: 55% 0 0; }
+    .grid__item--size {
+      flex: 52% 0 0; }
+      .grid__item--size-img {
+        flex: 48% 0 0; }
