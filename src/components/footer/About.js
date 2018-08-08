@@ -1,4 +1,5 @@
-import React, {Fragment} from 'react'
+import React from 'react'
+import Svg from '../common/Svg';
 
 // About stateless component;
 function About() {
@@ -26,10 +27,16 @@ function About() {
       </div>
       <div className="footer__copy">
         <p>Рос Нерж © 2018</p>
-        <div className="footer_social">
-          <a href="#">vk</a>
-          <a href="#">fb</a>
-          <a href="#">ig</a>
+        <div className="footer__social">
+          <a href="#">
+            <Svg id="vk" />
+          </a>
+          <a href="#">
+            <Svg id="fb" />
+          </a>
+          <a href="#">
+            <Svg id="instagram" />
+          </a>
         </div>
       </div>
     </main>

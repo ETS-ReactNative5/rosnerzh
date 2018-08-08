@@ -442,9 +442,22 @@ header {
   .footer__copy {
     padding: 60px 80px;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: center; }
     .footer__copy p {
       color: #ffffff; }
+  .footer__social {
+    display: flex;
+    align-items: center; }
+    .footer__social svg > * {
+      fill: #fe4365;
+      transition: fill .3s ease-in-out; }
+    .footer__social svg.vkontakte, .footer__social svg.facebook {
+      height: 50px; }
+    .footer__social svg.instagram {
+      height: 35px; }
+    .footer__social svg:hover * {
+      fill: #ffffff; }
   .footer__wrap {
     position: relative; }
   .footer__about {
