@@ -32,6 +32,8 @@ body
     left: 0
   figure
     margin-bottom: 0
+.parallax-inner
+  transition: transform 90ms ease-out
 // _________ S V G
 svg.arrowRight
   z-index: 3
@@ -80,12 +82,14 @@ header
   display: flex
   flex-wrap: wrap
   justify-content: space-between
-  legend
+  &__legend
     flex: 50% 1 1
-    background-color: #fff
-    padding: 130px 100px 50px
-    padding-left: $sidePadding
-    margin-bottom: 0
+    padding-top: 23px
+    & > div
+      background-color: #fff
+      padding: 130px 100px 50px
+      padding-left: $sidePadding
+      margin-bottom: 0
     h2
       margin-bottom: 30px
     p
@@ -120,17 +124,18 @@ header
     position: absolute 
     top: 0
     left: 0
-    &::before
-      content: ''
-      position: absolute 
-      top: 0
-      bottom: 0
-      right: 0
-      left: 0
-      background-color: $green
-      transform: translate(25px, 25px)
-    img
-      position: relative
+    &--img
+      &::before
+        content: ''
+        position: absolute 
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        background-color: $green
+        transform: translate(25px, 25px)
+      img
+        position: relative
   &__bathroom
     position: absolute 
     top: 150px
@@ -140,11 +145,12 @@ header
     bottom: 0
     right: 100px
     max-width: 680px
-    background-color: #fff
-    padding: 40px 80px
-    font-size: 24px
-    line-height: 36px
-    font-weight: 400
+    legend
+      padding: 40px 80px
+      background-color: #fff
+      font-size: 24px
+      line-height: 36px
+      font-weight: 400
 // ________  F O O T E R
 .footer
   padding: 100px $sidePadding 400px

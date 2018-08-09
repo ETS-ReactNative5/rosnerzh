@@ -17,7 +17,7 @@ const marker = {
   },
   options: {
     preset: 'islands#icon',
-    iconColor: '#0095b6',
+    iconColor: '#fe4365',
   },
 }
 

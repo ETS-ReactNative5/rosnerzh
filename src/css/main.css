@@ -311,6 +311,9 @@ body {
   body figure {
     margin-bottom: 0; }
 
+.parallax-inner {
+  transition: transform 90ms ease-out; }
+
 svg.arrowRight {
   z-index: 3;
   margin-left: auto;
@@ -359,19 +362,21 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
-  .preview legend {
+  .preview__legend {
     flex: 50% 1 1;
-    background-color: #fff;
-    padding: 130px 100px 50px;
-    padding-left: calc((100vw - 1100px) / 2);
-    margin-bottom: 0; }
-    .preview legend h2 {
+    padding-top: 23px; }
+    .preview__legend > div {
+      background-color: #fff;
+      padding: 130px 100px 50px;
+      padding-left: calc((100vw - 1100px) / 2);
+      margin-bottom: 0; }
+    .preview__legend h2 {
       margin-bottom: 30px; }
-    .preview legend p {
+    .preview__legend p {
       font-size: 24px;
       line-height: 36px;
       font-weight: 400; }
-    .preview legend .rz_btn {
+    .preview__legend .rz_btn {
       float: right; }
   .preview__constructor {
     flex: 612px 0 0;
@@ -399,7 +404,7 @@ header {
     position: absolute;
     top: 0;
     left: 0; }
-    .benefits__dryer::before {
+    .benefits__dryer--img::before {
       content: '';
       position: absolute;
       top: 0;
@@ -408,7 +413,7 @@ header {
       left: 0;
       background-color: #96BBAA;
       transform: translate(25px, 25px); }
-    .benefits__dryer img {
+    .benefits__dryer--img img {
       position: relative; }
   .benefits__bathroom {
     position: absolute;
@@ -418,12 +423,13 @@ header {
     position: absolute;
     bottom: 0;
     right: 100px;
-    max-width: 680px;
-    background-color: #fff;
-    padding: 40px 80px;
-    font-size: 24px;
-    line-height: 36px;
-    font-weight: 400; }
+    max-width: 680px; }
+    .benefits__legend legend {
+      padding: 40px 80px;
+      background-color: #fff;
+      font-size: 24px;
+      line-height: 36px;
+      font-weight: 400; }
 
 .footer {
   padding: 100px calc((100vw - 1100px) / 2) 400px;

@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from 'react'
 
-import Header from './components/Header'
+import Header from './components/header'
+import Preview from './components/preview'
 import Menu from './components/MenuButton'
-import Preview from './components/Preview'
 import Benefits from './components/Benefits'
 import Grid from './components/Gird'
 import Footer from './components/footer'
