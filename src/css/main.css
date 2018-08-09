@@ -257,9 +257,9 @@ label {
       bottom: -45px;
       right: -30px;
       left: 0; }
-    .grid__item--energy-img img, .grid__item--design-img img {
+    .grid__item--design-img img, .grid__item--energy-img .parallax-inner img {
       position: relative; }
-    .grid__item--energy-img::before, .grid__item--design-img::before {
+    .grid__item--design-img::before, .grid__item--energy-img .parallax-inner::before {
       content: '';
       position: absolute;
       background-color: #96BBAA; }
@@ -269,7 +269,7 @@ label {
       width: 365px;
       height: 365px;
       transform: translate(-27px, 27px); }
-    .grid__item--energy-img::before {
+    .grid__item--energy-img .parallax-inner::before {
       top: 0;
       right: 0;
       width: 192px;
@@ -421,11 +421,12 @@ header {
     right: 0; }
   .benefits__legend {
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     right: 100px;
-    max-width: 680px; }
+    max-width: 680px;
+    margin-bottom: 0; }
     .benefits__legend legend {
-      padding: 40px 80px;
+      padding: 60px 80px;
       background-color: #fff;
       font-size: 24px;
       line-height: 36px;

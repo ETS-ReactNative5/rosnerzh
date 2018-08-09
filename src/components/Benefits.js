@@ -15,8 +15,8 @@ class Benefits extends Component {
           </figure>
           <Parallax
             className="benefits__dryer"
-            offsetYMax={50}
-            offsetYMin={20}
+            offsetYMax={20}
+            offsetYMin={-20}
             slowerScrollRate
             tag="figure"
           >
