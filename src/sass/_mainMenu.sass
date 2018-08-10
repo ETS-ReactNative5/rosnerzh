@@ -1,0 +1,99 @@
+.main-menu
+  position: absolute 
+  top: 0
+  bottom: 0
+  right: 10vw
+  left: 0
+  background-color: $accent
+  cursor: default
+  padding: 20vh 5vw 5vh
+  &__footer
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    & > *
+      flex: 50% 0 0
+      color: #ffffff
+      padding: 15px 0
+      font-size: 18px
+      font-weight: 500
+    a:hover
+      color: #ffffff
+  &__header
+    display: flex
+    align-items: center
+    color: #ffffff
+    text-transform: uppercase
+    font-size: 90px
+    font-weight: 700
+    margin-bottom: 0
+    line-height: 1.25
+    padding-right: 180px
+    &:nth-child(1)
+      transition: transform .4s .45s ease-out
+    &:nth-child(2)
+      transition: transform .4s .48s ease-out
+    &:nth-child(3)
+      transition: transform .4s .59s ease-out
+    span
+      color: inherit
+      padding-right: 20px
+      cursor: pointer
+    ul
+      flex-grow: 1
+      opacity: 0
+      margin-bottom: 0
+      padding: 0
+      padding-left: 80px
+      transition: flex-grow .3s ease-out, opacity .2s
+    hr
+      opacity: 0
+      flex: auto 1 0
+      transition: opacity .2s
+    &:hover
+      hr
+        opacity: 1
+      ul
+        flex-grow: 0
+        opacity: 1
+    li
+      cursor: pointer
+      list-style: none
+      font-size: 18px
+      text-transform: none
+      font-weight: 500
+    li + li
+      margin-top: 18px
+  & > hr
+    margin: 20px 0 30px
+  hr
+    height: 2px
+    border: none
+    background-color: #fff
+  &__close
+    position: absolute 
+    top: 0
+    bottom: 0
+    right: 0
+    width: 10vw
+  &__wrap
+    z-index: 9
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    cursor: pointer
+    transition: transform .3s 280ms, background-color .48s .52s
+    &.open
+      transform: translateX(0)
+      background-color: rgba(254, 67, 101, .3)
+      .main-menu__header
+        transform: translateX(0)
+    &.close
+      transition: transform .2s, background-color .2s
+      transform: translateX(-100vw)
+      background-color: rgba(254, 67, 101, 0)
+      .main-menu__header
+        transform: translateX(-100vw)
+        transition: transform .2s
