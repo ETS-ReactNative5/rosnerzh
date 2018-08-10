@@ -47,9 +47,16 @@ class Gird extends Component {
           </p>
           <Button caption="В конструктор" />
         </div>
-        <div className="grid__item grid__item--size-img">
+        
+        <Parallax
+          className="grid__item grid__item--size-img"
+          offsetXMax={5}
+          offsetXMin={-5}
+          slowerScrollRate
+          tag="div"
+        >
           <img src={srcSize} alt="" />
-        </div>
+        </Parallax>
       </section>
     )
   }
