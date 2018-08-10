@@ -2,10 +2,11 @@ import React, {Component, Fragment} from 'react'
 
 import Header from './components/header'
 import Preview from './components/preview'
-import Menu from './components/MenuButton'
+import MenuButton from './components/MenuButton'
 import Benefits from './components/Benefits'
 import Grid from './components/Gird'
 import Footer from './components/footer'
+import Menu from './components/Menu';
 import './css/main.css'
 
 export const MenuButtonContext = React.createContext({
@@ -27,6 +28,7 @@ class Root extends Component {
         <MenuButtonContext.Provider
           value={{isOpen: this.state.menu !== 'close' ? true : false, toggleMenu: this.toggleMenu}}
         >
+          <MenuButton />
           <Menu />
         </MenuButtonContext.Provider>
         <Header isMobile={false} />

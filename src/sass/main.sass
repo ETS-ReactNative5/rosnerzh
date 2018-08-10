@@ -24,13 +24,9 @@ body
     line-height: 57.5px
     font-weight: 700
     text-transform: uppercase
-  nav
-    display: flex
-    position: fixed
-    z-index: 10
-    top: 0
-    left: 0
   figure
+    margin-bottom: 0
+  address
     margin-bottom: 0
 .parallax-inner
   transition: transform 90ms ease-out
@@ -210,5 +206,65 @@ header
       color: $font
       a
         color: inherit
-      address
+      address, time
         margin-bottom: 0
+// ________  M A I N   M E N U
+.main-menu
+  position: absolute 
+  top: 0
+  bottom: 0
+  right: 20vh
+  left: 0
+  background-color: $accent
+  cursor: default
+  padding: 20vh 5vw 5vh
+  &__footer
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    & > *
+      flex: 50% 0 0
+      color: #ffffff
+      padding: 15px 0
+      font-size: 18px
+      font-weight: 500
+  &__header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    color: #ffffff
+    text-transform: uppercase
+    font-size: 90px
+    font-weight: 700
+    margin-bottom: 0
+    line-height: 1.25
+    span
+      color: inherit
+      padding-right: 50px
+    ul
+      margin-bottom: 0
+      padding: 0 50px
+    li
+      list-style: none
+      font-size: 18px
+      text-transform: none
+      font-weight: 500
+    li + li
+      margin-top: 18px
+    hr
+      flex-grow: 1
+  & > hr
+    margin: 20px 0
+  hr
+    height: 2px
+    border: none
+    background-color: #fff
+  &__wrap
+    z-index: 9
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    background-color: rgba(254, 67, 101, .3)
+    cursor: pointer

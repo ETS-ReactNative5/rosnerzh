@@ -1,54 +1,59 @@
-
-.menu-toggler
-  position: relative
-  width: 80px
-  height: 80px
-  background-color: $accent
-  cursor: pointer
-  &__inner
-    position: absolute 
-    top: 50%
-    left: 50%
-    margin: auto
-    width: 23px
-    height: 18px
-    transform: translate(-50%,-50%)
-    transition: transform .3s cubic-bezier(.4,0,.2,1)
-    & > span
-      position: absolute
-      left: 0
-      height: 3px
-      width: 100%
-      background-color: #fff
-      transform: translateZ(0)
-      transition: transform .2s cubic-bezier(.4,0,.2,1) .2s, opacity .15s 50ms, width .4s
-      &:nth-child(1)
-        top: 0
-      &:nth-child(2)
-        top: 7px
-        transition: transform .2s cubic-bezier(.4,0,.2,1) 50ms,width .4s
-      &:nth-child(3)
-        top: 14px
-  &:hover .menu-toggler__inner
-    & > span:nth-child(1)
-      width: 40%
-    & > span:nth-child(2)
-      width: 70%
-  &.open .menu-toggler__inner
-    transform: translate(-50%,-50%) rotate(135deg)
-    transition-delay: .2s
-    & > span:nth-child(1)
-      transform: translateY(.425rem)
-      transition-delay: 0s, .2s
-    & > span:nth-child(2)
-      transition-delay: .15s
-      transform: rotate(90deg)
-    & > span:nth-child(3)
-      transform: translateY(-.59375rem);
-      transition-delay: 0s, .15s
-      opacity: 0
-  &.open:hover .menu-toggler__inner
-    & > span:nth-child(1)
-      width: 100%
-    & > span:nth-child(2)
-      width: 100%
+.menu
+  display: flex
+  position: fixed
+  z-index: 10
+  top: 0
+  left: 0
+  &-toggler
+    position: relative
+    width: 80px
+    height: 80px
+    background-color: $accent
+    cursor: pointer
+    &__inner
+      position: absolute 
+      top: 50%
+      left: 50%
+      margin: auto
+      width: 23px
+      height: 18px
+      transform: translate(-50%,-50%)
+      transition: transform .3s cubic-bezier(.4,0,.2,1)
+      & > span
+        position: absolute
+        left: 0
+        height: 3px
+        width: 100%
+        background-color: #fff
+        transform: translateZ(0)
+        transition: transform .2s cubic-bezier(.4,0,.2,1) .2s, opacity .15s 50ms, width .4s
+        &:nth-child(1)
+          top: 0
+        &:nth-child(2)
+          top: 7px
+          transition: transform .2s cubic-bezier(.4,0,.2,1) 50ms,width .4s
+        &:nth-child(3)
+          top: 14px
+    &:hover .menu-toggler__inner
+      & > span:nth-child(1)
+        width: 40%
+      & > span:nth-child(2)
+        width: 70%
+    &.open .menu-toggler__inner
+      transform: translate(-50%,-50%) rotate(135deg)
+      transition-delay: .2s
+      & > span:nth-child(1)
+        transform: translateY(.425rem)
+        transition-delay: 0s, .2s
+      & > span:nth-child(2)
+        transition-delay: .15s
+        transform: rotate(90deg)
+      & > span:nth-child(3)
+        transform: translateY(-.59375rem);
+        transition-delay: 0s, .15s
+        opacity: 0
+    &.open:hover .menu-toggler__inner
+      & > span:nth-child(1)
+        width: 100%
+      & > span:nth-child(2)
+        width: 100%

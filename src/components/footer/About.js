@@ -29,7 +29,9 @@ function About() {
           <li>
             <address>Ул. Скольнический Вал, 1а</address>
           </li>
-          <li>Пн - Сб, с 9:00 до 18:00</li>
+          <li>
+            <time>Пн - Сб, с 9:00 до 18:00</time>
+          </li>
         </ul>
       </Parallax>
       <div className="footer__copy">
