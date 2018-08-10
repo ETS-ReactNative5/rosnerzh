@@ -1,11 +1,18 @@
 import React from 'react'
-import Svg from '../common/Svg';
+import {Parallax} from 'react-scroll-parallax'
+import Svg from '../common/Svg'
 
 // About stateless component;
 function About() {
   return (
     <main className="footer__main">
-      <div className="footer__about">
+      <Parallax
+        className="footer__about"
+        offsetYMax={-50}
+        offsetYMin={20}
+        slowerScrollRate
+        tag="div"
+      >
         <h2>Как мы работаем</h2>
         <p>
           Сразу после подтверждения заказ отправляется на производство. После проверки
@@ -24,7 +31,7 @@ function About() {
           </li>
           <li>Пн - Сб, с 9:00 до 18:00</li>
         </ul>
-      </div>
+      </Parallax>
       <div className="footer__copy">
         <p>Рос Нерж © 2018</p>
         <div className="footer__social">
