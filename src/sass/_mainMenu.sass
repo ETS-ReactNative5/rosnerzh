@@ -1,12 +1,44 @@
+.main-constructor
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 10vw
+  left: 80px
+  background-color: #fff
+  cursor: default
+  transform: translateY(100vh)
+  transition: transform .35s ease-out
+  &__arrow-back
+    cursor: pointer
+    position: absolute 
+    bottom: 2vh
+    right: 100%
+    transform: rotate(-90deg)
+    width: 80px
+    & > *
+      fill: #ffffff
+
+
+.main-menu__wrap.constructor
+  .main-constructor
+    transform: translateY(0)
+  .main-menu
+    // padding-right: 80px
+    // transform: translateX(calc(-90vw + 80px))
+
+
+
 .main-menu
   position: absolute 
   top: 0
   bottom: 0
   right: 10vw
   left: 0
+  overflow: hidden
   background-color: $accent
   cursor: default
-  padding: 20vh 5vw 5vh
+  padding: 20vh 80px 5vh
+  transition: transform .35s ease-out
   &__footer
     display: flex
     flex-wrap: wrap
@@ -78,6 +110,7 @@
     width: 10vw
   &__wrap
     z-index: 9
+    overflow: hidden
     position: fixed
     top: 0
     bottom: 0

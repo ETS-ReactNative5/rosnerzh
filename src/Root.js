@@ -20,14 +20,18 @@ class Root extends Component {
     menu: 'close',
   }
 
-  componentDidUpdate(_, {menu}) {
-    if (menu !== 'open') document.body.classList.add('active-menu')
-    else document.body.classList.remove('active-menu')
+  componentWillUpdate(_, {menu}) {
+    if (menu === 'close') document.body.classList.add('inactive-menu')
+    else document.body.classList.remove('inactive-menu')
   }
 
   _isOpen = menu => (menu !== 'close' ? true : false)
 
-  _toggleMenu = () => this.setState(({menu}) => ({menu: menu === 'close' ? 'open' : 'close'}))
+  _toggleConst = () => this.setState(() => ({menu: 'constructor'}))
+
+  _toggleMain = () => this.setState(() => ({menu: 'main'}))
+
+  _toggleMenu = () => this.setState(({menu}) => ({menu: menu === 'close' ? 'main' : 'close'}))
 
   render() {
     return (
@@ -41,6 +45,8 @@ class Root extends Component {
           isOpen={this._isOpen(this.state.menu)}
           menu={this.state.menu}
           toggleMenu={this._toggleMenu}
+          toggleConst={this._toggleConst}
+          toggleMain={this._toggleMain}
         />
         <Header isMobile={false} />
         <Preview />

@@ -1,12 +1,16 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 // Nav component;
 class Nav extends Component {
+  static propTypes = {
+    toggleConst: PropTypes.func.isRequired,
+  }
   render() {
     return (
       <nav className="main-menu">
         <h3 className="main-menu__header">
-          <span>Конструктор</span>
+          <span onClick={this.props.toggleConst}>Конструктор</span>
         </h3>
         <h3 className="main-menu__header">
           <span>О нас</span>
