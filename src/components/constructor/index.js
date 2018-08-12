@@ -13,6 +13,9 @@ class Constructor extends Component {
         <div onClick={this.props.toggleMain} className="main-constructor__arrow-back">
           <Svg id="arrow"/>
         </div>
+        <div onClick={this.props.toggleMain} className="main-constructor__arrow-back">
+          <Svg id="arrow"/>
+        </div>
       </section>
     );
   }

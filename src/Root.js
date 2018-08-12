@@ -6,7 +6,7 @@ import MenuButton from './components/MenuButton'
 import Benefits from './components/Benefits'
 import Grid from './components/Gird'
 import Footer from './components/footer'
-import Menu from './components/Menu'
+import Menu from './components/menu'
 import './css/main.css'
 
 export const MenuButtonContext = React.createContext({
@@ -30,6 +30,8 @@ class Root extends Component {
   _toggleConst = () => this.setState(() => ({menu: 'constructor'}))
 
   _toggleMain = () => this.setState(() => ({menu: 'main'}))
+
+  _toggleOrder = () => this.setState(() => ({menu: 'order'}))
 
   _toggleMenu = () => this.setState(({menu}) => ({menu: menu === 'close' ? 'main' : 'close'}))
 

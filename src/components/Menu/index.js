@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 import Nav from './Nav'
-import Constructor from './Constructor'
+import Constructor from '../constructor'
 
 // Menu component;
 class Menu extends Component {
