@@ -1,22 +1,23 @@
 import React, {Component} from 'react'
-
-import {MenuButtonContext} from '../../Root'
+import {inject, observer} from 'mobx-react'
 
 // Humburger component;
+@inject('menuStore')
+@observer
 class Humburger extends Component {
   render() {
+    const {isOpen, toggleMenu} = this.props.menuStore
     return (
-      <MenuButtonContext.Consumer>
-        {({isOpen, toggleMenu}) => (
-          <div onClick={toggleMenu} className={`menu-toggler ${isOpen ? 'open' : 'close'}`}>
-            <div className="menu-toggler__inner">
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-        )}
-      </MenuButtonContext.Consumer>
+      <div
+        onClick={toggleMenu}
+        className={`menu-toggler ${isOpen() ? 'open' : 'close'}`}
+      >
+        <div className="menu-toggler__inner">
+          <span />
+          <span />
+          <span />
+        </div>
+      </div>
     )
   }
 }

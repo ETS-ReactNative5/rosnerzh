@@ -1,20 +1,20 @@
 import React, {Component} from 'react'
+import {inject, observer} from 'mobx-react'
 
 import {MenuButtonContext} from '../../Root'
 
 // Logo component;
+@inject('menuStore')
+@observer
 class Logo extends Component {
   render() {
+    const {isOpen} = this.props.menuStore
     return (
-      <MenuButtonContext.Consumer>
-        {({isOpen}) => (
-          <div className={`logo${isOpen? ' open': ' close'}`}>
-            <span>Рос</span>
-            <figure/>
-            <span>Нерж</span>
-          </div>
-        )}
-      </MenuButtonContext.Consumer>
+      <div className={`logo ${isOpen() ? 'open' : 'close'}`}>
+        <span>Рос</span>
+        <figure />
+        <span>Нерж</span>
+      </div>
     )
   }
 }

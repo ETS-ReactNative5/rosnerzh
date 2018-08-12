@@ -1,16 +1,17 @@
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
+import {inject, observer} from 'mobx-react'
 
 // Nav component;
+@inject('menuStore')
+@observer
 class Nav extends Component {
-  static propTypes = {
-    toggleConst: PropTypes.func.isRequired,
-  }
+  
   render() {
+    const {openConstructor} = this.props.menuStore
     return (
       <nav className="main-menu">
         <h3 className="main-menu__header">
-          <span onClick={this.props.toggleConst}>Конструктор</span>
+          <span onClick={openConstructor}>Конструктор</span>
         </h3>
         <h3 className="main-menu__header">
           <span>О нас</span>

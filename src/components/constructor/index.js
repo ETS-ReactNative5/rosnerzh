@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import { inject, observer } from 'mobx-react';
-import PropTypes from 'prop-types'
+import {inject, observer} from 'mobx-react'
 
 import Svg from '../common/Svg'
 
@@ -8,17 +7,14 @@ import Svg from '../common/Svg'
 @inject('menuStore')
 @observer
 class Constructor extends Component {
-  static propTypes = {
-    toggleMain: PropTypes.func.isRequired,
-  }
   render() {
-    console.log(" LOG ___ this.props ", this.props.menuStore )
+    const {state, openMain, openOrder} = this.props.menuStore
     return (
       <section className="main-constructor">
-        <div onClick={this.props.toggleMain} className="main-constructor__arrow-back">
+        <div onClick={openMain} className="main-constructor__arrow-back">
           <Svg id="arrow" />
         </div>
-        <div onClick={this.props.toggleMain} className="main-constructor__arrow-back">
+        <div onClick={openOrder} className="main-constructor__arrow-order">
           <Svg id="arrow" />
         </div>
       </section>

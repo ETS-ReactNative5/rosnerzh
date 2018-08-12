@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react'
+import { inject, observer } from 'mobx-react';
 
 import Header from './components/header'
 import Preview from './components/preview'
@@ -15,13 +16,16 @@ export const MenuButtonContext = React.createContext({
 })
 
 // Root component;
+@inject('menuStore')
+@observer
 class Root extends Component {
   state = {
     menu: 'close',
   }
 
-  componentWillUpdate(_, {menu}) {
-    if (menu === 'close') document.body.classList.add('inactive-menu')
+  componentWillUpdate(_, nProps) {
+    console.log(" LOG ___ CWU ", nProps )
+    if (nProps.menu === 'close') document.body.classList.add('inactive-menu')
     else document.body.classList.remove('inactive-menu')
   }
 
