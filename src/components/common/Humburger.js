@@ -10,7 +10,7 @@ class Humburger extends Component {
     return (
       <div
         onClick={toggleMenu}
-        className={`menu-toggler ${isOpen() ? 'open' : 'close'}`}
+        className={`menu-toggler ${isOpen ? 'open' : 'close'}`}
       >
         <div className="menu-toggler__inner">
           <span />

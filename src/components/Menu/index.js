@@ -10,7 +10,7 @@ import Constructor from '../constructor'
 class Menu extends Component {
   render() {
     const {isOpen, state, toggleMenu} = this.props.menuStore
-    const menuState = 'main-menu__wrap' + (!isOpen() ? ' close' : ` open ${state}`)
+    const menuState = 'main-menu__wrap' + (!isOpen ? ' close' : ` open ${state}`)
     return (
       <section className={menuState}>
         <Nav />
