@@ -6,12 +6,13 @@ import DevTools from 'mobx-react-devtools'
 import Root from './Root'
 import 'antd/dist/antd.css'
 import menuStore from './store/Menu'
+import constStore from './store/Constructor'
 
 class App extends Component {
   render() {
     console.log(' LOG ___ process.env ', process.env)
     return (
-      <MobxProvider menuStore={menuStore}>
+      <MobxProvider menuStore={menuStore} constStore={constStore}>
         <ParallaxProvider>
           <Root />
           <DevTools />

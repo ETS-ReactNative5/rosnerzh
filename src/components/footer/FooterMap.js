@@ -20,7 +20,7 @@ const marker = {
     iconColor: '#fe4365',
   },
 }
-
+// TODO: Disallow map scrolling 
 // FooterMap component;
 class FooterMap extends Component {
   state = {

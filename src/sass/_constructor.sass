@@ -1,0 +1,39 @@
+.main-constructor
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 10vw
+  left: 80px
+  display: flex
+  justify-content: space-between
+  background-color: #fff
+  cursor: default
+  transform: translateY(100vh)
+  transition: transform .35s ease-out
+  padding: 100px 5vw
+  &__arrow
+    &--order, &--back
+      width: 80px
+      cursor: pointer
+      position: absolute 
+      bottom: 2vh
+    &--back
+      right: 100%
+      transform: rotate(-90deg)
+      & > *
+        fill: #ffffff
+    &--order
+      right: 5vw
+      transform: rotate(-180deg)
+      & > *
+        fill: $accent
+
+// WHEN STATE ARE constructor
+.main-menu__wrap.constructor
+  .main-constructor
+    transform: translateY(0)
+
+// WHEN STATE ARE order
+.main-menu__wrap.order
+  .main-constructor
+    transform: translateY(0)
