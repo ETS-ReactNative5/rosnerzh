@@ -4,5 +4,5 @@ export const colors = [
   {color: '#006e69'},
   {color: '#82c09a'},
   {color: '#344099'},
-  {color: 'transparent'},
+  {color: '#b3b3b3'},
 ]

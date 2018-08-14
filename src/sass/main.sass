@@ -4,6 +4,7 @@ $light: #D6D6BF
 $font: #323232
 
 $roboto: 'roboto', serif
+$defaultFont: "roboto", "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif
 
 $sidePadding: calc((100vw - 1100px) / 2)
 
@@ -15,10 +16,10 @@ $sidePadding: calc((100vw - 1100px) / 2)
 @import _mainMenu
 @import _constructor
 
-
-body
-  font-family: $roboto
+html body
+  font-family: $defaultFont
   color: $font
+body
   overflow: hidden
   &.inactive-menu
     overflow: auto

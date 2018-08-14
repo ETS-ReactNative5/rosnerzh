@@ -4,7 +4,6 @@ import {Provider as MobxProvider} from 'mobx-react'
 import DevTools from 'mobx-react-devtools'
 
 import Root from './Root'
-import 'antd/dist/antd.css'
 import menuStore from './store/Menu'
 import constStore from './store/Constructor'
 

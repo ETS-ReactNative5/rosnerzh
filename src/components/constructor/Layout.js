@@ -3,6 +3,7 @@ import {inject, observer} from 'mobx-react'
 import InputRange from 'react-rangeslider'
 import './rangeSlider.css'
 
+import Toggler from './Toggler'
 import ColorList from './ColorList'
 // Layout component;
 @inject('constStore')
@@ -18,13 +19,38 @@ class Layout extends Component {
       minHeight,
       maxHeight,
       setHeight,
+      setGate,
+      setRack,
+      setLintels,
+      gate,
+      rack,
+      lintels,
+      gateLength,
+      setGateLength,
     } = this.props.constStore
     return (
       <Fragment>
-        <div className="main-constructor__settings">settings</div>
+        <div className="main-constructor__settings">
+          <Toggler isActive={gate} handler={setLintels} />
+          <Toggler isActive={rack} handler={setRack} />
+          <Toggler isActive={lintels} handler={setGate} />
+          {gate && (
+            <InputRange
+              value={gateLength}
+              min={300}
+              max={600}
+              onChange={setGateLength}
+              step={100}
+              tooltip={false}
+            />
+          )}
+        </div>
         <div className="main-constructor__image">
           <div className="main-constructor__image--wrap">
-            <div className="main-constructor__image--width-tooltip">{width}мм</div>
+            <div className="main-constructor__image--width-tooltip">
+              {width}
+              мм
+            </div>
             <InputRange
               value={width}
               max={maxWidth}
@@ -38,9 +64,13 @@ class Layout extends Component {
               src="img/main-800-500.jpg"
               alt=""
             />
+            <ColorList />
           </div>
           <div className="main-constructor__image--range">
-            <div className="main-constructor__image--height-tooltip">{height}мм</div>
+            <div className="main-constructor__image--height-tooltip">
+              {height}
+              мм
+            </div>
             <InputRange
               value={height}
               max={maxHeight}
@@ -51,7 +81,6 @@ class Layout extends Component {
               orientation="vertical"
             />
           </div>
-          <ColorList />
         </div>
         <div className="main-constructor__settings">settings</div>
       </Fragment>

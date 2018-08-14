@@ -17,7 +17,7 @@ class Color extends Component {
     return (
       <div
         className={`main-constructor__color${color === id ? ' active' : ''}`}
-        style={{background: this.props.color}}
+        style={{backgroundColor: this.props.color}}
         onClick={setColor.bind(null, id)}
       />
     )
