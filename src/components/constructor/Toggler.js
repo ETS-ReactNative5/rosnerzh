@@ -12,7 +12,7 @@ class Toggler extends Component {
   render() {
     const {isActive, handler} = this.props
     return (
-      <div className={isActive ? 'active' : ''} onClick={handler}>
+      <div className={'main-constructor__settings--wrap' +(isActive ? ' active' : '')} onClick={handler}>
         <Svg id="towelDryer" />
       </div>
     )

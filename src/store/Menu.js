@@ -2,7 +2,7 @@ import {observable, action, computed} from 'mobx'
 
 class MenuStore {
   @observable
-  state
+  state       // close | constructor | main | order
 
   constructor() {
     this.state = 'close'

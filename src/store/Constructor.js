@@ -8,6 +8,7 @@ class Contructour {
   @observable  minHeight = 500
   @observable  maxHeight = 1200
   @observable  gateLength = 400
+  @observable  type = "ladder"       // ladder | mType | pType | fType
   @observable  form = 1
   @observable  color = 5
   @observable  energy = false
@@ -43,6 +44,10 @@ class Contructour {
   @action('set-rack')
   setRack = () => {
     this.rack = !this.rack
+  }
+  @action('set-type')
+  setType = value => {
+    this.type = value
   }
 }
 

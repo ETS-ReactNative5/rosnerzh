@@ -1,9 +1,10 @@
 import React, {Component, Fragment} from 'react'
 import {inject, observer} from 'mobx-react'
+import {Motion, spring} from 'react-motion'
 import InputRange from 'react-rangeslider'
 import './rangeSlider.css'
 
-import IconList from './IconList';
+import IconList from './IconList'
 import Toggler from './Toggler'
 import ColorList from './ColorList'
 // Layout component;
@@ -35,22 +36,29 @@ class Layout extends Component {
           <Toggler isActive={gate} handler={setLintels} />
           <Toggler isActive={rack} handler={setRack} />
           <Toggler isActive={lintels} handler={setGate} />
-          {gate && (
-            <InputRange
-              value={gateLength}
-              min={300}
-              max={600}
-              onChange={setGateLength}
-              step={100}
-              tooltip={false}
-            />
-          )}
+          <Motion
+            style={{
+              y: spring(gate ? -10 : 0, {stiffness: 120, damping: 10}),
+              opacity: spring(gate ? 0 : 1, {stiffness: 180, damping: 26}),
+            }}
+          >
+            {({y, opacity}) => (
+              <div style={{transform: `translateY(${y}px)`, opacity}}>
+                <InputRange
+                  value={gateLength}
+                  min={300}
+                  max={600}
+                  onChange={setGateLength}
+                  step={100}
+                  tooltip={false}
+                />
+              </div>
+            )}
+          </Motion>
         </div>
         <div className="main-constructor__image">
           <div className="main-constructor__image--wrap">
-            <div className="main-constructor__image--width-tooltip">
-              {`${width} мм`}
-            </div>
+            <div className="main-constructor__image--width-tooltip">{`${width} мм`}</div>
             <InputRange
               value={width}
               max={maxWidth}
