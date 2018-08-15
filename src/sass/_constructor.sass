@@ -1,12 +1,20 @@
+$imgHeight: 420px
+$rangeSlider: $imgHeight - 50px !important
+$rangeHandleTransition: .2s
+
+@keyframes collapseUp
+  50%
+    transform: translateY(130px)
+  100%
+    transform: translateY(0)
+
+@keyframes collapseDown
+  50%
+    transform: translateY(-130px)
+  100%
+    transform: translateY(0)
+
 .main-constructor
-  svg.towelDryer
-    display: block
-    cursor: pointer
-    width: 130px
-    height: 130px
-    margin-bottom: 10px
-    & > * 
-      fill: $accent
   position: absolute
   top: 0
   bottom: 0
@@ -19,8 +27,60 @@
   transform: translateY(100vh)
   transition: transform .35s ease-out
   padding: 60px 7vw 0
+  svg.towelDryer
+    display: block
+    cursor: pointer
+    width: 130px
+    height: 130px
+    margin-bottom: 10px
+    & > * 
+      fill: $accent
   &__settings
     padding-top: 60px
+    &--icons
+      position: relative
+      width: 130px
+      height: 130px
+      margin-bottom: 0
+      svg.towelDryer
+        width: 100%
+        height: 100%
+        margin-bottom: 0
+        background-color: #fff
+      figure
+        z-index: 3
+        position: relative
+        transition: z-index
+        transition-delay: 150ms
+        svg.towelDryer
+          width: 130px
+          height: 130px
+      &.collapse
+        color: #000
+        figure
+          z-index: 0
+        & > div:nth-child(2), & > div:nth-child(3)
+          animation: collapseUp .3s ease-out forwards
+        & > div:nth-child(4), & > div:nth-child(5)
+          animation: collapseDown .3s ease-out forwards
+    &--icon
+      z-index: 1
+      width: 65px
+      height: 65px
+      position: absolute
+      transition: transform .3s ease-out
+      &:nth-child(2)
+        top: 0
+        left: 0
+      &:nth-child(3)
+        top: 0
+        left: 50%
+      &:nth-child(4)
+        top: 50%
+        left: 0
+      &:nth-child(5)
+        top: 50%
+        left: 50%
   &__color
     position: relative
     cursor: pointer
@@ -68,14 +128,18 @@
       margin-bottom: 30px
     .rangeslider-vertical
       margin: 0
-      height: 100%!important
+      max-height: 420px
+      height: $rangeSlider
     &--range
       position: relative
-      padding: 95px 10px 38px 54px
+      align-self: flex-end
+      padding: 0 20px 30px 54px
     &--preview
       max-width: 100%
-      height: 420px   //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!????????
+      height: $imgHeight   //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!????????
       max-height: 90%
+    &--height-tooltip, &--width-tooltip
+      white-space: nowrap
     &--height-tooltip
       position: absolute 
       top: 0
@@ -114,3 +178,9 @@
 .main-menu__wrap.order
   .main-constructor
     transform: translateY(0)
+
+// range transition
+.rangeslider__handle
+  transition: top $rangeHandleTransition ease-out, left $rangeHandleTransition ease-out
+.rangeslider__fill
+  transition: height $rangeHandleTransition ease-out, width $rangeHandleTransition ease-out

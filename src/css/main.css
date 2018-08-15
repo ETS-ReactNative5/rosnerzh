@@ -406,6 +406,18 @@ label {
         transform: translateX(-100vw);
         transition: transform .2s; }
 
+@keyframes collapseUp {
+  50% {
+    transform: translateY(130px); }
+  100% {
+    transform: translateY(0); } }
+
+@keyframes collapseDown {
+  50% {
+    transform: translateY(-130px); }
+  100% {
+    transform: translateY(0); } }
+
 .main-constructor {
   position: absolute;
   top: 0;
@@ -429,6 +441,50 @@ label {
       fill: #fe4365; }
   .main-constructor__settings {
     padding-top: 60px; }
+    .main-constructor__settings--icons {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      margin-bottom: 0; }
+      .main-constructor__settings--icons svg.towelDryer {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0;
+        background-color: #fff; }
+      .main-constructor__settings--icons figure {
+        z-index: 3;
+        position: relative;
+        transition: z-index;
+        transition-delay: 150ms; }
+        .main-constructor__settings--icons figure svg.towelDryer {
+          width: 130px;
+          height: 130px; }
+      .main-constructor__settings--icons.collapse {
+        color: #000; }
+        .main-constructor__settings--icons.collapse figure {
+          z-index: 0; }
+        .main-constructor__settings--icons.collapse > div:nth-child(2), .main-constructor__settings--icons.collapse > div:nth-child(3) {
+          animation: collapseUp .3s ease-out forwards; }
+        .main-constructor__settings--icons.collapse > div:nth-child(4), .main-constructor__settings--icons.collapse > div:nth-child(5) {
+          animation: collapseDown .3s ease-out forwards; }
+    .main-constructor__settings--icon {
+      z-index: 1;
+      width: 65px;
+      height: 65px;
+      position: absolute;
+      transition: transform .3s ease-out; }
+      .main-constructor__settings--icon:nth-child(2) {
+        top: 0;
+        left: 0; }
+      .main-constructor__settings--icon:nth-child(3) {
+        top: 0;
+        left: 50%; }
+      .main-constructor__settings--icon:nth-child(4) {
+        top: 50%;
+        left: 0; }
+      .main-constructor__settings--icon:nth-child(5) {
+        top: 50%;
+        left: 50%; }
   .main-constructor__color {
     position: relative;
     cursor: pointer;
@@ -476,14 +532,18 @@ label {
       margin-bottom: 30px; }
     .main-constructor__image .rangeslider-vertical {
       margin: 0;
-      height: 100% !important; }
+      max-height: 420px;
+      height: 370px !important; }
     .main-constructor__image--range {
       position: relative;
-      padding: 95px 10px 38px 54px; }
+      align-self: flex-end;
+      padding: 0 20px 30px 54px; }
     .main-constructor__image--preview {
       max-width: 100%;
       height: 420px;
       max-height: 90%; }
+    .main-constructor__image--height-tooltip, .main-constructor__image--width-tooltip {
+      white-space: nowrap; }
     .main-constructor__image--height-tooltip {
       position: absolute;
       top: 0;
@@ -518,6 +578,12 @@ label {
 
 .main-menu__wrap.order .main-constructor {
   transform: translateY(0); }
+
+.rangeslider__handle {
+  transition: top 0.2s ease-out, left 0.2s ease-out; }
+
+.rangeslider__fill {
+  transition: height 0.2s ease-out, width 0.2s ease-out; }
 
 html body {
   font-family: "roboto", "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;

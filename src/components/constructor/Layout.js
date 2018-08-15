@@ -3,6 +3,7 @@ import {inject, observer} from 'mobx-react'
 import InputRange from 'react-rangeslider'
 import './rangeSlider.css'
 
+import IconList from './IconList';
 import Toggler from './Toggler'
 import ColorList from './ColorList'
 // Layout component;
@@ -48,8 +49,7 @@ class Layout extends Component {
         <div className="main-constructor__image">
           <div className="main-constructor__image--wrap">
             <div className="main-constructor__image--width-tooltip">
-              {width}
-              мм
+              {`${width} мм`}
             </div>
             <InputRange
               value={width}
@@ -68,8 +68,7 @@ class Layout extends Component {
           </div>
           <div className="main-constructor__image--range">
             <div className="main-constructor__image--height-tooltip">
-              {height}
-              мм
+              {`${height} мм`}
             </div>
             <InputRange
               value={height}
@@ -82,7 +81,9 @@ class Layout extends Component {
             />
           </div>
         </div>
-        <div className="main-constructor__settings">settings</div>
+        <div className="main-constructor__settings">
+          <IconList />
+        </div>
       </Fragment>
     )
   }
