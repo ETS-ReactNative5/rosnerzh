@@ -52,6 +52,9 @@ class Layout extends Component {
                   step={100}
                   tooltip={false}
                 />
+                <div className="main-constructor__image--gate-tooltip">
+                  {`${gateLength} мм`}
+                </div>
               </div>
             )}
           </Motion>

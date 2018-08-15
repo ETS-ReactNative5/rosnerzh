@@ -29,6 +29,7 @@ class IconList extends Component {
       y: spring(this.state.collapsed ? -107 : 0, {stiffness: 120, damping: 12}),
       o: spring(this.state.collapsed ? 1 : 0, {stiffness: 80, damping: 26}),
     }
+    const icons = ['towelDryer', 'towelDryer', 'towelDryer', 'fb']
     return (
       <figure className="main-constructor__settings--icons">
         <figure onClick={() => this.setState(({collapsed}) => ({collapsed: !collapsed}))}>
@@ -38,42 +39,42 @@ class IconList extends Component {
           {({x, y, o}) => (
             <Fragment>
               <Icon
-                id="towelDryer"
+                id={icons[0]}
                 style={this._getComuptedStyles(0, -y, o)}
                 onClick={() =>
                   this.setState(({collapsed}) => ({
                     collapsed: !collapsed,
-                    icon: 'towelDryer',
+                    icon: icons[0],
                   }))
                 }
               />
               <Icon
-                id="towelDryer"
+                id={icons[1]}
                 style={this._getComuptedStyles(x, 0, o)}
                 onClick={() =>
                   this.setState(({collapsed}) => ({
                     collapsed: !collapsed,
-                    icon: 'towelDryer',
+                    icon: icons[1],
                   }))
                 }
               />
               <Icon
-                id="towelDryer"
+                id={icons[2]}
                 style={this._getComuptedStyles(0, y, o)}
                 onClick={() =>
                   this.setState(({collapsed}) => ({
                     collapsed: !collapsed,
-                    icon: 'towelDryer',
+                    icon: icons[2],
                   }))
                 }
               />
               <Icon
-                id="fb"
+                id={icons[3]}
                 style={this._getComuptedStyles(-x, 0, o)}
                 onClick={() =>
                   this.setState(({collapsed}) => ({
                     collapsed: !collapsed,
-                    icon: 'fb',
+                    icon: icons[3],
                   }))
                 }
               />
