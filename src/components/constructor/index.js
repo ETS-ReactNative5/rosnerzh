@@ -4,6 +4,7 @@ import {Motion, spring} from 'react-motion'
 
 import Svg from '../common/Svg'
 import Layout from './Layout'
+import { opacityFastPreset } from '../../settings/conf';
 
 // Constructor component;
 @inject('menuStore')
@@ -14,7 +15,7 @@ class Constructor extends Component {
     return (
       <Motion
         style={{
-          y: spring(state === 'constructor' ? 0 : 100, {stiffness: 220, damping: 26}),
+          y: spring(~['constructor', 'order'].indexOf(state) ? 0 : 100, opacityFastPreset),
         }}
       >
         {({y}) => (

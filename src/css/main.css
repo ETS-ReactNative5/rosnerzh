@@ -563,14 +563,14 @@ label {
   .main-constructor .input-range__slider {
     border-color: #fe4365; }
 
-.main-menu__wrap.order .main-constructor {
-  transform: translateY(0); }
-
 .rangeslider__handle {
   transition: top 0.2s ease-out, left 0.2s ease-out; }
 
 .rangeslider__fill {
   transition: height 0.2s ease-out, width 0.2s ease-out; }
+
+.icons-form__set {
+  margin-top: 130px; }
 
 html body {
   font-family: "roboto", "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;

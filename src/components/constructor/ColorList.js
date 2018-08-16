@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import Color from './Color'
-import {colors} from '../../settings/Colors'
+import {colors} from '../../settings/conf'
 
 // ColorList component;
 class ColorList extends Component {

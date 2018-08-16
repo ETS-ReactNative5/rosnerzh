@@ -7,10 +7,21 @@ import './rangeSlider.css'
 import IconList from './IconList'
 import Toggler from './Toggler'
 import ColorList from './ColorList'
+import FormList from './FormList'
+import {opacityFastPreset, transformPreset} from '../../settings/conf'
 // Layout component;
 @inject('constStore')
 @observer
 class Layout extends Component {
+  state = {
+    collapsed: null,
+  }
+
+  collapseIcons = () =>
+    this.setState(({collapsed}) => ({collapsed: collapsed !== 'icon' ? 'icon' : null}))
+  collapseForms = () =>
+    this.setState(({collapsed}) => ({collapsed: collapsed !== 'form' ? 'form' : null}))
+
   render() {
     const {
       width,
@@ -38,8 +49,8 @@ class Layout extends Component {
           <Toggler isActive={lintels} handler={setGate} />
           <Motion
             style={{
-              y: spring(gate ? -10 : 0, {stiffness: 120, damping: 10}),
-              opacity: spring(gate ? 0 : 1, {stiffness: 180, damping: 26}),
+              y: spring(gate ? -10 : 0, transformPreset),
+              opacity: spring(gate ? 0 : 1, opacityFastPreset),
             }}
           >
             {({y, opacity}) => (
@@ -93,7 +104,14 @@ class Layout extends Component {
           </div>
         </div>
         <div className="main-constructor__settings">
-          <IconList />
+          <IconList
+            isCollapsed={this.state.collapsed === 'icon'}
+            collapse={this.collapseIcons}
+          />
+          <FormList
+            isCollapsed={this.state.collapsed === 'form'}
+            collapse={this.collapseForms}
+          />
         </div>
       </Fragment>
     )

@@ -1,16 +1,17 @@
 $imgHeight: 420px
 $rangeSlider: $imgHeight - 50px !important
 $rangeHandleTransition: .2s
+$svgSize: 130px
 
 @keyframes collapseUp
   50%
-    transform: translateY(130px)
+    transform: translateY($svgSize)
   100%
     transform: translateY(0)
 
 @keyframes collapseDown
   50%
-    transform: translateY(-130px)
+    transform: translateY(-$svgSize)
   100%
     transform: translateY(0)
 
@@ -33,8 +34,8 @@ $rangeHandleTransition: .2s
   svg.towelDryer
     display: block
     cursor: pointer
-    width: 130px
-    height: 130px
+    width: $svgSize
+    height: $svgSize
     margin-bottom: 10px
     background-color: #fff
     & > * 
@@ -46,8 +47,8 @@ $rangeHandleTransition: .2s
       z-index: 2
     &--icons
       position: relative
-      width: 130px
-      height: 130px
+      width: $svgSize
+      height: $svgSize
       margin-bottom: 0
       svg.towelDryer
         width: 100%
@@ -59,8 +60,8 @@ $rangeHandleTransition: .2s
         transition: z-index
         transition-delay: 150ms
         svg.towelDryer
-          width: 130px
-          height: 130px
+          width: $svgSize
+          height: $svgSize
     &--icon
       z-index: 1
       width: 85px
@@ -162,17 +163,23 @@ $rangeHandleTransition: .2s
   .input-range__slider
     border-color: $accent
 // WHEN STATE ARE constructor
+// Current version work on react-motion
 .main-menu__wrap.constructor
   .main-constructor
     // transform: translateY(0)
 
 // WHEN STATE ARE order
+// Current version work on react-motion
 .main-menu__wrap.order
   .main-constructor
-    transform: translateY(0)
+    // transform: translateY(0)
 
 // range transition
 .rangeslider__handle
   transition: top $rangeHandleTransition ease-out, left $rangeHandleTransition ease-out
 .rangeslider__fill
   transition: height $rangeHandleTransition ease-out, width $rangeHandleTransition ease-out
+
+// form button groups margin
+.icons-form__set
+  margin-top: $svgSize

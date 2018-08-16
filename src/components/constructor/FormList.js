@@ -1,13 +1,16 @@
 import React, {Component, Fragment} from 'react'
 import {inject, observer} from 'mobx-react'
-import {Motion, StaggeredMotion, spring} from 'react-motion'
+import {Motion, spring} from 'react-motion'
 import PropTypes from 'prop-types'
 
 import Svg from '../common/Svg'
 import Icon from './Icon'
-import {opacityFastPreset, opacityPreset, transformPreset} from '../../settings/conf'
-
-const coordinates = [{x: 0, y: -107}, {x: 107, y: 0}, {x: 0, y: 107}, {x: -107, y: 0}]
+import {
+  opacityFastPreset,
+  opacityPreset,
+  transformPreset,
+  formCount,
+} from '../../settings/conf'
 
 // FormList component;
 @inject('constStore')
@@ -25,25 +28,28 @@ class FormList extends Component {
     this.props.constStore.setType(icon)
   }
 
+  _parseComuptedStyles = ({x, y, o}) => {
+    return {
+    transform: `translate(${x.val}px, ${y.val}px)`,
+    opacity: o.val,
+  }}
   _getComuptedStyles = (x, y, opacity) => ({
     transform: `translate(${x}px, ${y}px)`,
     opacity,
   })
 
-  _getStaggedStyles = prevStyles => {
-    const {isCollapsed} = this.props
-    return prevStyles.map((_, i) => ({
-      x: spring(isCollapsed ? coordinates[i].x : 0, transformPreset),
-      y: spring(isCollapsed ? coordinates[i].y : 0, transformPreset),
-      o: spring(isCollapsed ? 1 : 0, opacityPreset),
-    }))
-  }
-
   render() {
     const {isCollapsed, collapse} = this.props
+    const radius = 107
+    const angle = 360 / formCount
+    const coordinates = [...new Array(formCount)].map((_, i) => ({
+      x: spring(isCollapsed ? Math.cos(angle * i) * radius : 0, transformPreset), // 82 cos(40)
+      y: spring(isCollapsed ? Math.sin(angle * i) * radius : 0, transformPreset), // 69 sin(40)
+      o: spring(isCollapsed ? 1 : 0, opacityPreset),
+    }))
     const styles = {
-      x: spring(isCollapsed ? -107 : 0, transformPreset),
-      y: spring(isCollapsed ? -107 : 0, transformPreset),
+      x: spring(isCollapsed ? -107 : 0, transformPreset), // 82 cos(40)
+      y: spring(isCollapsed ? -107 : 0, transformPreset), // 69 sin(40)
       o: spring(isCollapsed ? 1 : 0, opacityPreset),
     }
     const stylesFigure = {
@@ -52,7 +58,7 @@ class FormList extends Component {
     }
     const icons = ['towelDryer', 'towelDryer', 'towelDryer', 'fb']
     return (
-      <figure className="main-constructor__settings--icons">
+      <figure className="main-constructor__settings--icons icons-form__set">
         <figure onClick={collapse}>
           <Motion style={stylesFigure}>
             {({s, opacity}) => (
@@ -62,10 +68,7 @@ class FormList extends Component {
             )}
           </Motion>
         </figure>
-        <StaggeredMotion
-          defaultStyles={[...new Array(4).map((_, i) => ({x: 0, y: 0, o: 0}))]}
-          styles={this._getStaggedStyles}
-        >
+        <Motion style={styles}>
           {({x, y, o}) => (
             <Fragment>
               <Icon
@@ -94,7 +97,7 @@ class FormList extends Component {
               />
               <Icon
                 id={icons[3]}
-                style={this._getComuptedStyles(-x, 0, o)}
+                style={this._getComuptedStyles(96.6964469808557, -45.812630805036314, 1)}
                 onClick={() => {
                   this.setState(() => ({icon: icons[3]}))
                   collapse()
@@ -102,7 +105,7 @@ class FormList extends Component {
               />
             </Fragment>
           )}
-        </StaggeredMotion>
+        </Motion>
       </figure>
     )
   }
