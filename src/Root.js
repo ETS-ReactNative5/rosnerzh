@@ -11,7 +11,6 @@ import Menu from './components/menu'
 import 'antd/dist/antd.css'
 import './css/main.css'
 
-//TODO: Add blur wrapper when menu is open
 // Root component;
 @inject('menuStore')
 @observer

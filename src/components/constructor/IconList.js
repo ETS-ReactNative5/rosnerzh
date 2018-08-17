@@ -7,12 +7,7 @@ import Svg from '../common/Svg'
 import Icon from './Icon'
 import {opacityFastPreset, opacityPreset, transformPreset} from '../../settings/conf'
 
-const coordinates = [
-  {x: 0, y: -107, o: 0},
-  {x: 107, y: 0, o: 0},
-  {x: 0, y: 107, o: 0},
-  {x: -107, y: 0, o: 0},
-]
+const coordinateMask = [{x: 0, y: -1}, {x: 1, y: 0}, {x: 0, y: 1}, {x: -1, y: 0}]
 
 // FormList component;
 @inject('constStore')
@@ -27,22 +22,40 @@ class FormList extends Component {
   }
 
   componentWillUpdate(_, {icon}) {
-    this.props.constStore.setType(icon)
+    icon && this.props.constStore.setType(icon)
   }
 
-  _getComuptedStyles = (x, y, opacity) => ({
-    transform: `translate(${x}px, ${y}px)`,
+  _getComuptedStyles = ({unit, opacity}, i) => ({
+    transform: `translate(${unit * coordinateMask[i].x}px, ${unit *
+      coordinateMask[i].y}px)`,
     opacity,
   })
 
   _getStaggedStyles = prevStyles => {
+    // prevStyles.map(({unit}, i) => console.log(`unit ${i} = ${unit}`))
     const {isCollapsed} = this.props
-    const res = prevStyles.map((_, i) => ({
-      x: spring(isCollapsed ? coordinates[i].x : 0, transformPreset),
-      y: spring(isCollapsed ? coordinates[i].y : 0, transformPreset),
-      o: spring(isCollapsed ? 1 : 0, opacityPreset),
-    }))
-    return res
+    const result = prevStyles.map((_, i) => {
+      if (!isCollapsed)
+        return i === 0
+          ? {
+              unit: spring(0, transformPreset),
+              opacity: spring(1, opacityPreset),
+            }
+          : {
+              unit: spring(prevStyles[i - 1].unit, transformPreset),
+              opacity: spring(prevStyles[i - 1].opacity, opacityPreset),
+            }
+      return i === 0
+        ? {
+            unit: spring(107, transformPreset),
+            opacity: spring(1, opacityPreset),
+          }
+        : {
+            unit: spring(prevStyles[i - 1].unit, transformPreset),
+            opacity: spring(prevStyles[i - 1].opacity, opacityPreset),
+          }
+    })
+    return result
   }
 
   render() {
@@ -64,15 +77,15 @@ class FormList extends Component {
           </Motion>
         </figure>
         <StaggeredMotion
-          defaultStyles={[...new Array(4)].map(() => ({x: 0, y: 0, o: 0}))}
+          defaultStyles={[...new Array(4)].map(() => ({unit: 0, opacity: 0}))}
           styles={this._getStaggedStyles}
         >
           {iconsStyle => (
             <Fragment>
-              {iconsStyle.map(({x, y, o}, i) => (
+              {iconsStyle.map((styles, i) => (
                 <Icon
                   id={icons[i]}
-                  style={this._getComuptedStyles(x-i, y-i, o)}
+                  style={this._getComuptedStyles(styles, i)}
                   onClick={() => {
                     this.setState(() => ({icon: icons[i]}))
                     collapse()

@@ -8,7 +8,7 @@ export const colors = [
   {color: '#b3b3b3'},
 ]
 // react motion presents
-export const transformPreset = {stiffness: 120, damping: 12}
+export const transformPreset = {stiffness: 120, damping: 14}
 export const opacityPreset = {stiffness: 80, damping: 26}
 export const opacityFastPreset = {stiffness: 280, damping: 26}
 
