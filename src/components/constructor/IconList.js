@@ -7,7 +7,12 @@ import Svg from '../common/Svg'
 import Icon from './Icon'
 import {opacityFastPreset, opacityPreset, transformPreset} from '../../settings/conf'
 
-const coordinates = [{x: 0, y: -107}, {x: 107, y: 0}, {x: 0, y: 107}, {x: -107, y: 0}]
+const coordinates = [
+  {x: 0, y: -107, o: 0},
+  {x: 107, y: 0, o: 0},
+  {x: 0, y: 107, o: 0},
+  {x: -107, y: 0, o: 0},
+]
 
 // FormList component;
 @inject('constStore')
@@ -32,21 +37,17 @@ class FormList extends Component {
 
   _getStaggedStyles = prevStyles => {
     const {isCollapsed} = this.props
-    return prevStyles.map((_, i) => ({
+    const res = prevStyles.map((_, i) => ({
       x: spring(isCollapsed ? coordinates[i].x : 0, transformPreset),
       y: spring(isCollapsed ? coordinates[i].y : 0, transformPreset),
       o: spring(isCollapsed ? 1 : 0, opacityPreset),
     }))
+    return res
   }
 
   render() {
     const {isCollapsed, collapse} = this.props
-    const styles = {
-      x: spring(isCollapsed ? -107 : 0, transformPreset),
-      y: spring(isCollapsed ? -107 : 0, transformPreset),
-      o: spring(isCollapsed ? 1 : 0, opacityPreset),
-    }
-    const stylesFigure = {
+    const figuresStyle = {
       s: spring(isCollapsed ? 0.5 : 1, transformPreset),
       opacity: spring(isCollapsed ? 0.3 : 1, opacityFastPreset),
     }
@@ -54,7 +55,7 @@ class FormList extends Component {
     return (
       <figure className="main-constructor__settings--icons">
         <figure onClick={collapse}>
-          <Motion style={stylesFigure}>
+          <Motion style={figuresStyle}>
             {({s, opacity}) => (
               <div style={{transform: `scale(${s})`, opacity}}>
                 <Svg id={this.state.icon} />
@@ -63,43 +64,21 @@ class FormList extends Component {
           </Motion>
         </figure>
         <StaggeredMotion
-          defaultStyles={[...new Array(4).map((_, i) => ({x: 0, y: 0, o: 0}))]}
+          defaultStyles={[...new Array(4)].map(() => ({x: 0, y: 0, o: 0}))}
           styles={this._getStaggedStyles}
         >
-          {({x, y, o}) => (
+          {iconsStyle => (
             <Fragment>
-              <Icon
-                id={icons[0]}
-                style={this._getComuptedStyles(0, -y, o)}
-                onClick={() => {
-                  this.setState(() => ({icon: icons[0]}))
-                  collapse()
-                }}
-              />
-              <Icon
-                id={icons[1]}
-                style={this._getComuptedStyles(x, 0, o)}
-                onClick={() => {
-                  this.setState(() => ({icon: icons[1]}))
-                  collapse()
-                }}
-              />
-              <Icon
-                id={icons[2]}
-                style={this._getComuptedStyles(0, y, o)}
-                onClick={() => {
-                  this.setState(() => ({icon: icons[2]}))
-                  collapse()
-                }}
-              />
-              <Icon
-                id={icons[3]}
-                style={this._getComuptedStyles(-x, 0, o)}
-                onClick={() => {
-                  this.setState(() => ({icon: icons[3]}))
-                  collapse()
-                }}
-              />
+              {iconsStyle.map(({x, y, o}, i) => (
+                <Icon
+                  id={icons[i]}
+                  style={this._getComuptedStyles(x-i, y-i, o)}
+                  onClick={() => {
+                    this.setState(() => ({icon: icons[i]}))
+                    collapse()
+                  }}
+                />
+              ))}
             </Fragment>
           )}
         </StaggeredMotion>

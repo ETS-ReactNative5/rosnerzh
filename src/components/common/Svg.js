@@ -52,7 +52,7 @@ const Svg = ({id}) => {
       </svg>
     ),
   }
-  return entities[id]
+  return entities[id] || null
 }
 
 export default Svg
