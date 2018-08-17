@@ -24,11 +24,19 @@ class Root extends Component {
       <Fragment>
         <MenuButton />
         <Menu />
-        <Header isMobile={false} />
-        <Preview />
-        <Benefits />
-        <Grid />
-        <Footer />
+        <main
+          className="blur-container"
+          style={{
+            filter: isOpen ? 'blur(5px) contrast(.7) brightness(.8)' : 'blur(0) contrast(1) brightness(1)',
+            boxShadow: '0 0 0 50vmax rgba(0,0,0,.7)',
+          }}
+        >
+          <Header isMobile={false} />
+          <Preview />
+          <Benefits />
+          <Grid />
+          <Footer />
+        </main>
       </Fragment>
     )
   }
