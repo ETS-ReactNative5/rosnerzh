@@ -9,10 +9,10 @@ import {opacityFastPreset, opacityPreset, transformPreset} from '../../settings/
 
 const coordinateMask = [{x: 0, y: -1}, {x: 1, y: 0}, {x: 0, y: 1}, {x: -1, y: 0}]
 
-// FormList component;
+// IconList component;
 @inject('constStore')
 @observer
-class FormList extends Component {
+class IconList extends Component {
   static propTypes = {
     isCollapsed: PropTypes.bool.isRequired,
     collapse: PropTypes.func.isRequired,
@@ -27,8 +27,7 @@ class FormList extends Component {
 
   _getComuptedStyles = ({unit, opacity}, i) => ({
     transform: `translate(${unit * coordinateMask[i].x}px, ${unit *
-      coordinateMask[i].y}px)`,
-    opacity,
+      coordinateMask[i].y}px) scale(${opacity})`
   })
 
   _getStaggedStyles = prevStyles => {
@@ -39,20 +38,20 @@ class FormList extends Component {
         return i === 0
           ? {
               unit: spring(0, transformPreset),
-              opacity: spring(1, opacityPreset),
+              opacity: spring(0, transformPreset),
             }
           : {
               unit: spring(prevStyles[i - 1].unit, transformPreset),
-              opacity: spring(prevStyles[i - 1].opacity, opacityPreset),
+              opacity: spring(prevStyles[i - 1].opacity, transformPreset),
             }
       return i === 0
         ? {
             unit: spring(107, transformPreset),
-            opacity: spring(1, opacityPreset),
+            opacity: spring(1, transformPreset),
           }
         : {
             unit: spring(prevStyles[i - 1].unit, transformPreset),
-            opacity: spring(prevStyles[i - 1].opacity, opacityPreset),
+            opacity: spring(prevStyles[i - 1].opacity, transformPreset),
           }
     })
     return result
@@ -70,7 +69,7 @@ class FormList extends Component {
         <figure onClick={collapse}>
           <Motion style={figuresStyle}>
             {({s, opacity}) => (
-              <div style={{transform: `scale(${s})`, opacity}}>
+              <div style={{transform: `scale(${s})`, filter: `saturate(${opacity})`}}>
                 <Svg id={this.state.icon} />
               </div>
             )}
@@ -100,4 +99,4 @@ class FormList extends Component {
   }
 }
 
-export default FormList
+export default IconList

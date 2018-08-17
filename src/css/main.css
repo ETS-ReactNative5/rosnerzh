@@ -437,8 +437,7 @@ label {
     cursor: pointer;
     width: 130px;
     height: 130px;
-    margin-bottom: 10px;
-    background-color: #fff; }
+    margin-bottom: 10px; }
     .main-constructor svg.towelDryer > * {
       fill: #fe4365; }
   .main-constructor__settings {
@@ -460,13 +459,22 @@ label {
         position: relative;
         transition: z-index;
         transition-delay: 150ms; }
+        .main-constructor__settings--icons figure::before {
+          content: '';
+          background-color: #fff;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          filter: blur(10px); }
         .main-constructor__settings--icons figure svg.towelDryer {
           width: 130px;
           height: 130px; }
     .main-constructor__settings--icon {
       z-index: 1;
-      width: 85px;
-      height: 85px;
+      width: 60px;
+      height: 60px;
       position: absolute;
       top: 0;
       bottom: 0;
@@ -571,6 +579,9 @@ label {
 
 .icons-form__set {
   margin-top: 130px; }
+  .icons-form__set .main-constructor__settings--icon {
+    width: 50px;
+    height: 50px; }
 
 html body {
   font-family: "roboto", "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;

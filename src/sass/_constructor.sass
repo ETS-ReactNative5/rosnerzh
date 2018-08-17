@@ -28,8 +28,6 @@ $svgSize: 130px
   background-clip: content-box
   cursor: default
   transform: translateY(100vh)
-  // transition: transform .35s ease-out
-  // padding: 60px 10px 0 10px
   padding-left: 80px
   svg.towelDryer
     display: block
@@ -37,7 +35,6 @@ $svgSize: 130px
     width: $svgSize
     height: $svgSize
     margin-bottom: 10px
-    background-color: #fff
     & > * 
       fill: $accent
   &__settings
@@ -59,13 +56,22 @@ $svgSize: 130px
         position: relative
         transition: z-index
         transition-delay: 150ms
+        &::before
+          content: ''
+          background-color: #fff
+          position: absolute 
+          top: 0
+          bottom: 0
+          right: 0
+          left: 0
+          filter: blur(10px)
         svg.towelDryer
           width: $svgSize
           height: $svgSize
     &--icon
       z-index: 1
-      width: 85px
-      height: 85px
+      width: 60px
+      height: 60px
       position: absolute 
       top: 0
       bottom: 0
@@ -183,3 +189,6 @@ $svgSize: 130px
 // form button groups margin
 .icons-form__set
   margin-top: $svgSize
+  .main-constructor__settings--icon
+    width: 50px
+    height: 50px

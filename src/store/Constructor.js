@@ -1,20 +1,21 @@
 import {observable, action, computed} from 'mobx'
 
 class Contructour {
+  @observable price = 1500
   @observable width = 500
-  @observable  height = 800
-  @observable  minWidth = 400
-  @observable  maxWidth = 600
-  @observable  minHeight = 500
-  @observable  maxHeight = 1200
-  @observable  gateLength = 400
-  @observable  type = "ladder"       // ladder | mType | pType | fType
-  @observable  form = 1
-  @observable  color = 5
-  @observable  energy = false
-  @observable  lintels = false
-  @observable  gate = false
-  @observable  rack = false
+  @observable height = 800
+  @observable minWidth = 400
+  @observable maxWidth = 600
+  @observable minHeight = 500
+  @observable maxHeight = 1200
+  @observable gateLength = 400
+  @observable type = "ladder"       // ladder | mType | pType | fType
+  @observable form = 1
+  @observable color = 5
+  @observable energy = false
+  @observable lintels = false
+  @observable gate = false
+  @observable rack = false
 
   @action('set-width')
   setWidth = value => {
