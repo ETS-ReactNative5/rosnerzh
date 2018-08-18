@@ -10,6 +10,7 @@ import IconList from './IconList'
 import Toggler from './Toggler'
 import ColorList from './ColorList'
 import FormList from './FormList'
+import MainImage from './MainImage';
 import {opacityFastPreset, transformPreset} from '../../settings/conf'
 // Layout component;
 @inject('constStore')
@@ -83,11 +84,7 @@ class Layout extends Component {
               step={100}
               tooltip={false}
             />
-            <img
-              className="main-constructor__image--preview"
-              src="img/main-800-500.jpg"
-              alt=""
-            />
+            <MainImage />
             <ColorList />
           </div>
           <div className="main-constructor__image--range">

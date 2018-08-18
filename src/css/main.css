@@ -535,9 +535,11 @@ label {
       align-self: flex-end;
       padding: 0 20px 30px 54px; }
     .main-constructor__image--preview {
-      max-width: 100%;
+      width: 258px;
       height: 420px;
-      max-height: 90%; }
+      display: flex;
+      align-items: center;
+      justify-content: center; }
     .main-constructor__image--height-tooltip, .main-constructor__image--width-tooltip, .main-constructor__image--gate-tooltip {
       text-align: center;
       white-space: nowrap;
@@ -582,6 +584,29 @@ label {
   .icons-form__set .main-constructor__settings--icon {
     width: 50px;
     height: 50px; }
+
+.loading svg {
+  width: 34px;
+  height: 34px; }
+  .loading svg circle.background {
+    fill: #fe4365;
+    stroke: transparent;
+    stroke-width: 0; }
+  .loading svg circle.stroke {
+    fill: transparent;
+    stroke-width: 5px;
+    stroke: #d4d4d4;
+    stroke-dasharray: 91;
+    stroke-dashoffset: 0;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    animation: loading 8s infinite; }
+
+@keyframes loading {
+  0% {
+    stroke-dashoffset: 182; }
+  100% {
+    stroke-dashoffset: 0; } }
 
 html body {
   font-family: "roboto", "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;

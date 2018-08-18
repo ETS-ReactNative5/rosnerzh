@@ -1,0 +1,24 @@
+.loading
+  svg
+    width: 34px
+    height: 34px
+    circle.background
+      fill: $accent
+      stroke: transparent
+      stroke-width: 0
+    circle.stroke
+      fill: transparent
+      stroke-width: 5px
+      stroke: #d4d4d4
+      stroke-dasharray: 91
+      stroke-dashoffset: 0
+      transform: rotate(-90deg)
+      transform-origin: 50% 50%
+      animation: loading 8s infinite
+
+
+@keyframes loading
+  0%
+    stroke-dashoffset: 182
+  100%
+    stroke-dashoffset: 0

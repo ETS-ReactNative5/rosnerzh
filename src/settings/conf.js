@@ -14,3 +14,7 @@ export const opacityFastPreset = {stiffness: 280, damping: 26}
 
 // Some lp consts
 export const formCount = 9
+
+// Domain name for getting images
+// TODO: add to procces vars
+export const imageCDN = "http://localhost:3000"

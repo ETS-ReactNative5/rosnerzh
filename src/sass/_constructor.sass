@@ -1,3 +1,4 @@
+$imgWidth: 258px
 $imgHeight: 420px
 $rangeSlider: $imgHeight - 50px !important
 $rangeHandleTransition: .2s
@@ -132,9 +133,11 @@ $svgSize: 130px
       align-self: flex-end
       padding: 0 20px 30px 54px
     &--preview
-      max-width: 100%
+      width: $imgWidth
       height: $imgHeight   //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!????????
-      max-height: 90%
+      display: flex
+      align-items: center
+      justify-content: center
     &--height-tooltip, &--width-tooltip, &--gate-tooltip
       text-align: center
       white-space: nowrap
