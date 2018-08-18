@@ -4,7 +4,8 @@ import {Motion, spring} from 'react-motion'
 
 import Svg from '../common/Svg'
 import Layout from './Layout'
-import { opacityFastPreset } from '../../settings/conf';
+import Price from './Price'
+import {opacityFastPreset} from '../../settings/conf'
 
 // Constructor component;
 @inject('menuStore')
@@ -15,14 +16,14 @@ class Constructor extends Component {
     return (
       <Motion
         style={{
-          y: spring(~['constructor', 'order'].indexOf(state) ? 0 : 100, opacityFastPreset),
+          y: spring(
+            ~['constructor', 'order'].indexOf(state) ? 0 : 100,
+            opacityFastPreset,
+          ),
         }}
       >
         {({y}) => (
-          <section
-            className="main-constructor"
-            style={{transform: `translateY(${y}vh)`}}
-          >
+          <section className="main-constructor" style={{transform: `translateY(${y}vh)`}}>
             <Layout />
             <div onClick={openMain} className="main-constructor__arrow--back">
               <Svg id="arrow" />
@@ -30,6 +31,7 @@ class Constructor extends Component {
             <div onClick={openOrder} className="main-constructor__arrow--order">
               <Svg id="arrow" />
             </div>
+            <Price />
           </section>
         )}
       </Motion>

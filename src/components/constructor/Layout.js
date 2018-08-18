@@ -4,8 +4,6 @@ import {Motion, spring} from 'react-motion'
 import InputRange from 'react-rangeslider'
 import './rangeSlider.css'
 
-import Demo from './Demo';
-
 import IconList from './IconList'
 import Toggler from './Toggler'
 import ColorList from './ColorList'

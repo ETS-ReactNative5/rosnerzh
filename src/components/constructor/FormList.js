@@ -99,6 +99,7 @@ class FormList extends Component {
             <Fragment>
               {iconsStyle.map((styles, i) => (
                 <Icon
+                  key={i}
                   id={icons[i]}
                   style={this._getComuptedStyles(styles, i)}
                   onClick={() => {

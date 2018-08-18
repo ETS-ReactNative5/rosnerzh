@@ -553,6 +553,16 @@ label {
       height: 1rem; }
     .main-constructor__image--wrap {
       position: relative; }
+  .main-constructor__price {
+    position: absolute;
+    bottom: 2vh;
+    right: calc(10vw + 90px);
+    height: 80px;
+    display: flex;
+    align-items: center; }
+    .main-constructor__price span {
+      font-size: 30px;
+      font-weight: 700; }
   .main-constructor__arrow--order, .main-constructor__arrow--back {
     width: 80px;
     cursor: pointer;
