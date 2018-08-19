@@ -74,6 +74,7 @@ class IconList extends Component {
               </div>
             )}
           </Motion>
+          <figcaption>Тип</figcaption>
         </figure>
         <StaggeredMotion
           defaultStyles={[...new Array(4)].map(() => ({unit: 0, opacity: 0}))}

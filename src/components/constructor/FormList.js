@@ -90,6 +90,7 @@ class FormList extends Component {
               </div>
             )}
           </Motion>
+          <figcaption>Форма</figcaption>
         </figure>
         <StaggeredMotion
           defaultStyles={[...new Array(formCount)].map(() => ({unit: 0, opacity: 0}))}

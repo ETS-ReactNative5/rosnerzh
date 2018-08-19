@@ -408,13 +408,13 @@ label {
 
 @keyframes collapseUp {
   50% {
-    transform: translateY(130px); }
+    transform: translateY(100px); }
   100% {
     transform: translateY(0); } }
 
 @keyframes collapseDown {
   50% {
-    transform: translateY(-130px); }
+    transform: translateY(-100px); }
   100% {
     transform: translateY(0); } }
 
@@ -432,45 +432,68 @@ label {
   cursor: default;
   transform: translateY(100vh);
   padding-left: 80px; }
-  .main-constructor svg.towelDryer {
-    display: block;
-    cursor: pointer;
-    width: 130px;
-    height: 130px;
-    margin-bottom: 10px; }
-    .main-constructor svg.towelDryer > * {
-      fill: #fe4365; }
   .main-constructor__settings {
     padding-top: 120px; }
     .main-constructor__settings--wrap {
       position: relative;
-      z-index: 2; }
+      z-index: 2;
+      display: block;
+      cursor: pointer;
+      margin-bottom: 10px;
+      text-align: center;
+      transform: scale(1.1);
+      transition: transform .2s ease-out; }
+      .main-constructor__settings--wrap figcaption {
+        opacity: 0;
+        transform: translateY(5px);
+        transition: transform 0.2s ease-out, opacity 0.2s ease-out; }
+      .main-constructor__settings--wrap svg {
+        width: 100px;
+        height: 100px; }
+        .main-constructor__settings--wrap svg > * {
+          fill: #fe4365; }
+      .main-constructor__settings--wrap:hover {
+        transform: scale(1); }
+        .main-constructor__settings--wrap:hover figcaption {
+          transform: translateY(-5px);
+          opacity: 1; }
     .main-constructor__settings--icons {
       position: relative;
-      width: 130px;
-      height: 130px;
+      width: 100px;
+      height: 100px;
       margin-bottom: 0; }
-      .main-constructor__settings--icons svg.towelDryer {
+      .main-constructor__settings--icons svg {
         width: 100%;
         height: 100%;
         margin-bottom: 0; }
+        .main-constructor__settings--icons svg > * {
+          fill: #fe4365; }
       .main-constructor__settings--icons figure {
+        cursor: pointer;
         z-index: 3;
         position: relative;
         transition: z-index;
         transition-delay: 150ms; }
+        .main-constructor__settings--icons figure figcaption {
+          text-align: center;
+          transform: translateY(-5px);
+          opacity: 0;
+          transition: transform 0.2s ease-out, opacity 0.2s ease-out; }
+        .main-constructor__settings--icons figure:hover figcaption {
+          transform: translateY(-15px);
+          opacity: 1; }
         .main-constructor__settings--icons figure::before {
           content: '';
           background-color: #fff;
           position: absolute;
           top: 0;
-          bottom: 0;
           right: 0;
           left: 0;
+          height: 100px;
           filter: blur(10px); }
-        .main-constructor__settings--icons figure svg.towelDryer {
-          width: 130px;
-          height: 130px; }
+        .main-constructor__settings--icons figure svg {
+          width: 100px;
+          height: 100px; }
     .main-constructor__settings--icon {
       z-index: 1;
       width: 60px;
@@ -608,7 +631,7 @@ label {
   transition: height 0.2s ease-out, width 0.2s ease-out; }
 
 .icons-form__set {
-  margin-top: 130px; }
+  margin-top: 140px; }
   .icons-form__set .main-constructor__settings--icon {
     width: 50px;
     height: 50px; }
@@ -659,19 +682,22 @@ body {
 .parallax-inner {
   transition: transform 90ms ease-out; }
 
-svg.arrowRight {
+svg {
+  cursor: pointer; }
+
+.arrowRight {
   z-index: 3;
   margin-left: auto;
   background-color: #fe4365;
   width: 17px;
   transition: transform 440ms cubic-bezier(0.2, 0.85, 0.4, 1.275); }
-  svg.arrowRight > * {
+  .arrowRight > * {
     fill: #ffffff; }
 
-svg.towelDryer {
+.towelDryer {
   width: 36px;
   height: 42px; }
-  svg.towelDryer > * {
+  .towelDryer > * {
     fill: #ffffff;
     stroke: #ffffff; }
 

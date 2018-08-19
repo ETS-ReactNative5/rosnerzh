@@ -7,14 +7,21 @@ class Toggler extends Component {
   static propTypes = {
     handler: PropTypes.func.isRequired,
     isActive: PropTypes.bool.isRequired,
+    caption: PropTypes.string.isRequired,
   }
 
   render() {
-    const {isActive, handler} = this.props
+    const {isActive, handler, caption} = this.props
     return (
-      <div className={'main-constructor__settings--wrap' +(isActive ? ' active' : '')} onClick={handler}>
+      <figure
+        className={'main-constructor__settings--wrap' + (isActive ? ' active' : '')}
+        onClick={handler}
+      >
         <Svg id="towelDryer" />
-      </div>
+        <figcaption>
+          {caption}
+        </figcaption>
+      </figure>
     )
   }
 }

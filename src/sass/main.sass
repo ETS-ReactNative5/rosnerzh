@@ -38,7 +38,9 @@ body
 .parallax-inner
   transition: transform 90ms ease-out
 // _________ S V G
-svg.arrowRight
+svg
+  cursor: pointer
+.arrowRight
   z-index: 3
   margin-left: auto
   background-color: $accent
@@ -46,7 +48,7 @@ svg.arrowRight
   transition: transform 440ms cubic-bezier(.2,.85,.4,1.275)
   & > *
     fill: #ffffff
-svg.towelDryer
+.towelDryer
   width: 36px
   height: 42px
   & > *
