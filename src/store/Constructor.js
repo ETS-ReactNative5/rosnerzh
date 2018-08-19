@@ -49,6 +49,10 @@ class Contructour {
   setType = value => {
     this.type = value
   }
+  @action('set-energy')
+  setEnergy = value => {
+    this.energy = value
+  }
 
   @computed
   get imgSrc() {

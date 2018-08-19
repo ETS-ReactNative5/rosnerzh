@@ -8,7 +8,8 @@ import IconList from './IconList'
 import Toggler from './Toggler'
 import ColorList from './ColorList'
 import FormList from './FormList'
-import MainImage from './MainImage';
+import MainImage from './MainImage'
+import Energy from './Energy'
 import {opacityFastPreset, transformPreset} from '../../settings/conf'
 // Layout component;
 @inject('constStore')
@@ -73,6 +74,7 @@ class Layout extends Component {
         </div>
         <div className="main-constructor__image">
           <div className="main-constructor__image--wrap">
+            <Energy />
             <div className="main-constructor__image--width-tooltip">{`${width} мм`}</div>
             <InputRange
               value={width}

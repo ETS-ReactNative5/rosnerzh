@@ -553,6 +553,24 @@ label {
       height: 1rem; }
     .main-constructor__image--wrap {
       position: relative; }
+  .main-constructor__energy {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .main-constructor__energy svg {
+      cursor: pointer;
+      width: 20px; }
+      .main-constructor__energy svg > * {
+        transition: fill .2s;
+        fill: #b3b3b3; }
+    .main-constructor__energy .active svg.tint > * {
+      fill: #77dde7; }
+    .main-constructor__energy .active svg.bolt > * {
+      fill: #fde910; }
   .main-constructor__price {
     position: absolute;
     bottom: 2vh;
