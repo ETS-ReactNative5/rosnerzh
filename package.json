@@ -1,7 +1,9 @@
 {
   "name": "rosnerzh",
-  "version": "0.1.0",
+  "version": "3.0.1",
   "private": false,
+  "author": "vk.com/didex",
+  "license": "ISC",
   "dependencies": {
     "antd": "^3.7.3",
     "axios": "^0.18.0",

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Button from '../common/Button'
 import {Parallax} from 'react-scroll-parallax'
 
+//TODO: Replace this desc to benefits section
 // PreviewLegend component;
 class PreviewLegend extends Component {
   render() {

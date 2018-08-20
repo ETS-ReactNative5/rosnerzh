@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import Svg from './Svg'
 
+// TODO: add link
 // Button component;
 class Button extends Component {
   static propTypes = {

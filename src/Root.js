@@ -11,6 +11,7 @@ import Menu from './components/menu'
 import 'antd/dist/antd.css'
 import './css/main.css'
 
+// TODO: add icons for contacts
 // Root component;
 @inject('menuStore')
 @observer
