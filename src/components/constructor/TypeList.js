@@ -5,14 +5,14 @@ import PropTypes from 'prop-types'
 
 import Svg from '../common/Svg'
 import Icon from './Icon'
-import {opacityFastPreset, opacityPreset, transformPreset} from '../../settings/conf'
+import {opacityFastPreset, transformPreset} from '../../settings/conf'
 
 const coordinateMask = [{x: 0, y: -1}, {x: 1, y: 0}, {x: 0, y: 1}, {x: -1, y: 0}]
 
-// IconList component;
+// TypeList component;
 @inject('constStore')
 @observer
-class IconList extends Component {
+class TypeList extends Component {
   static propTypes = {
     isCollapsed: PropTypes.bool.isRequired,
     collapse: PropTypes.func.isRequired,
@@ -63,7 +63,7 @@ class IconList extends Component {
       s: spring(isCollapsed ? 0.5 : 1, transformPreset),
       opacity: spring(isCollapsed ? 0.3 : 1, opacityFastPreset),
     }
-    const icons = ['towelDryer', 'towelDryer', 'towelDryer', 'fb']
+    const icons = ['towelDryer', 'pType', 'fType', 'ladder']
     return (
       <figure className="main-constructor__settings--icons">
         <figure onClick={collapse}>
@@ -101,4 +101,4 @@ class IconList extends Component {
   }
 }
 
-export default IconList
+export default TypeList

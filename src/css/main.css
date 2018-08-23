@@ -196,6 +196,25 @@ label {
     .logo.open span:last-child {
       animation: logoToggle .6s ease-out forwards; }
 
+svg {
+  cursor: pointer; }
+
+.arrowRight {
+  z-index: 3;
+  margin-left: auto;
+  background-color: #fe4365;
+  width: 17px;
+  transition: transform 440ms cubic-bezier(0.2, 0.85, 0.4, 1.275); }
+  .arrowRight > * {
+    fill: #ffffff; }
+
+.towelDryer, .ladder, .fType {
+  width: 36px;
+  height: 42px; }
+  .towelDryer > *, .ladder > *, .fType > * {
+    fill: #ffffff;
+    stroke: #ffffff; }
+
 .rz_btn {
   position: relative;
   cursor: pointer;
@@ -681,25 +700,6 @@ body {
 
 .parallax-inner {
   transition: transform 90ms ease-out; }
-
-svg {
-  cursor: pointer; }
-
-.arrowRight {
-  z-index: 3;
-  margin-left: auto;
-  background-color: #fe4365;
-  width: 17px;
-  transition: transform 440ms cubic-bezier(0.2, 0.85, 0.4, 1.275); }
-  .arrowRight > * {
-    fill: #ffffff; }
-
-.towelDryer {
-  width: 36px;
-  height: 42px; }
-  .towelDryer > * {
-    fill: #ffffff;
-    stroke: #ffffff; }
 
 header {
   position: relative;

@@ -11,6 +11,7 @@ $sidePadding: calc((100vw - 1100px) / 2)
 @import _reset
 @import _humburger
 @import _logo
+@import _svg
 @import _button
 @import _sectionGrid
 @import _mainMenu
@@ -37,23 +38,6 @@ body
     margin-bottom: 0
 .parallax-inner
   transition: transform 90ms ease-out
-// _________ S V G
-svg
-  cursor: pointer
-.arrowRight
-  z-index: 3
-  margin-left: auto
-  background-color: $accent
-  width: 17px
-  transition: transform 440ms cubic-bezier(.2,.85,.4,1.275)
-  & > *
-    fill: #ffffff
-.towelDryer
-  width: 36px
-  height: 42px
-  & > *
-    fill: #ffffff
-    stroke: #ffffff
 // _________ H E A D E R
 header
   position: relative
