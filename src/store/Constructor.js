@@ -9,7 +9,7 @@ class Contructour {
   @observable maxHeight = 1200
   @observable gateLength = 400
   @observable type = "ladder"       // ladder | mType | pType | fType | gType
-  @observable form = 1
+  @observable form = 0
   @observable color = 5
   @observable energy = false
   @observable lintels = false
@@ -49,6 +49,10 @@ class Contructour {
   setType = value => {
     this.type = value
   }
+  @action('set-form')
+  setForm = value => {
+    this.form = value
+  }
   @action('set-energy')
   setEnergy = value => {
     this.energy = value
@@ -63,7 +67,6 @@ class Contructour {
   @computed
   get price() {
     return 123
-    return data[this.type]
   }
 }
 
@@ -101,15 +104,15 @@ const data = {
     "1000": 1.42,
     "1100": 1.49},
   "form"  : {				//	Цены на форму сушилки
-      "1" : 50,		//	волна
-      "2" : 550,		//	скоба
-      "3" : 2100,		//	аврора
-      "4" : 50,		//	дуга
-      "5" : 700,		//	зигзаг
-      "6" : 2100,		//	NEO 1
-      "7" : 0,		//	прямая
-      "8" : 50,		//	трапеция
-      "9" : 2300},	//	NEO 2
+      "0" : 50,		//	волна
+      "1" : 550,		//	скоба
+      "2" : 2100,		//	аврора
+      "3" : 50,		//	дуга
+      "4" : 700,		//	зигзаг
+      "5" : 2100,		//	NEO 1
+      "6" : 0,		//	прямая
+      "7" : 50,		//	трапеция
+      "8" : 2300},	//	NEO 2
   "base"  : {				//	Цены на тип сушилки
       "1" : 0,		//	Водянной
       "2" : 3100},	//	Электрический

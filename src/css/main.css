@@ -215,6 +215,10 @@ svg {
     fill: #ffffff;
     stroke: #ffffff; }
 
+.main-constructor .towelDryer > *, .main-constructor .ladder > *, .main-constructor .fType > * {
+  fill: #fe4365;
+  stroke: #fe4365; }
+
 .phone, .letter, .clock, .marker {
   width: 15px; }
   .phone > *, .letter > *, .clock > *, .marker > * {
@@ -226,6 +230,16 @@ svg {
   .main-menu__footer .phone > *, .main-menu__footer .letter > *, .main-menu__footer .clock > *, .main-menu__footer .marker > * {
     fill: #ffffff;
     stroke: #ffffff; }
+
+.volna > *, .zigzag > *, .duga > *, .priamaia > *, .skoba > *, .neo1 > *, .neo2 > *, .trapecia > *, .avrora > * {
+  stroke: #fe4365;
+  fill: transparent; }
+
+.volna > circle, .zigzag > circle, .duga > circle, .priamaia > circle, .skoba > circle, .neo1 > circle, .neo2 > circle, .trapecia > circle, .avrora > circle {
+  fill: #fe4365; }
+
+.volna path, .volna line, .volna polyline, .zigzag path, .zigzag line, .zigzag polyline, .duga path, .duga line, .duga polyline, .priamaia path, .priamaia line, .priamaia polyline, .skoba path, .skoba line, .skoba polyline, .neo1 path, .neo1 line, .neo1 polyline, .neo2 path, .neo2 line, .neo2 polyline, .trapecia path, .trapecia line, .trapecia polyline, .avrora path, .avrora line, .avrora polyline {
+  stroke-width: 5; }
 
 .rz_btn {
   position: relative;
@@ -469,6 +483,10 @@ svg {
   cursor: default;
   transform: translateY(100vh);
   padding-left: 80px; }
+  .main-constructor figcaption {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase; }
   .main-constructor__settings {
     padding-top: 120px; }
     .main-constructor__settings--wrap {
@@ -487,8 +505,6 @@ svg {
       .main-constructor__settings--wrap svg {
         width: 100px;
         height: 100px; }
-        .main-constructor__settings--wrap svg > * {
-          fill: #fe4365; }
       .main-constructor__settings--wrap:hover {
         transform: scale(1); }
         .main-constructor__settings--wrap:hover figcaption {
@@ -503,8 +519,6 @@ svg {
         width: 100%;
         height: 100%;
         margin-bottom: 0; }
-        .main-constructor__settings--icons svg > * {
-          fill: #fe4365; }
       .main-constructor__settings--icons figure {
         cursor: pointer;
         z-index: 3;
@@ -670,8 +684,9 @@ svg {
 .icons-form__set {
   margin-top: 140px; }
   .icons-form__set .main-constructor__settings--icon {
-    width: 50px;
-    height: 50px; }
+    width: 60px; }
+  .icons-form__set figure:hover figcaption {
+    transform: translateY(-35px); }
 
 .loading svg {
   width: 34px;

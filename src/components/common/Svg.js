@@ -130,6 +130,73 @@ const Svg = ({id}) => {
         <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
       </svg>
     ),
+    volna: (
+      <svg className="volna" viewBox="0 0 240 90">
+        <circle cx="45.3" cy="45" r="11" />
+        <circle cx="194.7" cy="45.8" r="11" />
+        <path d="M194.7,45.8C148,12.5,98,84.3,45.3,45" />
+      </svg>
+    ),
+    zigzag: (
+      <svg className="zigzag" viewBox="0 0 240 90">
+        <circle cx="45.3" cy="68" r="11" />
+        <circle cx="194.7" cy="21.3" r="11" />
+        <path d="M194.7,21.3H85.9c-36.3,0-36.3,23.4,0,23.4h68.2c36.3,0,36.3,23.4,0,23.4H45.3" />
+      </svg>
+    ),
+    duga: (
+      <svg className="duga" viewBox="0 0 240 90">
+        <circle cx="45.3" cy="45.4" r="11" />
+        <circle cx="194.7" cy="46.2" r="11" />
+        <path d="M194.7,46.2C144.5,74,92.3,74.2,45.3,45.4" />
+      </svg>
+    ),
+    priamaia: (
+      <svg className="priamaia" viewBox="0 0 240 90">
+        <circle cx="45.3" cy="45.4" r="11" />
+        <circle cx="194.7" cy="46.2" r="11" />
+        <line x1="194.7" y1="46.2" x2="45.3" y2="45.4" />
+      </svg>
+    ),
+    skoba: (
+      <svg className="skoba" viewBox="0 0 240 90">
+        <circle cx="45.3" cy="45.4" r="11" />
+        <circle cx="194.7" cy="46.2" r="11" />
+        <polyline points="194.7,46.2 194.7,12.8 45.3,12.8 45.3,45.4 	" />
+      </svg>
+    ),
+    neo1: (
+      <svg className="neo1" viewBox="0 0 240 90">
+        <circle cx="45.3" cy="45.4" r="11" />
+        <circle cx="194.7" cy="46.2" r="11" />
+        <polyline points="24.5,12.8 45.3,12.8 45.3,45.4 45.3,12.8 194.7,12.8 194.7,46.2 194.7,12.8 215.5,12.8 	" />
+      </svg>
+    ),
+    neo2: (
+      <svg className="neo2" viewBox="0 0 240 90">
+        <circle cx="45.3" cy="68" r="11" />
+        <circle cx="194.7" cy="21.3" r="11" />
+        <line x1="181.1" y1="68" x2="45.3" y2="68" />
+        <line x1="58.9" y1="44.7" x2="181.1" y2="44.7" />
+        <line x1="194.7" y1="21.3" x2="58.9" y2="21.3" />
+        <line x1="172.5" y1="45" x2="172.5" y2="68" />
+        <line x1="67.8" y1="45" x2="67.8" y2="21.3" />
+      </svg>
+    ),
+    trapecia: (
+      <svg className="trapecia" viewBox="0 0 240 90">
+        <circle cx="45.3" cy="45.4" r="11" />
+        <circle cx="194.7" cy="46.2" r="11" />
+        <polyline points="194.7,46.2 181.1,12.8 58.9,12.8 45.3,45.4 	" />
+      </svg>
+    ),
+    avrora: (
+      <svg className="avrora" viewBox="0 0 240 90">
+        <circle cx="45.3" cy="20.4" r="11" />
+        <circle cx="194.7" cy="20.4" r="11" />
+        <path d="M45.3,20.4c-133.8,66.6,289.2,67.1,149.4,0" />
+      </svg>
+    ),
   }
   return entities[id] || null
 }

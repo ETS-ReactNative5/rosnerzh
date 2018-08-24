@@ -14,6 +14,11 @@ svg
   & > *
     fill: #ffffff
     stroke: #ffffff
+.main-constructor
+  .towelDryer, .ladder, .fType
+    & > *
+      fill: $accent
+      stroke: $accent
 .phone, .letter, .clock, .marker
   width: 15px
   & > *
@@ -25,3 +30,11 @@ svg
     & > *
       fill: #ffffff
       stroke: #ffffff
+.volna, .zigzag, .duga, .priamaia, .skoba, .neo1, .neo2, .trapecia, .avrora
+  & > *
+    stroke: $accent
+    fill: transparent
+  & > circle
+    fill: $accent
+  path, line, polyline
+    stroke-width: 5

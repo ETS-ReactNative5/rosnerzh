@@ -31,6 +31,10 @@ $figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
   cursor: default
   transform: translateY(100vh)
   padding-left: 80px
+  figcaption
+    font-weight: 700
+    font-size: 0.8rem
+    text-transform: uppercase
   &__settings
     padding-top: 120px
     &--wrap
@@ -49,8 +53,6 @@ $figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
       svg
         width: $svgSize
         height: $svgSize
-        & > *
-          fill: $accent
       &:hover
         transform: scale(1)
         figcaption
@@ -65,8 +67,6 @@ $figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
         width: 100%
         height: 100%
         margin-bottom: 0
-        & > *
-          fill: $accent
       figure
         cursor: pointer
         z-index: 3
@@ -246,5 +246,6 @@ $figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
 .icons-form__set
   margin-top: $svgSize + 40px
   .main-constructor__settings--icon
-    width: 50px
-    height: 50px
+    width: $svgSize - 40px
+  figure:hover figcaption
+    transform: translateY(-35px)
