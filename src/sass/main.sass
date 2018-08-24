@@ -188,19 +188,24 @@ header
     position: absolute
     top: 400px
     right: 60px
-    p, li
+    p
       font-size: 18px
       line-height: 28px
       font-weight: 500
     ul
-      padding-left: 0
+      padding: 13px 0 0
+      margin-bottom: 0
     li
       list-style: none
       color: $font
+      font-size: .9rem
       a
         color: inherit
       address, time
+        display: inline-block
         margin-bottom: 0
+      a, address, time
+        padding-left: 10px
 // Blur all behind menu
 .blur-container
   transition: all .5s ease-in-out

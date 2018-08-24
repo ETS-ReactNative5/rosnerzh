@@ -20,16 +20,20 @@ function About() {
           банковской картой после получения.
         </p>
         <ul>
-          <li>
+          <li className="contacts__phone">
+            <Svg id="phone"/>
             <a href="tel:+74952012514">+7 (495) 201-25-14</a>
           </li>
-          <li>
+          <li className="contacts__mail">
+            <Svg id="letter"/>
             <a href="mailto:info@rosnerzh.ru">info@rosnerzh.ru</a>
           </li>
-          <li>
+          <li className="contacts__address">
+            <Svg id="marker"/>
             <address>Ул. Скольнический Вал, 1а</address>
           </li>
-          <li>
+          <li className="contacts__time">
+            <Svg id="clock"/>
             <time>Пн - Сб, с 9:00 до 18:00</time>
           </li>
         </ul>

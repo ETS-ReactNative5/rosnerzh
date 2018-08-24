@@ -215,10 +215,23 @@ svg {
     fill: #ffffff;
     stroke: #ffffff; }
 
+.phone, .letter, .clock, .marker {
+  width: 15px; }
+  .phone > *, .letter > *, .clock > *, .marker > * {
+    fill: #fe4365;
+    stroke: #fe4365; }
+
+.main-menu__footer .phone, .main-menu__footer .letter, .main-menu__footer .clock, .main-menu__footer .marker {
+  width: 30px; }
+  .main-menu__footer .phone > *, .main-menu__footer .letter > *, .main-menu__footer .clock > *, .main-menu__footer .marker > * {
+    fill: #ffffff;
+    stroke: #ffffff; }
+
 .rz_btn {
   position: relative;
   cursor: pointer;
   padding: 0;
+  margin-top: 10px;
   margin-left: 21px;
   background-color: #fe4365;
   border: none;
@@ -343,7 +356,12 @@ svg {
       color: #ffffff;
       padding: 15px 0;
       font-size: 18px;
-      font-weight: 500; }
+      font-weight: 500;
+      display: flex;
+      align-items: center; }
+      .main-menu__footer > * span {
+        color: #ffffff;
+        padding-left: 25px; }
     .main-menu__footer a:hover {
       color: #ffffff; }
   .main-menu__header {
@@ -848,19 +866,24 @@ header {
     position: absolute;
     top: 400px;
     right: 60px; }
-    .footer__main p, .footer__main li {
+    .footer__main p {
       font-size: 18px;
       line-height: 28px;
       font-weight: 500; }
     .footer__main ul {
-      padding-left: 0; }
+      padding: 13px 0 0;
+      margin-bottom: 0; }
     .footer__main li {
       list-style: none;
-      color: #323232; }
+      color: #323232;
+      font-size: .9rem; }
       .footer__main li a {
         color: inherit; }
       .footer__main li address, .footer__main li time {
+        display: inline-block;
         margin-bottom: 0; }
+      .footer__main li a, .footer__main li address, .footer__main li time {
+        padding-left: 10px; }
 
 .blur-container {
   transition: all .5s ease-in-out; }
