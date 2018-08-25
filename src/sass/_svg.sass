@@ -1,5 +1,7 @@
 svg
   cursor: pointer
+  .lintel
+    transition: fill .3s ease-in-out
 .arrowRight
   z-index: 3
   margin-left: auto
@@ -38,3 +40,8 @@ svg
     fill: $accent
   path, line, polyline
     stroke-width: 5
+
+.main-constructor__settings--wrap
+  svg:hover
+    .lintel
+      fill: darken($accent, 30)

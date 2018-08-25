@@ -46,9 +46,9 @@ class Layout extends Component {
     return (
       <Fragment>
         <div className="main-constructor__settings">
-          <Toggler caption="Расположение перемычек" isActive={gate} handler={setLintels} />
-          <Toggler caption="Наличие полочки" isActive={rack} handler={setRack} />
-          <Toggler caption="Разъемы подключения" isActive={lintels} handler={setGate} />
+          <Toggler caption="Расположение перемычек" svgId={lintels? 'ladderGrouped': 'ladder'} handler={setLintels} />
+          <Toggler caption="Наличие полочки" svgId={rack? 'ladderGrouped': 'ladder'} handler={setRack} />
+          <Toggler caption="Разъемы подключения" svgId={gate? 'ladderGrouped': 'ladder'} handler={setGate} />
           <Motion
             style={{
               y: spring(gate ? -10 : 0, transformPreset),
