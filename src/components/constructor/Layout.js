@@ -48,11 +48,11 @@ class Layout extends Component {
         <div className="main-constructor__settings">
           <Toggler caption="Расположение перемычек" svgId={rail? 'ladderGrouped': 'ladder'} handler={setRail} />
           <Toggler caption="Наличие полочки" svgId={rack? 'ladderRack': 'ladderNoRack'} handler={setRack} />
-          <Toggler caption="Разъемы подключения" svgId={gate? 'ladderGrouped': 'ladder'} handler={setGate} />
+          <Toggler caption="Разъемы подключения" svgId={gate? 'ladderGate': 'ladder'} handler={setGate} />
           <Motion
             style={{
-              y: spring(gate ? -10 : 0, transformPreset),
-              opacity: spring(gate ? 0 : 1, opacityFastPreset),
+              y: spring(!gate ? -10 : 0, transformPreset),
+              opacity: spring(!gate ? 0 : 1, opacityFastPreset),
             }}
           >
             {({y, opacity}) => (
