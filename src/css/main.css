@@ -243,9 +243,6 @@ svg {
 .volna path, .volna line, .volna polyline, .zigzag path, .zigzag line, .zigzag polyline, .duga path, .duga line, .duga polyline, .priamaia path, .priamaia line, .priamaia polyline, .skoba path, .skoba line, .skoba polyline, .neo1 path, .neo1 line, .neo1 polyline, .neo2 path, .neo2 line, .neo2 polyline, .trapecia path, .trapecia line, .trapecia polyline, .avrora path, .avrora line, .avrora polyline {
   stroke-width: 5; }
 
-.main-constructor__settings--wrap svg:hover .lintel {
-  fill: #a7011f; }
-
 .rz_btn {
   position: relative;
   cursor: pointer;

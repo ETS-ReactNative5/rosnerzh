@@ -36,18 +36,18 @@ class Layout extends Component {
       setHeight,
       setGate,
       setRack,
-      setLintels,
+      setRail,
       gate,
       rack,
-      lintels,
+      rail,
       gateLength,
       setGateLength,
     } = this.props.constStore
     return (
       <Fragment>
         <div className="main-constructor__settings">
-          <Toggler caption="Расположение перемычек" svgId={lintels? 'ladderGrouped': 'ladder'} handler={setLintels} />
-          <Toggler caption="Наличие полочки" svgId={rack? 'ladderGrouped': 'ladder'} handler={setRack} />
+          <Toggler caption="Расположение перемычек" svgId={rail? 'ladderGrouped': 'ladder'} handler={setRail} />
+          <Toggler caption="Наличие полочки" svgId={rack? 'ladderRack': 'ladderNoRack'} handler={setRack} />
           <Toggler caption="Разъемы подключения" svgId={gate? 'ladderGrouped': 'ladder'} handler={setGate} />
           <Motion
             style={{

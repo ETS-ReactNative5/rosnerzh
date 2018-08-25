@@ -12,7 +12,7 @@ class Contructour {
   @observable form = 0
   @observable color = 5
   @observable energy = false
-  @observable lintels = false
+  @observable rail = false
   @observable gate = false
   @observable rack = false
 
@@ -33,9 +33,9 @@ class Contructour {
     if(value === this.color) return this.color = 5
     this.color = value
   }
-  @action('set-lintels')
-  setLintels = () => {
-    this.lintels = !this.lintels
+  @action('set-rail')
+  setRail = () => {
+    this.rail = !this.rail
   }
   @action('set-gate')
   setGate = () => {
