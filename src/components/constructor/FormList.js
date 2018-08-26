@@ -58,15 +58,15 @@ class FormList extends Component {
     }
     const {form, setForm} = this.props.constStore
     const icons = [
-      "volna",
-      "skoba",
-      "avrora",
-      "duga",
-      "zigzag",
-      "neo1",
-      "priamaia",
-      "trapecia",
-      "neo2",
+      {id: "volna", figcaption: "Волна"},
+      {id: "skoba", figcaption: "Скоба"},
+      {id: "avrora", figcaption: "Аврора"},
+      {id: "duga", figcaption: "Дуга"},
+      {id: "zigzag", figcaption: "Зигзаг"},
+      {id: "neo1", figcaption: "Нео 1"},
+      {id: "priamaia", figcaption: "Прямая"},
+      {id: "trapecia", figcaption: "Трапеция"},
+      {id: "neo2", figcaption: "Нео 2"},
     ]
     return (
       <figure className="main-constructor__settings--icons icons-form__set">
@@ -74,7 +74,7 @@ class FormList extends Component {
           <Motion style={figuresStyle}>
             {({s, opacity}) => (
               <div style={{transform: `scale(${s})`, filter: `saturate(${opacity})`}}>
-                <Svg id={icons[form]} />
+                <Svg id={icons[form].id} />
               </div>
             )}
           </Motion>
@@ -89,7 +89,7 @@ class FormList extends Component {
               {iconsStyle.map((styles, i) => (
                 <Icon
                   key={i}
-                  id={icons[i]}
+                  entity={icons[i]}
                   style={this._getComuptedStyles(styles, i)}
                   onClick={() => {
                     setForm(i)

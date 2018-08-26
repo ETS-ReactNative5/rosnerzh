@@ -11,17 +11,15 @@ class Icon extends Component {
   static propTypes = {
     style: PropTypes.object,
     onClick: PropTypes.func.isRequired,
-    id: PropTypes.string.isRequired,
+    entity: PropTypes.object.isRequired,
   }
 
   render() {
+    const {style, onClick, entity} = this.props
     return (
-      <div
-        style={this.props.style}
-        onClick={this.props.onClick}
-        className="main-constructor__settings--icon"
-      >
-        <Svg id={this.props.id} />
+      <div style={style} onClick={onClick} className="main-constructor__settings--icon">
+        <Svg id={entity.id} />
+        <figcaption>{entity.figcaption}</figcaption>
       </div>
     )
   }

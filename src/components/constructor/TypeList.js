@@ -27,7 +27,7 @@ class TypeList extends Component {
 
   _getComuptedStyles = ({unit, opacity}, i) => ({
     transform: `translate(${unit * coordinateMask[i].x}px, ${unit *
-      coordinateMask[i].y}px) scale(${opacity})`
+      coordinateMask[i].y}px) scale(${opacity})`,
   })
 
   _getStaggedStyles = prevStyles => {
@@ -63,7 +63,12 @@ class TypeList extends Component {
       s: spring(isCollapsed ? 0.5 : 1, transformPreset),
       opacity: spring(isCollapsed ? 0.3 : 1, opacityFastPreset),
     }
-    const icons = ['mType', 'pType', 'fType', 'ladder']
+    const icons = [
+      {id: 'mType', figcaption: 'Форма М'},
+      {id: 'pType', figcaption: 'Форма П'},
+      {id: 'fType', figcaption: 'Факстрот'},
+      {id: 'ladder', figcaption: 'Лесенка'},
+    ]
     return (
       <figure className="main-constructor__settings--icons">
         <figure onClick={collapse}>
@@ -85,10 +90,10 @@ class TypeList extends Component {
               {iconsStyle.map((styles, i) => (
                 <Icon
                   key={i}
-                  id={icons[i]}
+                  entity={icons[i]}
                   style={this._getComuptedStyles(styles, i)}
                   onClick={() => {
-                    this.setState(() => ({icon: icons[i]}))
+                    this.setState(() => ({icon: icons[i].id}))
                     collapse()
                   }}
                 />
