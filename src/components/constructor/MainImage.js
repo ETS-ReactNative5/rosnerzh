@@ -26,14 +26,7 @@ class MainImage extends Component {
         })
       })
   }
-
-  _handleImgChange = src => {
-    console.log(' LOG ___ this.state ', src)
-    if (this.state.srcCache[src]) return null
-    this.setState({loading: true})
-    this._cacheImg(src)
-  }
-
+  
   componentDidMount() {
     this._handleImgChange(this.props.constStore.imgSrc)
   }
@@ -41,6 +34,13 @@ class MainImage extends Component {
   componentWillReceiveProps({constStore}, {loading}) {
     if (!loading) this._handleImgChange(constStore.imgSrc)
   }
+
+  _handleImgChange = src => {
+    if (this.state.srcCache[src]) return null
+    this.setState({loading: true})
+    this._cacheImg(src)
+  }
+
 
   render() {
     const {srcCache, loading} = this.state

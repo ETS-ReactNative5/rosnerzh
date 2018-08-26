@@ -63,6 +63,14 @@ class Contructour {
     if(this.gate) return '/img/main2-800-500.jpg'
     if(!this.gate) return '/img/main-800-500.jpg'
   }
+  @computed
+  get title() {
+    let res = `${this.width}x${this.height} ${this.type} ${this.form} ${this.energy}`
+    if(this.rail) res += " rail"
+    if(this.gate) res += " gate"
+    if(this.rack) res += " rack"
+    return `${res} ${this.color}`
+  }
   //TODO: fix currency format, and round +/- 50 units
   @computed
   get price() {

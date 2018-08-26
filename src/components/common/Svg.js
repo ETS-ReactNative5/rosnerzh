@@ -3,7 +3,7 @@ import React from 'react'
 const Svg = ({id}) => {
   if (!id) return null
   const entities = {
-    towelDryer: (
+    mType: (
       <svg className="towelDryer" version="1.1" x="0" y="0" viewBox="0 0 604 706">
         <path
           d="M514.9,408.7H156.1c-59.6,0-61.7-108.3-0.4-108.3h358.8c114.5,0,120.5-190.8,0-190.8H108.3l-6.3-2H65.5V82.3

@@ -18,7 +18,7 @@ class TypeList extends Component {
     collapse: PropTypes.func.isRequired,
   }
   state = {
-    icon: 'towelDryer',
+    icon: 'mType',
   }
 
   componentWillUpdate(_, {icon}) {
@@ -63,7 +63,7 @@ class TypeList extends Component {
       s: spring(isCollapsed ? 0.5 : 1, transformPreset),
       opacity: spring(isCollapsed ? 0.3 : 1, opacityFastPreset),
     }
-    const icons = ['towelDryer', 'pType', 'fType', 'ladder']
+    const icons = ['mType', 'pType', 'fType', 'ladder']
     return (
       <figure className="main-constructor__settings--icons">
         <figure onClick={collapse}>

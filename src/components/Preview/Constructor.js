@@ -9,11 +9,11 @@ class Constructor extends Component {
     return (
       <section className="preview__constructor">
         <hgroup>
-          <Svg id="towelDryer" />
+          <Svg id="mType" />
           <Svg id="ladder" />
           <Svg id="fType" />
           <Svg id="pType" />
-          <Svg id="towelDryer" />
+          <Svg id="mType" />
         </hgroup>
         <main></main>
       </section>
