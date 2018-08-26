@@ -60,8 +60,8 @@ $figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
           opacity: 1
     &--icons
       position: relative
-      width: $svgSize
-      height: $svgSize
+      // width: $svgSize
+      // height: $svgSize
       margin-bottom: 0
       svg
         width: 100%
@@ -71,6 +71,7 @@ $figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
         cursor: pointer
         z-index: 3
         position: relative
+        text-align: center
         transition: z-index
         transition-delay: 150ms
         figcaption
@@ -249,3 +250,5 @@ $figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
     width: $svgSize - 40px
   figure:hover figcaption
     transform: translateY(-35px)
+  & > figure > div > svg
+    width: $svgSize * 1.5

@@ -514,8 +514,6 @@ svg {
           opacity: 1; }
     .main-constructor__settings--icons {
       position: relative;
-      width: 100px;
-      height: 100px;
       margin-bottom: 0; }
       .main-constructor__settings--icons svg {
         width: 100%;
@@ -525,6 +523,7 @@ svg {
         cursor: pointer;
         z-index: 3;
         position: relative;
+        text-align: center;
         transition: z-index;
         transition-delay: 150ms; }
         .main-constructor__settings--icons figure figcaption {
@@ -689,6 +688,8 @@ svg {
     width: 60px; }
   .icons-form__set figure:hover figcaption {
     transform: translateY(-35px); }
+  .icons-form__set > figure > div > svg {
+    width: 150px; }
 
 .loading svg {
   width: 34px;

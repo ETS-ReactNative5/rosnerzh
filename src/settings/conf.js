@@ -18,4 +18,4 @@ export const formCount = 9
 // Domain name for getting images
 // TODO: add to procces vars
 // export const imageCDN = process.env.REACT_APP_IMG
-export const imageCDN = 'http://localhost:3001/'
+export const imageCDN = 'http://localhost:3000/'
