@@ -949,3 +949,10 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: #fe4365;
   border-radius: 3px; }
+
+.ant-popover-inner, .ant-popover-arrow {
+  background-color: #fe4365; }
+
+.ant-popover-inner-content {
+  color: #ffffff;
+  font-weight: 700; }

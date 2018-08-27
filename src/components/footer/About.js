@@ -41,13 +41,13 @@ function About() {
       <div className="footer__copy">
         <p>Рос Нерж © 2018</p>
         <div className="footer__social">
-          <a href="#">
+          <a href="https://vk.com">
             <Svg id="vk" />
           </a>
-          <a href="#">
+          <a href="https://facebook.com">
             <Svg id="fb" />
           </a>
-          <a href="#">
+          <a href="https://instagram.com">
             <Svg id="instagram" />
           </a>
         </div>

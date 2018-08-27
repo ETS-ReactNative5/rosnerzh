@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react'
 import {inject, observer} from 'mobx-react'
 import {Motion, spring} from 'react-motion'
 import InputRange from 'react-rangeslider'
+import {Popover} from 'antd'
 import './rangeSlider.css'
 
 import IconList from './TypeList'
@@ -43,13 +44,25 @@ class Layout extends Component {
       gateLength,
       setGateLength,
     } = this.props.constStore
-    console.log(" configuration __ ", this.props.constStore.title )
+    console.log(' configuration __ ', this.props.constStore.title)
     return (
       <Fragment>
         <div className="main-constructor__settings">
-          <Toggler caption="Расположение перемычек" svgId={rail? 'ladderGrouped': 'ladder'} handler={setRail} />
-          <Toggler caption="Наличие полочки" svgId={rack? 'ladderRack': 'ladderNoRack'} handler={setRack} />
-          <Toggler caption="Разъемы подключения" svgId={gate? 'ladderGate': 'ladder'} handler={setGate} />
+          <Toggler
+            caption="Расположение перемычек"
+            svgId={rail ? 'ladderGrouped' : 'ladder'}
+            handler={setRail}
+          />
+          <Toggler
+            caption="Наличие полочки"
+            svgId={rack ? 'ladderRack' : 'ladderNoRack'}
+            handler={setRack}
+          />
+          <Toggler
+            caption="Разъемы подключения"
+            svgId={gate ? 'ladderGate' : 'ladder'}
+            handler={setGate}
+          />
           <Motion
             style={{
               y: spring(!gate ? -10 : 0, transformPreset),
@@ -57,51 +70,59 @@ class Layout extends Component {
             }}
           >
             {({y, opacity}) => (
-              <div style={{transform: `translateY(${y}px)`, opacity}}>
-                <InputRange
-                  value={gateLength}
-                  min={300}
-                  max={600}
-                  onChange={setGateLength}
-                  step={100}
-                  tooltip={false}
-                />
-                <div className="main-constructor__image--gate-tooltip">
-                  {`${gateLength} мм`}
+              <Popover placement="bottom" content="Длина разъема">
+                <div style={{transform: `translateY(${y}px)`, opacity}}>
+                  <InputRange
+                    value={gateLength}
+                    min={300}
+                    max={600}
+                    onChange={setGateLength}
+                    step={100}
+                    tooltip={false}
+                  />
+                  <div className="main-constructor__image--gate-tooltip">
+                    {`${gateLength} мм`}
+                  </div>
                 </div>
-              </div>
+              </Popover>
             )}
           </Motion>
         </div>
         <div className="main-constructor__image">
           <div className="main-constructor__image--wrap">
             <Energy />
-            <div className="main-constructor__image--width-tooltip">{`${width} мм`}</div>
-            <InputRange
-              value={width}
-              max={maxWidth}
-              min={minWidth}
-              onChange={setWidth}
-              step={100}
-              tooltip={false}
-            />
+            <Popover placement="rightBottom" content="Ширина">
+              <div>
+                <div className="main-constructor__image--width-tooltip">{`${width} мм`}</div>
+                <InputRange
+                  value={width}
+                  max={maxWidth}
+                  min={minWidth}
+                  onChange={setWidth}
+                  step={100}
+                  tooltip={false}
+                />
+              </div>
+            </Popover>
             <MainImage />
             <ColorList />
           </div>
-          <div className="main-constructor__image--range">
-            <div className="main-constructor__image--height-tooltip">
-              {`${height} мм`}
+          <Popover placement="rightTop" content="Высота">
+            <div className="main-constructor__image--range">
+              <div className="main-constructor__image--height-tooltip">
+                {`${height} мм`}
+              </div>
+              <InputRange
+                value={height}
+                max={maxHeight}
+                min={minHeight}
+                onChange={setHeight}
+                step={100}
+                tooltip={false}
+                orientation="vertical"
+              />
             </div>
-            <InputRange
-              value={height}
-              max={maxHeight}
-              min={minHeight}
-              onChange={setHeight}
-              step={100}
-              tooltip={false}
-              orientation="vertical"
-            />
-          </div>
+          </Popover>
         </div>
         <div className="main-constructor__settings">
           <IconList

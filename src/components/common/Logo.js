@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import {inject, observer} from 'mobx-react'
 
-import {MenuButtonContext} from '../../Root'
-
 // Logo component;
 @inject('menuStore')
 @observer
