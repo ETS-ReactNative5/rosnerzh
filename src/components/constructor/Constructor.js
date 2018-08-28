@@ -46,7 +46,7 @@ class Layout extends Component {
     } = this.props.constStore
     console.log(' configuration __ ', this.props.constStore.title)
     return (
-      <Fragment>
+      <div className="main-constructor__wrap">
         <div className="main-constructor__settings">
           <Toggler
             caption="Расположение перемычек"
@@ -134,7 +134,7 @@ class Layout extends Component {
             collapse={this.collapseForms}
           />
         </div>
-      </Fragment>
+      </div>
     )
   }
 }

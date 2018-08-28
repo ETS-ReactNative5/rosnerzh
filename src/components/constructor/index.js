@@ -3,7 +3,8 @@ import {inject, observer} from 'mobx-react'
 import {Motion, spring} from 'react-motion'
 
 import Svg from '../common/Svg'
-import Layout from './Layout'
+import ConstuctorLayout from './Constructor'
+import OrderLayout from './Order'
 import Price from './Price'
 import {opacityFastPreset} from '../../settings/conf'
 
@@ -12,7 +13,7 @@ import {opacityFastPreset} from '../../settings/conf'
 @observer
 class Constructor extends Component {
   render() {
-    const {openMain, openOrder, state} = this.props.menuStore
+    const {openMain, openOrder, openConstructor, state} = this.props.menuStore
     return (
       <Motion
         style={{
@@ -24,7 +25,14 @@ class Constructor extends Component {
       >
         {({y}) => (
           <section className="main-constructor" style={{transform: `translateY(${y}vh)`}}>
-            <Layout />
+            <div className="main-constructor__layout">
+              <ConstuctorLayout />
+              <OrderLayout>
+                <div onClick={openConstructor} className="main-constructor__arrow--main">
+                  <Svg id="arrow" />
+                </div>
+              </OrderLayout>
+            </div>
             <div onClick={openMain} className="main-constructor__arrow--back">
               <Svg id="arrow" />
             </div>

@@ -222,8 +222,11 @@ body::-webkit-scrollbar-thumb
   border-radius: 3px
 
 // Antd POPOVER 
-.ant-popover-inner, .ant-popover-arrow
-  background-color: $accent
-.ant-popover-inner-content
-  color: #ffffff
-  font-weight: 700
+.ant-popover
+  &-inner, &-arrow
+    background-color: $accent
+  &-inner-content
+    color: #ffffff
+    font-weight: 700
+  &-inner-content
+    padding: 6px 12px

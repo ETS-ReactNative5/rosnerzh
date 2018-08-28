@@ -22,15 +22,24 @@ $figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
   top: 0
   bottom: 0
   right: 10vw
-  left: 0
-  display: flex
-  justify-content: space-around
-  overflow: hidden
+  left: 80px
   background-color: #fff
-  background-clip: content-box
   cursor: default
   transform: translateY(100vh)
-  padding-left: 80px
+  &__wrap
+    display: flex
+    justify-content: space-around
+    flex: 100% 0 0
+  &__layout
+    display: flex
+    overflow: hidden
+    height: 100%
+  &__order
+    position: relative
+    flex-basis: 0%
+    background-color: $accent
+    transform: translateX(500px)
+    transition: transform .3s
   figcaption
     font-weight: 700
     font-size: 0.8rem
@@ -221,13 +230,13 @@ $figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
       font-size: 30px
       font-weight: 700
   &__arrow
-    &--order, &--back
+    &--order, &--back, &--main
       width: 80px
       cursor: pointer
       position: absolute 
       bottom: 2vh
     &--back
-      left: 0
+      right: 100%
       transform: rotate(-90deg)
       & > *
         fill: #ffffff
@@ -285,3 +294,19 @@ $figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
       transform: translateY(-35px)
   & > figure > div > svg
     width: $svgSize * 1.5
+
+// Order
+.main-menu__wrap.order
+  .main-constructor__wrap
+    flex: 50% 0 0
+  .main-constructor__settings:first-child
+    transform: translateX(-550px)
+  .main-constructor__settings:last-child
+    transform: translateX(550px)
+  .main-constructor__settings
+    max-width: 0
+  .main-constructor__order
+    flex: 50% 0 0
+    transform: translateX(0)
+  .main-constructor__image--range, .main-constructor__energy, .main-constructor__energy + div, .main-constructor__image--width-tooltip, .rangeslider-horizontal, .main-constructor__colors
+    visibility: hidden
