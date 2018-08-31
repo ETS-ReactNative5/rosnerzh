@@ -488,14 +488,6 @@ svg {
     position: relative;
     overflow: hidden;
     height: 100%; }
-  .main-constructor__order {
-    z-index: 5;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    bottom: 0;
-    background-color: #fe4365;
-    width: 50%; }
   .main-constructor figcaption {
     font-weight: 700;
     font-size: 0.8rem;
@@ -525,6 +517,7 @@ svg {
           opacity: 1; }
     .main-constructor__settings--icons {
       position: relative;
+      width: 100px;
       margin: 0 auto; }
       .main-constructor__settings--icons svg {
         width: 100%;
@@ -549,7 +542,6 @@ svg {
           top: 0;
           right: 0;
           left: 0;
-          width: 100px;
           height: 100px;
           margin: auto;
           filter: blur(10px); }
@@ -696,13 +688,17 @@ svg {
     transform: rotate(-180deg); }
     .main-constructor__arrow--order > * {
       fill: #fe4365; }
+  .main-constructor__gate-input {
+    max-width: 150px;
+    margin: 0 auto; }
   .main-constructor .input-range__track--active, .main-constructor .input-range__slider {
     background-color: #fe4365; }
   .main-constructor .input-range__slider {
     border-color: #fe4365; }
 
 .icons-form__set {
-  margin-top: 140px; }
+  margin-top: 140px;
+  width: 150px; }
   .icons-form__set .main-constructor__settings--icon {
     width: 60px; }
     .icons-form__set .main-constructor__settings--icon figcaption {
@@ -725,6 +721,24 @@ svg {
     transform: translateY(-35px); }
   .icons-form__set > figure > div > svg {
     width: 150px; }
+
+.main-constructor__order {
+  z-index: 5;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+  background-color: #fe4365;
+  width: 50%; }
+  .main-constructor__order--price {
+    position: absolute;
+    bottom: 2vh;
+    right: 5vw;
+    height: 70px; }
+    .main-constructor__order--price span {
+      color: #ffffff;
+      font-size: 30px;
+      font-weight: 700; }
 
 .main-menu__wrap.order .main-constructor__wrap {
   width: 50%; }

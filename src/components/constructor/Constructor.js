@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component} from 'react'
 import {inject, observer} from 'mobx-react'
 import {Motion, spring} from 'react-motion'
 import InputRange from 'react-rangeslider'
@@ -71,7 +71,7 @@ class Layout extends Component {
           >
             {({y, opacity}) => (
               <Popover placement="bottom" content="Длина разъема">
-                <div style={{transform: `translateY(${y}px)`, opacity}}>
+                <div className="main-constructor__gate-input" style={{transform: `translateY(${y}px)`, opacity}}>
                   <InputRange
                     value={gateLength}
                     min={300}
