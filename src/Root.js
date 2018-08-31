@@ -8,10 +8,9 @@ import Benefits from './components/Benefits'
 import Grid from './components/Gird'
 import Footer from './components/footer'
 import Menu from './components/menu'
-import 'antd/dist/antd.css'
+// import 'antd/dist/antd.css'
 import './css/main.css'
 
-// TODO: add icons for contacts
 // Root component;
 @inject('menuStore')
 @observer
