@@ -13,7 +13,23 @@ export const opacityPreset = {stiffness: 80, damping: 26}
 export const opacityFastPreset = {stiffness: 280, damping: 26}
 
 // Some lp consts
-export const formCount = 9
+export const formIcons = [
+  {id: "volna", figcaption: "Волна"},
+  {id: "skoba", figcaption: "Скоба"},
+  {id: "avrora", figcaption: "Аврора"},
+  {id: "duga", figcaption: "Дуга"},
+  {id: "zigzag", figcaption: "Зигзаг"},
+  {id: "neo1", figcaption: "Нео 1"},
+  {id: "priamaia", figcaption: "Прямая"},
+  {id: "trapecia", figcaption: "Трапеция"},
+  {id: "neo2", figcaption: "Нео 2"},
+]
+export const typeIcons = [
+  {id: 'mType', figcaption: 'Форма М'},
+  {id: 'pType', figcaption: 'Форма П'},
+  {id: 'fType', figcaption: 'Факстрот'},
+  {id: 'ladder', figcaption: 'Лесенка'},
+]
 
 // Domain name for getting images
 // TODO: add to procces vars

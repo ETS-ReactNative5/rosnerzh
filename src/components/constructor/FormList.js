@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import Svg from '../common/Svg'
 import Icon from './Icon'
-import {opacityFastPreset, transformPreset, formCount} from '../../settings/conf'
+import {opacityFastPreset, transformPreset, formIcons as icons} from '../../settings/conf'
 
 // FormList component;
 @inject('constStore')
@@ -17,7 +17,7 @@ class FormList extends Component {
   }
 
   _getComuptedStyles = ({unit, opacity}, i) => {
-    const angle = (2 * Math.PI) / formCount
+    const angle = (2 * Math.PI) / icons.length
     return {
       transform: `translate(${unit * Math.cos(angle * i)}px, ${unit *
         Math.sin(angle * i)}px) scale(${opacity})`,
@@ -57,17 +57,6 @@ class FormList extends Component {
       opacity: spring(isCollapsed ? 0.3 : 1, opacityFastPreset),
     }
     const {form, setForm} = this.props.constStore
-    const icons = [
-      {id: "volna", figcaption: "Волна"},
-      {id: "skoba", figcaption: "Скоба"},
-      {id: "avrora", figcaption: "Аврора"},
-      {id: "duga", figcaption: "Дуга"},
-      {id: "zigzag", figcaption: "Зигзаг"},
-      {id: "neo1", figcaption: "Нео 1"},
-      {id: "priamaia", figcaption: "Прямая"},
-      {id: "trapecia", figcaption: "Трапеция"},
-      {id: "neo2", figcaption: "Нео 2"},
-    ]
     return (
       <figure className="main-constructor__settings--icons icons-form__set">
         <figure onClick={collapse}>
@@ -81,7 +70,7 @@ class FormList extends Component {
           <figcaption>Форма</figcaption>
         </figure>
         <StaggeredMotion
-          defaultStyles={[...new Array(formCount)].map(() => ({unit: 0, opacity: 0}))}
+          defaultStyles={[...new Array(icons.length)].map(() => ({unit: 0, opacity: 0}))}
           styles={this._getStaggedStyles}
         >
           {iconsStyle => (

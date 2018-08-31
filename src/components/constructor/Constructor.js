@@ -11,7 +11,8 @@ import ColorList from './ColorList'
 import FormList from './FormList'
 import MainImage from './MainImage'
 import Energy from './Energy'
-import {opacityFastPreset, transformPreset} from '../../settings/conf'
+import {opacityFastPreset, transformPreset, typeIcons} from '../../settings/conf'
+import TypeList from './TypeList';
 // Layout component;
 @inject('constStore')
 @observer

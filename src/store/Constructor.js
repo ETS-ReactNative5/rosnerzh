@@ -74,7 +74,10 @@ class Contructour {
   //TODO: fix currency format, and round +/- 50 units
   @computed
   get price() {
-    return 123
+    let price = data.type[this.type]
+    const formatter = new Intl.NumberFormat('ru', 'currency');
+
+    return formatter.format(Math.round(price / 50) * 50)
   }
 }
 
