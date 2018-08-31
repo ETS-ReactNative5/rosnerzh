@@ -816,15 +816,19 @@ svg {
   background-color: #fe4365;
   width: 50%;
   padding: 20vh 5vw; }
-  .main-constructor__order--price {
-    position: absolute;
-    bottom: 2vh;
-    right: 5vw;
-    height: 70px; }
-    .main-constructor__order--price span {
-      color: #ffffff;
-      font-size: 30px;
-      font-weight: 700; }
+  .main-constructor__order--submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px; }
+  .main-constructor__order--price span {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700; }
+
+.ant-input {
+  padding: 8px 11px 7px;
+  height: auto; }
 
 html body {
   font-family: "roboto", "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;

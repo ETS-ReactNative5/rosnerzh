@@ -2,7 +2,7 @@ module.exports = {
   "@primary-color": "#fe4365",
   // "@primary-5": "#337ab7",
   // "@primary-7": "#23527c",
-  // "@font-family": ""Open Sans", "Trebuchet MS", arial, sans-serif;"
+  "@font-family": "'roboto', 'Monospaced Number', 'Chinese Quote', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif",
   // "@layout-sider-background": "#ffffff",
 
   // "@layout-header-background": "#1c5788",
