@@ -27,6 +27,7 @@ class Layout extends Component {
 
   render() {
     const {
+      type,
       width,
       height,
       minWidth,
@@ -53,6 +54,7 @@ class Layout extends Component {
             caption="Расположение перемычек"
             svgId={rail ? 'ladderGrouped' : 'ladder'}
             handler={setRail}
+            disabled={type !== 'ladder'}
           />
           <Toggler
             caption="Наличие полочки"
@@ -63,7 +65,7 @@ class Layout extends Component {
             caption="Разъемы подключения"
             svgId={gate ? 'ladderGate' : 'ladder'}
             handler={setGate}
-            disabled={energy}
+            disabled={energy || type !== 'ladder'}
           />
           <Motion
             style={{
@@ -138,7 +140,7 @@ class Layout extends Component {
           <FormList
             isCollapsed={this.state.collapsed === 'form'}
             collapse={this.collapseForms}
-            disabled={false}
+            disabled={type !== 'ladder'}
           />
         </div>
       </div>

@@ -53,6 +53,11 @@ class Contructour {
     this.minHeight = limits[value].height.min
     this.width = Math.max(this.minWidth, Math.min(this.maxWidth, this.width))
     this.height = Math.max(this.minHeight, Math.min(this.maxHeight, this.height))
+    if(value !== 'ladder') {
+      this.rail = false
+      this.gate = false
+      this.form = 0
+    }
     this.type = value
   }
   @action('set-form')
@@ -63,7 +68,6 @@ class Contructour {
   setEnergy = value => {
     this.gate = false
     this.type = 'ladder'
-    this.form = 0
     this.energy = value
   }
 
