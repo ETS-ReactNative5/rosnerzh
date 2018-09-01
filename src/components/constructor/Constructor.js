@@ -24,6 +24,8 @@ class Layout extends Component {
     this.setState(({collapsed}) => ({collapsed: collapsed !== 'icon' ? 'icon' : null}))
   collapseForms = () =>
     this.setState(({collapsed}) => ({collapsed: collapsed !== 'form' ? 'form' : null}))
+  collapseBoth = () =>
+    this.setState(() => ({collapsed: false}))
 
   render() {
     const {
@@ -97,7 +99,7 @@ class Layout extends Component {
         </div>
         <div className="main-constructor__image">
           <div className="main-constructor__image--wrap">
-            <Energy />
+            <Energy onClick={this.collapseBoth}/>
             <Popover placement="rightBottom" content="Ширина">
               <div>
                 <div className="main-constructor__image--width-tooltip">{`${width} мм`}</div>
