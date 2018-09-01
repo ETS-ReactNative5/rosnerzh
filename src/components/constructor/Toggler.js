@@ -8,19 +8,19 @@ class Toggler extends Component {
     handler: PropTypes.func.isRequired,
     svgId: PropTypes.string.isRequired,
     caption: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
   }
 
   render() {
-    const {svgId, handler, caption} = this.props
+    const {svgId, handler, caption, disabled} = this.props
     return (
       <figure
-        className='main-constructor__settings--wrap'
-        onClick={handler}
+        className="main-constructor__settings--wrap"
+        onClick={disabled? ()=>{}: handler}
+        disabled={disabled}
       >
-        <Svg id={svgId} />
-        <figcaption>
-          {caption}
-        </figcaption>
+        <Svg id={svgId} disabled={disabled} />
+        <figcaption>{caption}</figcaption>
       </figure>
     )
   }

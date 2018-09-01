@@ -58,7 +58,7 @@ $transformTrans: transform .2s ease-out
       svg
         width: $svgSize
         height: $svgSize
-      &:hover
+      &:hover:not([disabled])
         transform: scale(1)
         figcaption
           transform: translateY(-5px)
@@ -80,7 +80,7 @@ $transformTrans: transform .2s ease-out
           text-align: center
           transform: translateY(-5px)
           opacity: 0
-        &:hover
+        &:hover:not([disabled])
           figcaption
             transform: translateY(-15px)
             opacity: 1

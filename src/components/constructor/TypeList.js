@@ -14,6 +14,7 @@ class TypeList extends Component {
   static propTypes = {
     isCollapsed: PropTypes.bool.isRequired,
     collapse: PropTypes.func.isRequired,
+    disabled: PropTypes.bool.isRequired,
   }
 
   _getComuptedStyles = ({unit, opacity}, i) => {
@@ -51,7 +52,7 @@ class TypeList extends Component {
   }
 
   render() {
-    const {isCollapsed, collapse} = this.props
+    const {isCollapsed, collapse, disabled} = this.props
     const figuresStyle = {
       s: spring(isCollapsed ? 0.5 : 1, transformPreset),
       opacity: spring(isCollapsed ? 0.3 : 1, opacityFastPreset),
@@ -59,11 +60,11 @@ class TypeList extends Component {
     const {type, setType} = this.props.constStore
     return (
       <figure className="main-constructor__settings--icons">
-        <figure onClick={collapse}>
+        <figure onClick={disabled? ()=>{}: collapse} disabled={disabled}>
           <Motion style={figuresStyle}>
             {({s, opacity}) => (
               <div style={{transform: `scale(${s})`, filter: `saturate(${opacity})`}}>
-                <Svg id={type}/>
+                <Svg id={type} disabled={disabled}/>
               </div>
             )}
           </Motion>

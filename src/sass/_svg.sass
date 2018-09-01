@@ -1,7 +1,11 @@
 svg
   cursor: pointer
+  transition: opacity 120ms ease-in-out, filter 120ms
   .lintel
     transition: fill .3s ease-in-out
+  & > *
+    transition: fill 120ms ease-out, stroke 120ms ease-out
+
 .arrowRight
   z-index: 3
   margin-left: auto
@@ -40,6 +44,20 @@ svg
     fill: $accent
   path, line, polyline
     stroke-width: 5
+
+svg[disabled], .main-constructor svg[disabled]
+  cursor: not-allowed
+  opacity: 0.65
+  filter: blur(1px)
+  & > *
+    fill: darken($accent, 45)
+    stroke: darken($accent, 45)
+  &.volna, &.zigzag, &.duga, &.priamaia, &.skoba, &.neo1, &.neo2, &.trapecia, &.avrora
+    & > *
+      stroke: darken($accent, 45)
+      fill: transparent
+    & > circle
+      fill: darken($accent, 45)
 
 // highlight hover rails
 // .main-constructor__settings--wrap

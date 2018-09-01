@@ -47,10 +47,6 @@ class Contructour {
   }
   @action('set-type')
   setType = value => {
-    // @observable minWidth = 400 // mType: 400, pType: 400, fType: 400,gType: , ladder: 400
-    // @observable maxWidth = 600 // mType: 800, pType: 700, fType: 600,gType: , ladder: 600
-    // @observable minHeight = 500 // mType: 500, pType: 400, fType: 500,gType: , ladder: 500
-    // @observable maxHeight = 1200 // mType: 600, pType: 600, fType: 1200,gType: , ladder: 1200
     this.maxWidth = limits[value].width.max
     this.minWidth = limits[value].width.min
     this.maxHeight = limits[value].height.max
@@ -65,6 +61,9 @@ class Contructour {
   }
   @action('set-energy')
   setEnergy = value => {
+    this.gate = false
+    this.type = 'ladder'
+    this.form = 0
     this.energy = value
   }
 

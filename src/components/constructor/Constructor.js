@@ -11,8 +11,7 @@ import ColorList from './ColorList'
 import FormList from './FormList'
 import MainImage from './MainImage'
 import Energy from './Energy'
-import {opacityFastPreset, transformPreset, typeIcons} from '../../settings/conf'
-import TypeList from './TypeList';
+import {opacityFastPreset, transformPreset} from '../../settings/conf'
 // Layout component;
 @inject('constStore')
 @observer
@@ -42,6 +41,7 @@ class Layout extends Component {
       gate,
       rack,
       rail,
+      energy,
       gateLength,
       setGateLength,
     } = this.props.constStore
@@ -63,6 +63,7 @@ class Layout extends Component {
             caption="Разъемы подключения"
             svgId={gate ? 'ladderGate' : 'ladder'}
             handler={setGate}
+            disabled={energy}
           />
           <Motion
             style={{
@@ -71,8 +72,11 @@ class Layout extends Component {
             }}
           >
             {({y, opacity}) => (
-              <Popover placement="bottom" content="Длина разъема">
-                <div className="main-constructor__gate-input" style={{transform: `translateY(${y}px)`, opacity}}>
+              <Popover visible={gate} placement="bottom" content="Длина разъема">
+                <div
+                  className="main-constructor__gate-input"
+                  style={{transform: `translateY(${y}px)`, opacity}}
+                >
                   <InputRange
                     value={gateLength}
                     min={300}
@@ -129,10 +133,12 @@ class Layout extends Component {
           <IconList
             isCollapsed={this.state.collapsed === 'icon'}
             collapse={this.collapseIcons}
+            disabled={energy}
           />
           <FormList
             isCollapsed={this.state.collapsed === 'form'}
             collapse={this.collapseForms}
+            disabled={false}
           />
         </div>
       </div>

@@ -14,6 +14,7 @@ class FormList extends Component {
   static propTypes = {
     isCollapsed: PropTypes.bool.isRequired,
     collapse: PropTypes.func.isRequired,
+    disabled: PropTypes.bool.isRequired,
   }
 
   _getComuptedStyles = ({unit, opacity}, i) => {
@@ -51,7 +52,7 @@ class FormList extends Component {
   }
 
   render() {
-    const {isCollapsed, collapse} = this.props
+    const {isCollapsed, collapse, disabled} = this.props
     const figuresStyle = {
       s: spring(isCollapsed ? 0.5 : 1, transformPreset),
       opacity: spring(isCollapsed ? 0.3 : 1, opacityFastPreset),
@@ -59,11 +60,11 @@ class FormList extends Component {
     const {form, setForm} = this.props.constStore
     return (
       <figure className="main-constructor__settings--icons icons-form__set">
-        <figure onClick={collapse}>
+        <figure onClick={disabled? ()=>{}: collapse} disabled={disabled}>
           <Motion style={figuresStyle}>
             {({s, opacity}) => (
               <div style={{transform: `scale(${s})`, filter: `saturate(${opacity})`}}>
-                <Svg id={icons[form].id} />
+                <Svg id={icons[form].id} disabled={disabled} />
               </div>
             )}
           </Motion>

@@ -197,9 +197,12 @@ label {
       animation: logoToggle .6s ease-out forwards; }
 
 svg {
-  cursor: pointer; }
+  cursor: pointer;
+  transition: opacity 120ms ease-in-out, filter 120ms; }
   svg .lintel {
     transition: fill .3s ease-in-out; }
+  svg > * {
+    transition: fill 120ms ease-out, stroke 120ms ease-out; }
 
 .arrowRight {
   z-index: 3;
@@ -242,6 +245,19 @@ svg {
 
 .volna path, .volna line, .volna polyline, .zigzag path, .zigzag line, .zigzag polyline, .duga path, .duga line, .duga polyline, .priamaia path, .priamaia line, .priamaia polyline, .skoba path, .skoba line, .skoba polyline, .neo1 path, .neo1 line, .neo1 polyline, .neo2 path, .neo2 line, .neo2 polyline, .trapecia path, .trapecia line, .trapecia polyline, .avrora path, .avrora line, .avrora polyline {
   stroke-width: 5; }
+
+svg[disabled], .main-constructor svg[disabled] {
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: blur(1px); }
+  svg[disabled] > *, .main-constructor svg[disabled] > * {
+    fill: #5b0011;
+    stroke: #5b0011; }
+  svg[disabled].volna > *, svg[disabled].zigzag > *, svg[disabled].duga > *, svg[disabled].priamaia > *, svg[disabled].skoba > *, svg[disabled].neo1 > *, svg[disabled].neo2 > *, svg[disabled].trapecia > *, svg[disabled].avrora > *, .main-constructor svg[disabled].volna > *, .main-constructor svg[disabled].zigzag > *, .main-constructor svg[disabled].duga > *, .main-constructor svg[disabled].priamaia > *, .main-constructor svg[disabled].skoba > *, .main-constructor svg[disabled].neo1 > *, .main-constructor svg[disabled].neo2 > *, .main-constructor svg[disabled].trapecia > *, .main-constructor svg[disabled].avrora > * {
+    stroke: #5b0011;
+    fill: transparent; }
+  svg[disabled].volna > circle, svg[disabled].zigzag > circle, svg[disabled].duga > circle, svg[disabled].priamaia > circle, svg[disabled].skoba > circle, svg[disabled].neo1 > circle, svg[disabled].neo2 > circle, svg[disabled].trapecia > circle, svg[disabled].avrora > circle, .main-constructor svg[disabled].volna > circle, .main-constructor svg[disabled].zigzag > circle, .main-constructor svg[disabled].duga > circle, .main-constructor svg[disabled].priamaia > circle, .main-constructor svg[disabled].skoba > circle, .main-constructor svg[disabled].neo1 > circle, .main-constructor svg[disabled].neo2 > circle, .main-constructor svg[disabled].trapecia > circle, .main-constructor svg[disabled].avrora > circle {
+    fill: #5b0011; }
 
 .rz_btn {
   position: relative;
@@ -510,9 +526,9 @@ svg {
       .main-constructor__settings--wrap svg {
         width: 100px;
         height: 100px; }
-      .main-constructor__settings--wrap:hover {
+      .main-constructor__settings--wrap:hover:not([disabled]) {
         transform: scale(1); }
-        .main-constructor__settings--wrap:hover figcaption {
+        .main-constructor__settings--wrap:hover:not([disabled]) figcaption {
           transform: translateY(-5px);
           opacity: 1; }
     .main-constructor__settings--icons {
@@ -532,7 +548,7 @@ svg {
           text-align: center;
           transform: translateY(-5px);
           opacity: 0; }
-        .main-constructor__settings--icons figure:hover figcaption {
+        .main-constructor__settings--icons figure:hover:not([disabled]) figcaption {
           transform: translateY(-15px);
           opacity: 1; }
         .main-constructor__settings--icons figure::before {
