@@ -577,6 +577,20 @@ svg {
     width: 30px;
     height: 30px;
     border-radius: 50%; }
+    .main-constructor__color::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      border: 4px solid #fe4365;
+      border-radius: 50%;
+      transform: scale(1.5);
+      opacity: 0; }
+    .main-constructor__color:hover::before {
+      transform: scale(1.25);
+      opacity: 1; }
     .main-constructor__color::after {
       content: '';
       position: absolute;
@@ -586,16 +600,22 @@ svg {
       margin: 0 auto;
       width: 8px;
       height: 15px;
-      border-right: 2px solid #fe4365;
-      border-bottom: 2px solid #fe4365;
+      border-right: 2px solid #323232;
+      border-bottom: 2px solid #323232;
       transform: rotate(45deg) scale(0.5);
       opacity: 0; }
     .main-constructor__color:hover::after {
       opacity: 0.5;
       transform: rotate(45deg) scale(1); }
+    .main-constructor__color.active::before {
+      opacity: 1;
+      transform: scale(1); }
     .main-constructor__color.active::after {
       opacity: 1;
       transform: rotate(45deg) scale(1); }
+    .main-constructor__color.active:hover::before {
+      opacity: 1;
+      transform: scale(1.25); }
     .main-constructor__color.active:hover::after {
       opacity: 1;
       transform: rotate(45deg) scale(1.2); }
@@ -774,6 +794,8 @@ svg {
   transition: border-width 150ms ease-out; }
   .main-constructor__color::after {
     transition: transform .2s ease-out, opacity .1s; }
+  .main-constructor__color::before {
+    transition: transform 0.2s cubic-bezier(0.2, 0.85, 0.4, 1.275), opacity 0.4s; }
 
 .main-constructor__energy svg > * {
   transition: fill .2s; }

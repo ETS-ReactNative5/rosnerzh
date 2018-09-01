@@ -127,6 +127,20 @@ $transformTrans: transform .2s ease-out
     width: 30px
     height: 30px
     border-radius: 50%
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      border: 4px solid $accent
+      border-radius: 50%
+      transform: scale(1.5)
+      opacity: 0
+    &:hover::before
+      transform: scale(1.25)
+      opacity: 1
     &::after
       content: ''
       position: absolute 
@@ -136,16 +150,22 @@ $transformTrans: transform .2s ease-out
       margin: 0 auto
       width: 8px
       height: 15px
-      border-right: 2px solid $accent
-      border-bottom: 2px solid $accent
+      border-right: 2px solid $font
+      border-bottom: 2px solid $font
       transform: rotate(45deg) scale(.5)
       opacity: 0
     &:hover::after
       opacity: 0.5
       transform: rotate(45deg) scale(1)
+    &.active::before
+      opacity: 1
+      transform: scale(1)
     &.active::after
       opacity: 1
       transform: rotate(45deg) scale(1)
+    &.active:hover::before
+      opacity: 1
+      transform: scale(1.25)
     &.active:hover::after
       opacity: 1
       transform: rotate(45deg) scale(1.2)
@@ -329,6 +349,8 @@ $transformTrans: transform .2s ease-out
   transition: border-width 150ms ease-out
   &::after
     transition: transform .2s ease-out, opacity .1s
+  &::before
+    transition: transform .2s cubic-bezier(.2,.85,.4,1.275), opacity .4s
 .main-constructor__energy svg > *
   transition: fill .2s
 
