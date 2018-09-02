@@ -662,6 +662,9 @@ svg[disabled], .main-constructor svg[disabled] {
     .main-constructor__image--preview {
       width: 258px;
       height: 420px;
+      background-size: 100% auto;
+      background-position: center 0;
+      background-repeat: no-repeat;
       display: flex;
       align-items: center;
       justify-content: center; }

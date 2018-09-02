@@ -13,7 +13,8 @@ class MainImage extends Component {
     loading: true,
   }
 
-  _cacheImg = src => {
+  _cacheImg = ({imgPath, imgName}) => {
+    const src = imgPath + imgName
     axios
       .get(`${imageCDN}${src}`, {
         responseType: 'arraybuffer',
@@ -25,27 +26,37 @@ class MainImage extends Component {
           srcCache: {...this.state.srcCache, [src]: 'data:image/png;base64,' + res},
         })
       })
+      .catch(error => {
+        this._cacheImg({imgPath, imgName: 'main.jpg'})
+        this.setState({
+          loading: false,
+          srcCache: {...this.state.srcCache, [src]: 'no-image'},
+        })
+        console.log(error.response)
+      })
   }
-  
+
   componentDidMount() {
-    this._handleImgChange(this.props.constStore.imgSrc)
+    const {imgName, imgPath} = this.props.constStore
+    this._handleImgChange({imgName, imgPath})
   }
 
   componentWillReceiveProps({constStore}, {loading}) {
-    if (!loading) this._handleImgChange(constStore.imgSrc)
+    const {imgName, imgPath} = constStore
+    if (!loading) this._handleImgChange({imgName, imgPath})
   }
 
-  _handleImgChange = src => {
-    if (this.state.srcCache[src]) return null
+  _handleImgChange = ({imgName, imgPath}) => {
+    if (this.state.srcCache[imgPath + imgName]) return null
     this.setState({loading: true})
-    this._cacheImg(src)
+    this._cacheImg({imgPath, imgName})
   }
-
 
   render() {
     const {srcCache, loading} = this.state
-    const {constStore} = this.props
-    console.log(" LOG ___ imgSrc ", constStore.imgSrc )
+    const {imgName, imgPath} = this.props.constStore
+    console.log(' LOG ___ imgSrc ', imgPath, imgName)
+    const src = imgPath + (srcCache[imgPath + imgName] === 'no-image'? 'main.jpg': imgName)
     if (loading)
       return (
         <div className="main-constructor__image--preview">
@@ -53,10 +64,9 @@ class MainImage extends Component {
         </div>
       )
     return (
-      <img
+      <figure
+        style={{backgroundImage: `url(${srcCache[src]})`}}
         className="main-constructor__image--preview"
-        src={srcCache[constStore.imgSrc]}
-        alt=""
       />
     )
   }

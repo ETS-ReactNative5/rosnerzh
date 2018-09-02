@@ -75,15 +75,21 @@ class Contructour {
   }
 
   @computed
-  get imgSrc() {
-    let path = ''
-    // if(this.type === 'ladder') path = `/img/ladder/${this.form}/${+this.}${+this.}${+this.}/`
+  get imgPath() {
+    let path = '/img/'
+    if(this.type === 'ladder') path += `ladder/${this.form}/${+this.rack}${+this.rail}${+!this.energy && this.gate + 1}/`
+    else path += `${this.type}/${+this.rack}/`
+    return path
+  }
+  @computed
+  get imgName() {
     let name = 'main'
-    return path + name + '.jpg'
+    if(this.type === 'ladder') name += `-801-500`
+    return name + '.jpg'
+  }
     //   return \img\ladder\1\000\main.jpg
     // if (this.gate) return '/img/main2-800-500.jpg'
     // if (!this.gate) return '/img/main-800-500.jpg'
-  }
   @computed
   get title() {
     let res = `${this.width}x${this.height} ${this.type} ${this.form} ${this.energy}`
