@@ -76,7 +76,8 @@ class Contructour {
 
   @computed
   get imgSrc() {
-    let path = '/img/'
+    let path = ''
+    // if(this.type === 'ladder') path = `/img/ladder/${this.form}/${+this.}${+this.}${+this.}/`
     let name = 'main'
     return path + name + '.jpg'
     //   return \img\ladder\1\000\main.jpg
