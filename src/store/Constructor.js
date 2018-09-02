@@ -76,8 +76,12 @@ class Contructour {
 
   @computed
   get imgSrc() {
-    if (this.gate) return '/img/main2-800-500.jpg'
-    if (!this.gate) return '/img/main-800-500.jpg'
+    let path = '/img/'
+    let name = 'main'
+    return path + name + '.jpg'
+    //   return \img\ladder\1\000\main.jpg
+    // if (this.gate) return '/img/main2-800-500.jpg'
+    // if (!this.gate) return '/img/main-800-500.jpg'
   }
   @computed
   get title() {

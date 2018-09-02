@@ -45,6 +45,7 @@ class MainImage extends Component {
   render() {
     const {srcCache, loading} = this.state
     const {constStore} = this.props
+    console.log(" LOG ___ imgSrc ", constStore.imgSrc )
     if (loading)
       return (
         <div className="main-constructor__image--preview">

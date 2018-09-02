@@ -31,7 +31,7 @@ export const typeIcons = [
   {id: 'ladder', figcaption: 'Лесенка'},
 ]
 
-// Domain name for getting images
+// Domain name with images
 // TODO: add to procces vars
 // export const imageCDN = process.env.REACT_APP_IMG
 export const imageCDN = 'http://localhost:3000/'

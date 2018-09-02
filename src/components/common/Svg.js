@@ -5,7 +5,14 @@ const Svg = props => {
   if (!id) return null
   const entities = {
     mType: (
-      <svg className="towelDryer" disabled={disabled} version="1.1" x="0" y="0" viewBox="0 0 604 706">
+      <svg
+        className="towelDryer"
+        disabled={disabled}
+        version="1.1"
+        x="0"
+        y="0"
+        viewBox="0 0 604 706"
+      >
         <path
           d="M514.9,408.7H156.1c-59.6,0-61.7-108.3-0.4-108.3h358.8c114.5,0,120.5-190.8,0-190.8H108.3l-6.3-2H65.5V82.3
         c34.6-18.1,28.6-80.8-21-80.8C-3.9,1.5-10.9,61.2,21,80.9v71.6h78.3l9.3-2.3h406c61.3,0,59.6,108,0,108H155.7
@@ -18,7 +25,14 @@ const Svg = props => {
       </svg>
     ),
     ladder: (
-      <svg className="ladder" disabled={disabled} version="1.1" x="0" y="0" viewBox="0 0 604 706">
+      <svg
+        className="ladder"
+        disabled={disabled}
+        version="1.1"
+        x="0"
+        y="0"
+        viewBox="0 0 604 706"
+      >
         <path
           className="rail"
           d="M119.1,199.3l9.3-2.3h356.2l9.3,2.3h33.7v-45h-36.5l-6.3,2H128.1l-6.3-2H85.4v45H119.1z M129.4,171.3h354.2
@@ -50,7 +64,14 @@ const Svg = props => {
       </svg>
     ),
     ladderGrouped: (
-      <svg className="ladder" disabled={disabled} version="1.1" x="0" y="0" viewBox="0 0 604 706">
+      <svg
+        className="ladder"
+        disabled={disabled}
+        version="1.1"
+        x="0"
+        y="0"
+        viewBox="0 0 604 706"
+      >
         <path
           d="M85.4,451.2v-45V301.1v-45V151v-45V80.8C120.1,62.7,114,0,64.4,0C16,0,9,59.7,40.9,79.4V126v25v75.8v74.3V377v74.3V555v21
         v50.5C9,646.3,16,706,64.4,706c49.6,0,55.7-62.7,21-80.8V600v-45V451.2z"
@@ -92,7 +113,14 @@ const Svg = props => {
       </svg>
     ),
     ladderNoRack: (
-      <svg className="ladder" disabled={disabled} version="1.1" x="0" y="0" viewBox="0 0 604 706">
+      <svg
+        className="ladder"
+        disabled={disabled}
+        version="1.1"
+        x="0"
+        y="0"
+        viewBox="0 0 604 706"
+      >
         <path
           d="M455.7,401.6l-5.3,2.1H152l-5.3-2.1h-30.5v46.8h28.2l7.8-2.4h298l7.8,2.4h28.2v-46.8H455.7z M449.6,430.8H152.8
           c0,0-3.4-2-3.4-5.7c0-3.7,3.6-5.7,3.6-5.7h296.3c0,0,3.6,2,3.6,5.7C452.9,428.8,449.6,430.8,449.6,430.8z"
@@ -114,7 +142,14 @@ const Svg = props => {
       </svg>
     ),
     ladderRack: (
-      <svg className="ladder" disabled={disabled} version="1.1" x="0" y="0" viewBox="0 0 604 706">
+      <svg
+        className="ladder"
+        disabled={disabled}
+        version="1.1"
+        x="0"
+        y="0"
+        viewBox="0 0 604 706"
+      >
         <path
           d="M455.7,401.6l-5.3,2.1H152l-5.3-2.1h-30.5v46.8h28.2l7.8-2.4h298l7.8,2.4h28.2v-46.8H455.7z M449.6,430.8H152.8
         c0,0-3.4-2-3.4-5.7c0-3.7,3.6-5.7,3.6-5.7h296.3c0,0,3.6,2,3.6,5.7C452.9,428.8,449.6,430.8,449.6,430.8z"
@@ -141,7 +176,14 @@ const Svg = props => {
       </svg>
     ),
     ladderGate: (
-      <svg className="ladder" disabled={disabled} version="1.1" x="0" y="0" viewBox="0 0 604 706">
+      <svg
+        className="ladder"
+        disabled={disabled}
+        version="1.1"
+        x="0"
+        y="0"
+        viewBox="0 0 604 706"
+      >
         <path
           d="M119.1,199.3l9.3-2.3h312.2l9.3,2.3h33.7v-45h-36.5l-6.3,2H128.1l-6.3-2H85.4v45H119.1z M129.4,171.3h310.2
         c0,0,4.3,1.9,4.3,5.5s-4,5.5-4,5.5H129.1c0,0-4-1.9-4-5.5S129.4,171.3,129.4,171.3z"
@@ -160,7 +202,6 @@ const Svg = props => {
         c0,0-4.3-1.9-4.3-5.5s4-5.5,4-5.5h310.7c0,0,4,1.9,4,5.5S439.6,534.7,439.6,534.7z"
         />
         <path d="M40.9,625.2h44.5V600v-45V451.2v-45V301.1v-45V151v-45V80.8H40.9V126v25v75.8v74.3V377v74.3V555v21V625.2z" />
-        <g id="Слой_5" class="st0" />
         <rect x="528.1" y="228.6" width="40.9" height="15" />
         <ellipse
           transform="matrix(0.7071 -0.7071 0.7071 0.7071 3.3207 480.2168)"
@@ -180,7 +221,14 @@ const Svg = props => {
       </svg>
     ),
     fType: (
-      <svg className="fType" disabled={disabled} version="1.1" x="0" y="0" viewBox="0 0 604 706">
+      <svg
+        className="fType"
+        disabled={disabled}
+        version="1.1"
+        x="0"
+        y="0"
+        viewBox="0 0 604 706"
+      >
         <path
           d="M602.5,202.5c0-16.1-3.4-32.2-10.2-46.3c-13.1-27.2-38.9-47.3-78-47.3H108.1l-6.3-2H65.4V81.8
         C100.1,63.6,94,1,44.4,1C-4,1-11,60.6,20.9,80.4V152h62.8v53.7c0,22.5,18.2,40.7,40.7,40.7h279c14.4,0,26.1,11.7,26.1,26.1
@@ -200,7 +248,14 @@ const Svg = props => {
       </svg>
     ),
     pType: (
-      <svg className="fType" disabled={disabled} version="1.1" x="0" y="0" viewBox="0 0 604 706">
+      <svg
+        className="fType"
+        disabled={disabled}
+        version="1.1"
+        x="0"
+        y="0"
+        viewBox="0 0 604 706"
+      >
         <path
           d="M602.3,278.5c0-16.1-3.4-32.2-10.2-46.3c-13.1-27.2-38.9-47.3-78-47.3H107.9l-6.3-2H65.2v-25.2
         C99.9,139.6,93.8,77,44.2,77c-48.4,0-55.4,59.7-23.5,79.4V228h78.3l9.3-2.3h406c30.5,0,45.4,26.6,45.4,53.4v120.7
