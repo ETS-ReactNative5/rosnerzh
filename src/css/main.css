@@ -596,16 +596,16 @@ svg[disabled], .main-constructor svg[disabled] {
     .main-constructor__color::before {
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
+      top: -1px;
+      bottom: -1px;
+      right: -1px;
+      left: -1px;
       border: 4px solid #fe4365;
       border-radius: 50%;
       transform: scale(1.5);
       opacity: 0; }
     .main-constructor__color:hover::before {
-      transform: scale(1.25);
+      transform: scale(1.2);
       opacity: 1; }
     .main-constructor__color::after {
       content: '';
@@ -616,8 +616,8 @@ svg[disabled], .main-constructor svg[disabled] {
       margin: 0 auto;
       width: 8px;
       height: 15px;
-      border-right: 2px solid #323232;
-      border-bottom: 2px solid #323232;
+      border-right: 2px solid #fe4365;
+      border-bottom: 2px solid #fe4365;
       transform: rotate(45deg) scale(0.5);
       opacity: 0; }
     .main-constructor__color:hover::after {
@@ -631,7 +631,7 @@ svg[disabled], .main-constructor svg[disabled] {
       transform: rotate(45deg) scale(1); }
     .main-constructor__color.active:hover::before {
       opacity: 1;
-      transform: scale(1.25); }
+      transform: scale(1.2); }
     .main-constructor__color.active:hover::after {
       opacity: 1;
       transform: rotate(45deg) scale(1.2); }
