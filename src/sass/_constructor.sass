@@ -4,7 +4,7 @@ $rangeSlider: $imgHeight - 50px !important
 $rangeHandleTransition: .2s
 $svgSize: 100px
 $figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
-$transformTrans: transform .2s ease-out
+$transformTrans: transform .4s ease-out
 
 @keyframes collapseUp
   50%
@@ -176,6 +176,8 @@ $transformTrans: transform .2s ease-out
     top: calc(100% + 30px)
     right: -20px
     left: -20px
+    max-width: $imgWidth
+    margin: 0 auto
   &__image
     position: relative
     flex: 50% 0 0
@@ -194,9 +196,9 @@ $transformTrans: transform .2s ease-out
       align-self: flex-end
       padding: 0 20px 30px 54px
     &--preview
-      width: $imgWidth
+      width: 100%
       height: $imgHeight   //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!????????
-      background-size: 100% auto
+      background-size: auto 100%
       background-position: center 0
       background-repeat: no-repeat
       display: flex
@@ -214,15 +216,21 @@ $transformTrans: transform .2s ease-out
       margin: auto 0
       height: 1rem
     &--wrap
+      flex-grow: 1
       position: relative
   &__energy
     position: absolute
+    max-width: $imgWidth
+    margin: 0 auto
     right: 0
     left: 0
     bottom: 100%
     display: flex
     align-items: center
     justify-content: space-between
+    & + div
+      max-width: $imgWidth
+      margin: 0 auto
     svg
       cursor: pointer
       width: 20px
@@ -313,6 +321,10 @@ $transformTrans: transform .2s ease-out
 .main-menu__wrap.order
   .main-constructor__wrap
     width: 50%
+  .main-constructor__image
+    flex-basis: 100%
+  .main-constructor__settings
+    max-width: 0
   .main-constructor__settings:first-child
     transform: translateX(-350px)
   .main-constructor__settings:last-child
@@ -333,11 +345,13 @@ $transformTrans: transform .2s ease-out
 
 // TRANSITIONS
 .main-constructor__wrap
-  transition: width .2s ease-out
+  transition: width .4s ease-out
 .main-constructor__settings, .main-constructor__colors, .main-constructor__settings--wrap, .main-constructor__order
   transition: $transformTrans
 .main-constructor__energy, .main-constructor__energy + div
   transition: $transformTrans
+.main-constructor__image
+  transition: flex-basis .4s ease-out
 .main-constructor__settings
   figcaption
     transition: $figcaptionTrans

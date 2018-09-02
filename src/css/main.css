@@ -641,7 +641,9 @@ svg[disabled], .main-constructor svg[disabled] {
     position: absolute;
     top: calc(100% + 30px);
     right: -20px;
-    left: -20px; }
+    left: -20px;
+    max-width: 258px;
+    margin: 0 auto; }
   .main-constructor__image {
     position: relative;
     flex: 50% 0 0;
@@ -660,9 +662,9 @@ svg[disabled], .main-constructor svg[disabled] {
       align-self: flex-end;
       padding: 0 20px 30px 54px; }
     .main-constructor__image--preview {
-      width: 258px;
+      width: 100%;
       height: 420px;
-      background-size: 100% auto;
+      background-size: auto 100%;
       background-position: center 0;
       background-repeat: no-repeat;
       display: flex;
@@ -680,15 +682,21 @@ svg[disabled], .main-constructor svg[disabled] {
       margin: auto 0;
       height: 1rem; }
     .main-constructor__image--wrap {
+      flex-grow: 1;
       position: relative; }
   .main-constructor__energy {
     position: absolute;
+    max-width: 258px;
+    margin: 0 auto;
     right: 0;
     left: 0;
     bottom: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between; }
+    .main-constructor__energy + div {
+      max-width: 258px;
+      margin: 0 auto; }
     .main-constructor__energy svg {
       cursor: pointer;
       width: 20px; }
@@ -764,6 +772,12 @@ svg[disabled], .main-constructor svg[disabled] {
 .main-menu__wrap.order .main-constructor__wrap {
   width: 50%; }
 
+.main-menu__wrap.order .main-constructor__image {
+  flex-basis: 100%; }
+
+.main-menu__wrap.order .main-constructor__settings {
+  max-width: 0; }
+
 .main-menu__wrap.order .main-constructor__settings:first-child {
   transform: translateX(-350px); }
 
@@ -790,13 +804,16 @@ svg[disabled], .main-constructor svg[disabled] {
   transform: translateY(-200px); }
 
 .main-constructor__wrap {
-  transition: width .2s ease-out; }
+  transition: width .4s ease-out; }
 
 .main-constructor__settings, .main-constructor__colors, .main-constructor__settings--wrap, .main-constructor__order {
-  transition: transform 0.2s ease-out; }
+  transition: transform 0.4s ease-out; }
 
 .main-constructor__energy, .main-constructor__energy + div {
-  transition: transform 0.2s ease-out; }
+  transition: transform 0.4s ease-out; }
+
+.main-constructor__image {
+  transition: flex-basis .4s ease-out; }
 
 .main-constructor__settings figcaption {
   transition: transform 0.2s ease-out, opacity 0.2s ease-out; }

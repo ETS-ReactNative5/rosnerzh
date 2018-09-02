@@ -84,12 +84,9 @@ class Contructour {
   @computed
   get imgName() {
     let name = 'main'
-    if(this.type === 'ladder') name += `-801-500`
+    if(this.type === 'ladder') name = `main-${this.height}-${this.width}`
     return name + '.jpg'
   }
-    //   return \img\ladder\1\000\main.jpg
-    // if (this.gate) return '/img/main2-800-500.jpg'
-    // if (!this.gate) return '/img/main-800-500.jpg'
   @computed
   get title() {
     let res = `${this.width}x${this.height} ${this.type} ${this.form} ${this.energy}`

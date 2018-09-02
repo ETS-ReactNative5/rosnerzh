@@ -48,7 +48,7 @@ class Layout extends Component {
       gateLength,
       setGateLength,
     } = this.props.constStore
-    console.log(' configuration __ ', this.props.constStore.title)
+    // console.log(' configuration __ ', this.props.constStore.title)
     return (
       <div className="main-constructor__wrap">
         <div className="main-constructor__settings">
