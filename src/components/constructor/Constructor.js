@@ -9,8 +9,8 @@ import IconList from './TypeList'
 import Toggler from './Toggler'
 import ColorList from './ColorList'
 import FormList from './FormList'
-import MainImage from './MainImage'
 import Energy from './Energy'
+import PreviewContent from './PreviewContent'
 import {opacityFastPreset, transformPreset} from '../../settings/conf'
 // Layout component;
 @inject('constStore')
@@ -24,8 +24,7 @@ class Layout extends Component {
     this.setState(({collapsed}) => ({collapsed: collapsed !== 'icon' ? 'icon' : null}))
   collapseForms = () =>
     this.setState(({collapsed}) => ({collapsed: collapsed !== 'form' ? 'form' : null}))
-  collapseBoth = () =>
-    this.setState(() => ({collapsed: false}))
+  collapseBoth = () => this.setState(() => ({collapsed: false}))
 
   render() {
     const {
@@ -99,7 +98,7 @@ class Layout extends Component {
         </div>
         <div className="main-constructor__image">
           <div className="main-constructor__image--wrap">
-            <Energy onClick={this.collapseBoth}/>
+            <Energy onClick={this.collapseBoth} />
             <Popover placement="rightBottom" content="Ширина">
               <div>
                 <div className="main-constructor__image--width-tooltip">{`${width} мм`}</div>
@@ -113,7 +112,7 @@ class Layout extends Component {
                 />
               </div>
             </Popover>
-            <MainImage />
+            <PreviewContent />
             <ColorList />
           </div>
           <Popover placement="rightTop" content="Высота">

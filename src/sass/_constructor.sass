@@ -191,6 +191,32 @@ $transformTrans: transform .4s ease-out
       margin: 0
       max-height: 420px
       height: $rangeSlider
+    &--desc
+      position: absolute
+      top: 20%
+      bottom: 0
+      right: 0
+      left: 0
+      background-color: #fff
+      text-align: left
+      padding: 20px
+    &--container
+      position: relative
+      overflow: hidden
+    &--icons
+      position: absolute
+      bottom: 0
+      left: 0
+      color: $accent
+      font-size: 2rem
+      line-height: 1
+      cursor: pointer
+      background-color: #ffffff
+      padding: 5px
+      border-radius: 5px
+      & > i
+        margin-right: 15px
+        border-radius: 50%
     &--range
       position: relative
       align-self: flex-end
@@ -370,7 +396,8 @@ $transformTrans: transform .4s ease-out
     transition: transform .2s cubic-bezier(.2,.85,.4,1.275), opacity .4s
 .main-constructor__energy svg > *
   transition: fill .2s
-
+.main-constructor__image--desc
+  transition: $transformTrans
 // range transition
 .rangeslider__handle
   transition: top $rangeHandleTransition ease-out, left $rangeHandleTransition ease-out

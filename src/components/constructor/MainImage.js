@@ -32,7 +32,7 @@ class MainImage extends Component {
           loading: false,
           srcCache: {...this.state.srcCache, [src]: 'no-image'},
         })
-        console.log(error.response)
+        console.error(error.response)
       })
   }
 
@@ -56,7 +56,8 @@ class MainImage extends Component {
     const {srcCache, loading} = this.state
     const {imgName, imgPath} = this.props.constStore
     console.log(' LOG ___ imgSrc ', imgPath, imgName)
-    const src = imgPath + (srcCache[imgPath + imgName] === 'no-image'? 'main.jpg': imgName)
+    const src =
+      imgPath + (srcCache[imgPath + imgName] === 'no-image' ? 'main.jpg' : imgName)
     if (loading)
       return (
         <div className="main-constructor__image--preview">
@@ -65,7 +66,11 @@ class MainImage extends Component {
       )
     return (
       <figure
-        style={{backgroundImage: `url(${srcCache[src]})`}}
+        onClick={this.props.onClick}
+        style={{
+          backgroundImage: `url(${srcCache[src]})`,
+          cursor: `${this.props.isPointer ? 'pointer' : 'default'}`,
+        }}
         className="main-constructor__image--preview"
       />
     )

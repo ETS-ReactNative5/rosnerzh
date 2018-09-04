@@ -657,6 +657,32 @@ svg[disabled], .main-constructor svg[disabled] {
       margin: 0;
       max-height: 420px;
       height: 370px !important; }
+    .main-constructor__image--desc {
+      position: absolute;
+      top: 20%;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: #fff;
+      text-align: left;
+      padding: 20px; }
+    .main-constructor__image--container {
+      position: relative;
+      overflow: hidden; }
+    .main-constructor__image--icons {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: #fe4365;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+      background-color: #ffffff;
+      padding: 5px;
+      border-radius: 5px; }
+      .main-constructor__image--icons > i {
+        margin-right: 15px;
+        border-radius: 50%; }
     .main-constructor__image--range {
       position: relative;
       align-self: flex-end;
@@ -835,6 +861,9 @@ svg[disabled], .main-constructor svg[disabled] {
 
 .main-constructor__energy svg > * {
   transition: fill .2s; }
+
+.main-constructor__image--desc {
+  transition: transform 0.4s ease-out; }
 
 .rangeslider__handle {
   transition: top 0.2s ease-out, left 0.2s ease-out; }
