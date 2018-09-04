@@ -3,6 +3,7 @@ import {inject, observer} from 'mobx-react'
 import axios from 'axios'
 import {imageCDN} from '../../settings/conf'
 
+import {noImg} from '../common/noImage'
 import Loading from '../common/Loading'
 // MainImage component;
 @inject('constStore')
@@ -27,11 +28,18 @@ class MainImage extends Component {
         })
       })
       .catch(error => {
-        this._cacheImg({imgPath, imgName: 'main.jpg'})
-        this.setState({
-          loading: false,
-          srcCache: {...this.state.srcCache, [src]: 'no-image'},
-        })
+        if (imgName === 'main.jpg')
+          this.setState({
+            loading: false,
+            srcCache: {...this.state.srcCache, [src]: noImg},
+          })
+        else {
+          this._cacheImg({imgPath, imgName: 'main.jpg'})
+          this.setState({
+            loading: false,
+            srcCache: {...this.state.srcCache, [src]: 'no-image'},
+          })
+        }
         console.error(error.response)
       })
   }
