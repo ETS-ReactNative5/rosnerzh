@@ -15,6 +15,9 @@ class Contructour {
   @observable rail = false
   @observable gate = false
   @observable rack = false
+  @observable settings = 'Soem settings'
+  @observable description = 'Some description'
+  @observable properties = 'Some properties'
 
   @action('set-width')
   setWidth = value => {

@@ -1,9 +1,12 @@
 import React, {Component} from 'react'
+import {inject, observer} from 'mobx-react'
 import {Icon, Popover} from 'antd'
 
 import MainImage from './MainImage'
 
 // PreviewContent component;
+@inject('constStore')
+@observer
 class PreviewContent extends Component {
   state = {
     show: 'MainImage',
@@ -66,6 +69,7 @@ class PreviewContent extends Component {
     )
 
   render() {
+    const {constStore: store} = this.props
     return (
       <div className="main-constructor__image--container">
         <MainImage
@@ -78,7 +82,7 @@ class PreviewContent extends Component {
             transform: `translateY(${this.state.show === 'settings' ? '0' : '700px'})`,
           }}
         >
-          some settings
+          {store.settings}
         </p>
         <p
           className="main-constructor__image--desc"
@@ -86,7 +90,7 @@ class PreviewContent extends Component {
             transform: `translateY(${this.state.show === 'description' ? '0' : '700px'})`,
           }}
         >
-          some settings
+          {store.description}
         </p>
         <p
           className="main-constructor__image--desc"
@@ -94,7 +98,7 @@ class PreviewContent extends Component {
             transform: `translateY(${this.state.show === 'properties' ? '0' : '700px'})`,
           }}
         >
-          some settings
+          {store.properties}
         </p>
         {this._getIcons()}
       </div>
