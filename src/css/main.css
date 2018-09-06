@@ -659,17 +659,35 @@ svg[disabled], .main-constructor svg[disabled] {
       height: 370px !important; }
     .main-constructor__image--desc {
       position: absolute;
-      top: 20%;
+      top: 30%;
       bottom: 0;
       right: 0;
       left: 0;
       background-color: #fff;
       text-align: left;
-      padding: 20px; }
+      padding: 20px;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 400; }
+      .main-constructor__image--desc-table p {
+        display: flex;
+        justify-content: space-between;
+        background-image: repeating-linear-gradient(90deg, transparent, #fe4365 1px, #fe4365 2px, transparent 0, transparent 4px);
+        background-size: 100% 1px;
+        background-repeat: no-repeat;
+        background-position: 0 14px; }
+      .main-constructor__image--desc-table span {
+        background-color: #ffffff; }
+      .main-constructor__image--desc-table span:first-child {
+        font-weight: 700; }
+      .main-constructor__image--desc-table span:last-child {
+        max-width: 70%;
+        float: right; }
     .main-constructor__image--container {
       position: relative;
       overflow: hidden; }
     .main-constructor__image--icons {
+      z-index: 2;
       position: absolute;
       bottom: 0;
       left: 0;

@@ -193,17 +193,36 @@ $transformTrans: transform .4s ease-out
       height: $rangeSlider
     &--desc
       position: absolute
-      top: 20%
+      top: 30%
       bottom: 0
       right: 0
       left: 0
       background-color: #fff
       text-align: left
       padding: 20px
+      font-size: 14px
+      line-height: 1.5
+      font-weight: 400
+      &-table
+        p
+          display: flex
+          justify-content: space-between
+          background-image: repeating-linear-gradient(90deg, transparent, $accent 1px, $accent 2px, transparent 0, transparent 4px)
+          background-size: 100% 1px
+          background-repeat: no-repeat
+          background-position: 0 14px
+        span
+          background-color: #ffffff
+        span:first-child
+          font-weight: 700
+        span:last-child
+          max-width: 70%
+          float: right
     &--container
       position: relative
       overflow: hidden
     &--icons
+      z-index: 2
       position: absolute
       bottom: 0
       left: 0

@@ -1,6 +1,8 @@
+import React from 'react'
 import {observable, action, computed} from 'mobx'
+import {desc} from './DescriptionData';
 
-class Contructour {
+class Constructor {
   @observable width = 500
   @observable height = 800
   @observable minWidth = 400 // mType: 400, pType: 400, fType: 400,gType: , ladder: 400
@@ -15,9 +17,10 @@ class Contructour {
   @observable rail = false
   @observable gate = false
   @observable rack = false
-  @observable settings = 'Soem settings'
-  @observable description = 'Some description'
-  @observable properties = 'Some properties'
+  // @observable settings = null
+  // @observable description = null
+  // @observable workDescription = null
+  // @observable properties = null
 
   @action('set-width')
   setWidth = value => {
@@ -113,12 +116,36 @@ class Contructour {
     const formatter = new Intl.NumberFormat('ru', 'currency')
     return formatter.format(Math.round(price / 50) * 50)
   }
+  @computed
+  get settings() {
+    if(this.energy) return desc.energy.settings
+    return desc[this.type].settings
+  }
+  @computed
+  get description() {
+    if(this.energy) return desc.energy.description
+    return  desc[this.type].description
+  }
+  @computed
+  get workDescription() {
+    if(this.energy) return desc.energy.workDescription
+    return  desc[this.type].workDescription
+  }
+  @computed
+  get properties() {
+    if(this.energy) return desc.energy.properties
+    return  desc[this.type].properties
+  }
 }
 
-const constructor = new Contructour()
+  // @observable settings = null
+  // @observable description = null
+  // @observable workDescription = null
+  // @observable properties = null
+const constructor = new Constructor()
 
 export default constructor
-export {Contructour}
+export {Constructor}
 
 const limits = {
   mType: {

@@ -3,7 +3,7 @@ import {inject, observer} from 'mobx-react'
 import {Icon, Popover} from 'antd'
 
 import MainImage from './MainImage'
-
+import Formatted from '../common/FormattedDesc'
 // PreviewContent component;
 @inject('constStore')
 @observer
@@ -18,7 +18,7 @@ class PreviewContent extends Component {
     this.setState({isIconsContainerHovered: false})
     setTimeout(() => {
       !this.state.isIconsContainerHovered && this.setState({icons: false})
-    }, 5000)
+    }, 8000)
   }
 
   _handleEnter = () => {
@@ -44,6 +44,15 @@ class PreviewContent extends Component {
             theme="outlined"
           />
         </Popover>
+        {!!this.props.constStore.workDescription.length && (
+          <Popover placement="top" content="Рабочие свойства">
+            <Icon
+              onClick={() => this.setState({show: 'workDescription'})}
+              type="area-chart"
+              theme="outlined"
+            />
+          </Popover>
+        )}
         <Popover placement="top" content="Описание">
           <Icon
             onClick={() => this.setState({show: 'description'})}
@@ -82,7 +91,7 @@ class PreviewContent extends Component {
             transform: `translateY(${this.state.show === 'settings' ? '0' : '700px'})`,
           }}
         >
-          {store.settings}
+          <Formatted content={store.settings} />
         </p>
         <p
           className="main-constructor__image--desc"
@@ -95,10 +104,22 @@ class PreviewContent extends Component {
         <p
           className="main-constructor__image--desc"
           style={{
+            transform: `translateY(${
+              this.state.show === 'workDescription' ? '0' : '700px'
+            })`,
+          }}
+        >
+          {store.workDescription.map(row => (
+            <p>{row}</p>
+          ))}
+        </p>
+        <p
+          className="main-constructor__image--desc"
+          style={{
             transform: `translateY(${this.state.show === 'properties' ? '0' : '700px'})`,
           }}
         >
-          {store.properties}
+          <Formatted content={store.properties} />
         </p>
         {this._getIcons()}
       </div>
