@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
-import {inject, observer} from 'mobx-react'
+import {inject} from 'mobx-react'
 import {Icon, Popover} from 'antd'
 
 import MainImage from './MainImage'
 import Formatted from '../common/FormattedDesc'
 // PreviewContent component;
 @inject('constStore')
-@observer
 class PreviewContent extends Component {
   state = {
     show: 'MainImage',
