@@ -72,6 +72,7 @@ class FormList extends Component {
           <figcaption>Форма</figcaption>
         </figure>
         <StaggeredMotion
+          key={icons.length}  // Wootaa faakk iz goin aaan ??! - Froce update
           defaultStyles={[...new Array(icons.length)].map(() => ({unit: 0, opacity: 0}))}
           styles={this._getStaggedStyles}
         >
