@@ -1,12 +1,15 @@
 import React, {Component} from 'react'
-import Button from './common/Button'
+import {inject} from 'mobx-react'
 import {Parallax} from 'react-scroll-parallax'
+
+import Button from './common/Button'
 
 import srcEnergy from '../img/energy_bg.jpg'
 import srcDesign from '../img/design_bg.jpg'
 import srcSize from '../img/size_bg.jpg'
 
 // Gird component;
+@inject('menuStore')
 class Gird extends Component {
   render() {
     return (
@@ -17,7 +20,7 @@ class Gird extends Component {
             Если вы не хотите подключить сушилку к трубам, то сделайте выбор в пользу электрического
             полотенцесушителя.
           </p>
-          <Button caption="Выбать" />
+          <Button caption="Выбать"  onClick={this.props.menuStore.openChain.bind(null, 'constructor')}/>
         </div>
         <Parallax
           className="grid__item grid__item--energy-img"
@@ -37,7 +40,7 @@ class Gird extends Component {
             Уникальный дизайн подчеркнет ваш интерьер и предаст ему непередоваемый шарм, и всегда
             будет вас радовать.
           </p>
-          <Button caption="Перейти" />
+          <Button caption="Заказать" onClick={this.props.menuStore.openChain.bind(null, 'order')} />
         </div>
         <div className="grid__item grid__item--size">
           <h2>Размер</h2>
@@ -45,7 +48,7 @@ class Gird extends Component {
             Для вас важен размер полотенцесушителя? Нет проблем, у нас имеются как компактные формы
             так и возможность сделать все по своим размерам.
           </p>
-          <Button caption="В конструктор" />
+          <Button caption="В конструктор" onClick={this.props.menuStore.openChain.bind(null, 'constructor')}/>
         </div>
         
         <Parallax

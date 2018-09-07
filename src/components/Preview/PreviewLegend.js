@@ -1,9 +1,12 @@
 import React, {Component} from 'react'
-import Button from '../common/Button'
+import {inject} from 'mobx-react'
 import {Parallax} from 'react-scroll-parallax'
+
+import Button from '../common/Button'
 
 //TODO: Replace this desc to benefits section
 // PreviewLegend component;
+@inject('menuStore')
 class PreviewLegend extends Component {
   render() {
     return (
@@ -21,7 +24,7 @@ class PreviewLegend extends Component {
             подходящий по размерам, цвету и форме. Или оставьте заявку и наш оператор перезвонит
             вам.
           </p>
-          <Button caption="В кноструктор" />
+          <Button caption="В кноструктор" onClick={this.props.menuStore.openChain.bind(null, 'constructor')}/>
         </legend>
       </Parallax>
     )

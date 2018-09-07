@@ -27,6 +27,18 @@ class MenuStore {
   openOrder = () => {
     this.state = 'order'
   }
+
+  @action('open-chain')
+  openChain = toState => {
+    this.state = 'main'
+    setTimeout(() => {
+      this.state = 'constructor'
+    }, 900);
+    setTimeout(() => {
+      this.state = toState
+    }, 1550);
+  }
+
   @computed
   get isOpen() {
     return this.state !== 'close' ? true : false
