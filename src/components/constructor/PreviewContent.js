@@ -36,13 +36,15 @@ class PreviewContent extends Component {
           type="close"
           theme="outlined"
         />
-        <Popover placement="top" content="Характеристики">
-          <Icon
-            onClick={() => this.setState({show: 'settings'})}
-            type="line-chart"
-            theme="outlined"
-          />
-        </Popover>
+        {!!this.props.constStore.settings.length && (
+          <Popover placement="top" content="Характеристики">
+            <Icon
+              onClick={() => this.setState({show: 'settings'})}
+              type="line-chart"
+              theme="outlined"
+            />
+          </Popover>
+        )}
         {!!this.props.constStore.workDescription.length && (
           <Popover placement="top" content="Рабочие свойства">
             <Icon
@@ -52,20 +54,24 @@ class PreviewContent extends Component {
             />
           </Popover>
         )}
-        <Popover placement="top" content="Описание">
-          <Icon
-            onClick={() => this.setState({show: 'description'})}
-            type="bars"
-            theme="outlined"
-          />
-        </Popover>
-        <Popover placement="top" content="Комплектующие">
-          <Icon
-            onClick={() => this.setState({show: 'properties'})}
-            type="setting"
-            theme="outlined"
-          />
-        </Popover>
+        {!!this.props.constStore.description.length && (
+          <Popover placement="top" content="Описание">
+            <Icon
+              onClick={() => this.setState({show: 'description'})}
+              type="bars"
+              theme="outlined"
+            />
+          </Popover>
+        )}
+        {!!this.props.constStore.properties.length && (
+          <Popover placement="top" content="Комплектующие">
+            <Icon
+              onClick={() => this.setState({show: 'properties'})}
+              type="setting"
+              theme="outlined"
+            />
+          </Popover>
+        )}
       </div>
     ) : (
       <div
