@@ -17,6 +17,10 @@ class MenuStore {
   openConstructor = () => {
     this.state = 'constructor'
   }
+  @action('close-menu')
+  closeMenu = () => {
+    this.state = 'close'
+  }
 
   @action('open-main')
   openMain = () => {

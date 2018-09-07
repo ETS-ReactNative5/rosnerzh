@@ -7,21 +7,45 @@ import Svg from '../common/Svg'
 @observer
 class Nav extends Component {
   render() {
-    const {openConstructor} = this.props.menuStore
+    const {openConstructor, closeMenu, openChain} = this.props.menuStore
     return (
       <nav className="main-menu">
         <h3 className="main-menu__header">
           <span onClick={openConstructor}>Конструктор</span>
         </h3>
         <h3 className="main-menu__header">
-          <span>О нас</span>
+          <span
+            onClick={e => {
+              e.preventDefault()
+              closeMenu()
+              const V = 0.3
+              const top = document.getElementById('footer').getBoundingClientRect().top + 200
+              const w = window.pageYOffset
+              let start = null
+              requestAnimationFrame(step)
+              function step(time) {
+                if (start === null) start = time
+                let progress = time - start
+                let r =
+                  top < 0
+                    ? Math.max(w - progress / V, w + top)
+                    : Math.min(w + progress / V, w + top)
+                window.scrollTo(0, r)
+                if (r != w + top) {
+                  requestAnimationFrame(step)
+                }
+              }
+            }}
+          >
+            О нас
+          </span>
         </h3>
         <h3 className="main-menu__header">
           <span>Заказать</span>
           <hr />
           <ul>
             <li>Обратный звонок</li>
-            <li>Полотенцесушитель</li>
+            <li onClick={openChain.bind(null, 'order')}>Полотенцесушитель</li>
           </ul>
         </h3>
         <hr />

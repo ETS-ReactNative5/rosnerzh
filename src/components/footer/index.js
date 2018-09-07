@@ -6,7 +6,7 @@ import FooterMap from './FooterMap'
 class Footer extends Component {
   render() {
     return (
-      <footer className="footer">
+      <footer className="footer" id="footer">
         <div className="footer__wrap">
           <FooterMap />
           <About />
