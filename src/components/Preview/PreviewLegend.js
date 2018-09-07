@@ -24,7 +24,11 @@ class PreviewLegend extends Component {
             подходящий по размерам, цвету и форме. Или оставьте заявку и наш оператор перезвонит
             вам.
           </p>
-          <Button caption="В кноструктор" onClick={this.props.menuStore.openChain.bind(null, 'constructor')}/>
+          <Button caption="В кноструктор" onClick={this.props.menuStore.openChain.bind(null, [
+            'main',
+            'constructor',
+            'constructor',
+          ])}/>
         </legend>
       </Parallax>
     )

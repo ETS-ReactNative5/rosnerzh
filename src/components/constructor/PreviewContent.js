@@ -90,23 +90,23 @@ class PreviewContent extends Component {
           isPointer={this.state.show !== 'MainImage'}
           onClick={() => this.setState({show: 'MainImage'})}
         />
-        <p
+        <article
           className="main-constructor__image--desc"
           style={{
             transform: `translateY(${this.state.show === 'settings' ? '0' : '700px'})`,
           }}
         >
           <Formatted content={store.settings} />
-        </p>
-        <p
+        </article>
+        <article
           className="main-constructor__image--desc"
           style={{
             transform: `translateY(${this.state.show === 'description' ? '0' : '700px'})`,
           }}
         >
           {store.description}
-        </p>
-        <p
+        </article>
+        <article
           className="main-constructor__image--desc"
           style={{
             transform: `translateY(${
@@ -117,15 +117,15 @@ class PreviewContent extends Component {
           {store.workDescription.map(row => (
             <p>{row}</p>
           ))}
-        </p>
-        <p
+        </article>
+        <article
           className="main-constructor__image--desc"
           style={{
             transform: `translateY(${this.state.show === 'properties' ? '0' : '700px'})`,
           }}
         >
           <Formatted content={store.properties} />
-        </p>
+        </article>
         {this._getIcons()}
       </div>
     )

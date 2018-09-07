@@ -11,7 +11,12 @@ import ColorList from './ColorList'
 import FormList from './FormList'
 import Energy from './Energy'
 import PreviewContent from './PreviewContent'
-import {opacityFastPreset, transformPreset} from '../../settings/conf'
+import {
+  opacityFastPreset,
+  transformPreset,
+  formIcons,
+  formIconsLType,
+} from '../../settings/conf'
 // Layout component;
 @inject('constStore')
 @observer
@@ -141,7 +146,8 @@ class Layout extends Component {
           <FormList
             isCollapsed={this.state.collapsed === 'form'}
             collapse={this.collapseForms}
-            disabled={type !== 'ladder'}
+            disabled={!~['ladder', 'pType'].indexOf(type)}
+            icons={type !== 'ladder' ? formIconsLType : formIcons}
           />
         </div>
       </div>

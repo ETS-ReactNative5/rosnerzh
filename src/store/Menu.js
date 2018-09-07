@@ -33,13 +33,13 @@ class MenuStore {
   }
 
   @action('open-chain')
-  openChain = toState => {
-    this.state = 'main'
+  openChain = chain => {
+    this.state = chain[0]
     setTimeout(() => {
-      this.state = 'constructor'
+      this.state = chain[1]
     }, 900);
     setTimeout(() => {
-      this.state = toState
+      this.state = chain[2]
     }, 1550);
   }
 

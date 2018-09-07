@@ -45,7 +45,11 @@ class Nav extends Component {
           <hr />
           <ul>
             <li>Обратный звонок</li>
-            <li onClick={openChain.bind(null, 'order')}>Полотенцесушитель</li>
+            <li onClick={openChain.bind(null, [
+              'constructor',
+              'order',
+              'order',
+            ])}>Полотенцесушитель</li>
           </ul>
         </h3>
         <hr />

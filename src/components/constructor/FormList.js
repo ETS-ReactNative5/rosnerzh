@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import Svg from '../common/Svg'
 import Icon from './Icon'
-import {opacityFastPreset, transformPreset, formIcons as icons} from '../../settings/conf'
+import {opacityFastPreset, transformPreset} from '../../settings/conf'
 
 // FormList component;
 @inject('constStore')
@@ -15,10 +15,11 @@ class FormList extends Component {
     isCollapsed: PropTypes.bool.isRequired,
     collapse: PropTypes.func.isRequired,
     disabled: PropTypes.bool.isRequired,
+    icons: PropTypes.array.isRequired,
   }
 
   _getComuptedStyles = ({unit, opacity}, i) => {
-    const angle = (2 * Math.PI) / icons.length
+    const angle = (2 * Math.PI) / this.props.icons.length
     return {
       transform: `translate(${unit * Math.cos(angle * i)}px, ${unit *
         Math.sin(angle * i)}px) scale(${opacity})`,
@@ -52,7 +53,7 @@ class FormList extends Component {
   }
 
   render() {
-    const {isCollapsed, collapse, disabled} = this.props
+    const {isCollapsed, collapse, disabled, icons} = this.props
     const figuresStyle = {
       s: spring(isCollapsed ? 0.5 : 1, transformPreset),
       opacity: spring(isCollapsed ? 0.3 : 1, opacityFastPreset),

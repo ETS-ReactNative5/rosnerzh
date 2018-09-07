@@ -4,8 +4,8 @@ import React from 'react'
 function FormattedDesc({content}) {
   return (
     <div className="main-constructor__image--desc-table">
-      {content.map(({id, content}) => (
-        <p>
+      {content.map(({id, content}, i) => (
+        <p key={i}>
           <span>{id}</span>
           <span>{content}</span>
         </p>

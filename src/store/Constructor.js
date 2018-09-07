@@ -17,10 +17,6 @@ class Constructor {
   @observable rail = false
   @observable gate = false
   @observable rack = false
-  // @observable settings = null
-  // @observable description = null
-  // @observable workDescription = null
-  // @observable properties = null
 
   @action('set-width')
   setWidth = value => {

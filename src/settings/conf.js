@@ -24,6 +24,14 @@ export const formIcons = [
   {id: "trapecia", figcaption: "Трапеция"},
   {id: "neo2", figcaption: "Нео 2"},
 ]
+export const formIconsLType = [
+  {id: "volna", figcaption: "Волна"},
+  {id: "skoba", figcaption: "Скоба"},
+  {id: "avrora", figcaption: "Аврора"},
+  {id: "duga", figcaption: "Дуга"},
+  {id: "zigzag", figcaption: "Зигзаг"},
+]
+
 export const typeIcons = [
   {id: 'mType', figcaption: 'Форма М'},
   {id: 'pType', figcaption: 'Форма П'},
