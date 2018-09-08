@@ -86,7 +86,10 @@ class Constructor {
   @computed
   get imgName() {
     let name = 'main'
-    if(this.type === 'ladder') name = `main-${this.height}-${this.width}`
+    if(this.type === 'ladder') {
+      const height = this.height === 1100? 1200: this.height === 900? 1000: this.height
+      name = `main-${height}-400`
+    }
     return name + '.jpg'
   }
   @computed
@@ -242,12 +245,12 @@ const data = {
     '6': 0, //	прямая
     '7': 50, //	трапеция
     '8': 2300,
-    '9': 2300,// Laguna
-    '10': 2300,// neo primaya
-    '11': 2300,// neo duga
-    '12': 2300,// neo modern
-    '13': 2300,// skoba priamo
-    '14': 2300,// trapecia prriamo
+    '9': 2300,//  laguna
+    '10': 2300,// neo_priamaya
+    '11': 2300,// neo_duga
+    '12': 2300,// neo_modern
+    '13': 2300,// skoba_priamaya
+    '14': 2300,// trapecia_priamaya
   }, //	NEO 2
   energy: {
     //	Цены на тип сушилки

@@ -236,14 +236,14 @@ svg {
     fill: #ffffff;
     stroke: #ffffff; }
 
-.volna > *, .zigzag > *, .duga > *, .priamaia > *, .skoba > *, .neo1 > *, .neo2 > *, .trapecia > *, .avrora > * {
+.volna > *, .zigzag > *, .duga > *, .priamaia > *, .skoba > *, .neo1 > *, .neo2 > *, .trapecia > *, .avrora > *, .laguna > *, .neo_priamaya > *, .neo_duga > *, .neo_modern > *, .skoba_priamaya > *, .trapecia_priamaya > * {
   stroke: #fe4365;
   fill: transparent; }
 
-.volna > circle, .zigzag > circle, .duga > circle, .priamaia > circle, .skoba > circle, .neo1 > circle, .neo2 > circle, .trapecia > circle, .avrora > circle {
+.volna > circle, .zigzag > circle, .duga > circle, .priamaia > circle, .skoba > circle, .neo1 > circle, .neo2 > circle, .trapecia > circle, .avrora > circle, .laguna > circle, .neo_priamaya > circle, .neo_duga > circle, .neo_modern > circle, .skoba_priamaya > circle, .trapecia_priamaya > circle {
   fill: #fe4365; }
 
-.volna path, .volna line, .volna polyline, .zigzag path, .zigzag line, .zigzag polyline, .duga path, .duga line, .duga polyline, .priamaia path, .priamaia line, .priamaia polyline, .skoba path, .skoba line, .skoba polyline, .neo1 path, .neo1 line, .neo1 polyline, .neo2 path, .neo2 line, .neo2 polyline, .trapecia path, .trapecia line, .trapecia polyline, .avrora path, .avrora line, .avrora polyline {
+.volna path, .volna line, .volna polyline, .zigzag path, .zigzag line, .zigzag polyline, .duga path, .duga line, .duga polyline, .priamaia path, .priamaia line, .priamaia polyline, .skoba path, .skoba line, .skoba polyline, .neo1 path, .neo1 line, .neo1 polyline, .neo2 path, .neo2 line, .neo2 polyline, .trapecia path, .trapecia line, .trapecia polyline, .avrora path, .avrora line, .avrora polyline, .laguna path, .laguna line, .laguna polyline, .neo_priamaya path, .neo_priamaya line, .neo_priamaya polyline, .neo_duga path, .neo_duga line, .neo_duga polyline, .neo_modern path, .neo_modern line, .neo_modern polyline, .skoba_priamaya path, .skoba_priamaya line, .skoba_priamaya polyline, .trapecia_priamaya path, .trapecia_priamaya line, .trapecia_priamaya polyline {
   stroke-width: 5; }
 
 svg[disabled], .main-constructor svg[disabled] {
@@ -540,6 +540,10 @@ svg[disabled], .main-constructor svg[disabled] {
       position: relative;
       width: 100px;
       margin: 0 auto; }
+      .main-constructor__settings--icons:hover .main-constructor__settings--icon {
+        opacity: 0.5; }
+        .main-constructor__settings--icons:hover .main-constructor__settings--icon:hover {
+          opacity: 1; }
       .main-constructor__settings--icons svg {
         width: 100%;
         height: 100%;
@@ -580,6 +584,8 @@ svg[disabled], .main-constructor svg[disabled] {
       right: 0;
       left: 0;
       margin: auto; }
+      .main-constructor__settings--icon.active {
+        opacity: 1 !important; }
       .main-constructor__settings--icon figcaption {
         white-space: nowrap;
         text-align: center;
@@ -798,17 +804,7 @@ svg[disabled], .main-constructor svg[disabled] {
   .icons-form__set .main-constructor__settings--icon {
     width: 60px; }
     .icons-form__set .main-constructor__settings--icon figcaption {
-      text-align: center;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      transform: translateY(10px);
-      opacity: 0;
-      transition: transform 0.2s ease-out, opacity 0.2s ease-out; }
-    .icons-form__set .main-constructor__settings--icon:hover figcaption {
-      transform: translateY(0);
-      opacity: 1; }
+      display: none; }
   .icons-form__set figure::before {
     top: 10px;
     right: 10px;
@@ -870,10 +866,14 @@ svg[disabled], .main-constructor svg[disabled] {
 .icons-form__set .main-constructor__settings--icon figcaption {
   transition: transform 0.2s ease-out, opacity 0.2s ease-out; }
 
-.main-constructor__settings--icons figure {
-  transition: z-index 150ms; }
-  .main-constructor__settings--icons figure figcaption {
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out; }
+.main-constructor__settings--icons {
+  transition: opacity .1s; }
+  .main-constructor__settings--icons .main-constructor__settings--icon {
+    transition: opacity .1s; }
+  .main-constructor__settings--icons figure {
+    transition: z-index 150ms; }
+    .main-constructor__settings--icons figure figcaption {
+      transition: transform 0.2s ease-out, opacity 0.2s ease-out; }
 
 .main-constructor__color {
   transition: border-width 150ms ease-out; }

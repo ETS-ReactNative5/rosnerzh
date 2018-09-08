@@ -67,6 +67,11 @@ $transformTrans: transform .4s ease-out
       position: relative
       width: $svgSize
       margin: 0 auto
+      &:hover
+        .main-constructor__settings--icon
+          opacity: 0.5
+          &:hover
+            opacity: 1
       svg
         width: 100%
         height: 100%
@@ -108,6 +113,8 @@ $transformTrans: transform .4s ease-out
       right: 0
       left: 0
       margin: auto
+      &.active
+        opacity: 1!important
       figcaption
         white-space: nowrap
         text-align: center
@@ -341,18 +348,20 @@ $transformTrans: transform .4s ease-out
   .main-constructor__settings--icon
     width: $svgSize - 40px
     figcaption
-      text-align: center
-      position: absolute
-      bottom: 0
-      right: 0
-      left: 0
-      transform: translateY(10px)
-      opacity: 0
-      transition: $figcaptionTrans
-    &:hover
-      figcaption
-        transform: translateY(0)
-        opacity: 1
+      display: none
+    //   text-align: center
+    //   position: absolute
+    //   bottom: 0
+    //   right: 0
+    //   left: 0
+    //   transform: translateY(10px)
+    //   opacity: 0
+    //   transition: $figcaptionTrans
+    //   font-size: 10px
+    // &:hover
+    //   figcaption
+    //     transform: translateY(0)
+    //     opacity: 1
   figure
     &::before
       top: 10px
@@ -403,6 +412,9 @@ $transformTrans: transform .4s ease-out
 .icons-form__set .main-constructor__settings--icon figcaption
   transition: $figcaptionTrans
 .main-constructor__settings--icons
+  transition: opacity .1s
+  .main-constructor__settings--icon
+    transition: opacity .1s
   figure
     transition: z-index 150ms
     figcaption

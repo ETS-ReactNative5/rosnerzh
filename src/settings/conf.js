@@ -23,6 +23,12 @@ export const formIcons = [
   {id: "priamaia", figcaption: "Прямая"},
   {id: "trapecia", figcaption: "Трапеция"},
   {id: "neo2", figcaption: "Нео 2"},
+  {id: "laguna", figcaption: "Лагуна"},
+  {id: "neo_priamaya", figcaption: "Нео прямая"},
+  {id: "neo_duga", figcaption: "Нео дуга"},
+  {id: "neo_modern", figcaption: "Нео модерн"},
+  {id: "skoba_priamaya", figcaption: "Скоба прямая"},
+  {id: "trapecia_priamaya", figcaption: "Трапеция прямая"},
 ]
 export const formIconsLType = [
   {id: "volna", figcaption: "Волна"},

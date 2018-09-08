@@ -69,7 +69,7 @@ class FormList extends Component {
               </div>
             )}
           </Motion>
-          <figcaption>Форма</figcaption>
+          <figcaption>{icons[form].figcaption}</figcaption>
         </figure>
         <StaggeredMotion
           key={icons.length}  // Wootaa faakk iz goin aaan ??! - Froce update
@@ -82,6 +82,7 @@ class FormList extends Component {
                 <Icon
                   key={i}
                   entity={icons[i]}
+                  className={i === form? 'active': ''}
                   style={this._getComuptedStyles(styles, i)}
                   onClick={() => {
                     setForm(i)

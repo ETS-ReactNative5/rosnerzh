@@ -400,6 +400,52 @@ const Svg = props => {
         <path d="M45.3,20.4c-133.8,66.6,289.2,67.1,149.4,0" />
       </svg>
     ),
+    laguna: (
+      <svg className="laguna" disabled={disabled} viewBox="0 0 240 90">
+        <circle cx="45.3" cy="20.4" r="13.6" />
+        <circle cx="136.5" cy="20.4" r="13.6" />
+        <path d="M45.3,20.4C-111,104,425,72.9,136.5,20.4" />
+      </svg>
+    ),
+    neo_priamaya: (
+      <svg className="neo_priamaya" disabled={disabled} viewBox="0 0 240 90">
+        <circle cx="45.3" cy="45.4" r="13.6" />
+        <circle cx="194.7" cy="46.2" r="13.6" />
+        <polyline points="194.7,46.2 194.7,12.8 48.8,12.8 45.3,12.8 45.3,45.4 " />
+        <line x1="21.8" y1="12.8" x2="45.3" y2="12.8" />
+        <line x1="194.7" y1="12.8" x2="218.3" y2="12.8" />
+      </svg>
+    ),
+    neo_duga: (
+      <svg className="neo_duga" disabled={disabled} viewBox="0 0 240 90">
+        <circle cx="45.3" cy="45.4" r="13.6" />
+        <circle cx="194.7" cy="46.2" r="13.6" />
+        <path d="M194.7,12.8v33.5" />
+        <path d="M45.3,45.4V12.8" />
+        <path d="M23,25C53-1.3,189,0,219.3,25" />
+      </svg>
+    ),
+    neo_modern: (
+      <svg className="neo_modern" disabled={disabled} viewBox="0 0 240 90">
+        <circle cx="110" cy="46.2" r="13.6" />
+        <circle cx="162.5" cy="46.2" r="13.6" />
+        <line x1="194.7" y1="46.2" x2="45.3" y2="45.4" />
+      </svg>
+    ),
+    skoba_priamaya: (
+      <svg className="skoba_priamaya" disabled={disabled} viewBox="0 0 240 90">
+        <circle cx="45.3" cy="45.4" r="13.6" />
+        <circle cx="194.7" cy="46.2" r="13.6" />
+        <path d="M194.7,46.2v-8.4c0-13.9-11.2-25.1-25.1-25.1H70.4c-13.9,0-25.1,11.2-25.1,25.1v7.5" />
+      </svg>
+    ),
+    trapecia_priamaya: (
+      <svg className="trapecia_priamaya" disabled={disabled} viewBox="0 0 240 90">
+        <circle cx="45.3" cy="45.4" r="13.6" />
+        <circle cx="194.7" cy="46.2" r="13.6" />
+        <path d="M194.7,46.2l-3.1-7.6c-6.4-15.6-21.6-25.8-38.4-25.8H86.6c-16.7,0-31.8,10.1-38.3,25.5l-3,7.1" />
+      </svg>
+    ),
   }
   return entities[id] || null
 }

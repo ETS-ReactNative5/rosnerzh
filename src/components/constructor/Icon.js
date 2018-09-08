@@ -1,10 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
-// style={{
-//   x: spring(130, helperConfig),
-// }}
-
 import Svg from '../common/Svg'
 // Icon component;
 class Icon extends Component {
@@ -15,9 +11,9 @@ class Icon extends Component {
   }
 
   render() {
-    const {style, onClick, entity} = this.props
+    const {style, onClick, entity, className = ''} = this.props
     return (
-      <div style={style} onClick={onClick} className="main-constructor__settings--icon">
+      <div style={{...style}} onClick={onClick} className={`main-constructor__settings--icon ${className}`}>
         <Svg id={entity.id} />
         <figcaption>{entity.figcaption}</figcaption>
       </div>
