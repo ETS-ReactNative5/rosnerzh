@@ -242,6 +242,12 @@ const data = {
     '6': 0, //	прямая
     '7': 50, //	трапеция
     '8': 2300,
+    '9': 2300,// Laguna
+    '10': 2300,// neo primaya
+    '11': 2300,// neo duga
+    '12': 2300,// neo modern
+    '13': 2300,// skoba priamo
+    '14': 2300,// trapecia prriamo
   }, //	NEO 2
   energy: {
     //	Цены на тип сушилки
@@ -259,3 +265,21 @@ const data = {
   }, //	Боковое 110%
   color: 4000, //	Цена за перекраску
 }
+
+/*
+
+gType
+0 g
+0 UL
+
+mType form
+0 m
+1 M1Neo
+2 UM1
+3 UM2
+
+pType
+0 U
+1 U1
+
+*/
