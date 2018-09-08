@@ -79,6 +79,7 @@ class TypeList extends Component {
               {iconsStyle.map((styles, i) => (
                 <Icon
                   key={i}
+                  className={icons[i].id === type? 'active': ''}
                   entity={icons[i]}
                   style={this._getComuptedStyles(styles, i)}
                   onClick={() => {
