@@ -20,7 +20,7 @@ class Constructor {
 
   @action('set-width')
   setWidth = value => {
-    this.width = value
+    this.width = value === 300? 320: value
   }
   @action('set-height')
   setHeight = value => {
@@ -156,7 +156,7 @@ const limits = {
   },
   pType: {
     width: {
-      min: 400,
+      min: 300,
       max: 700,
     },
     height: {
@@ -221,6 +221,7 @@ const data = {
   width: {
     //	Цены на ширрину сушилки
     '300': 1, //	300 мм		100%
+    '320': 1, //	300 мм		100%
     '400': 1, //	400 мм		100%
     '500': 1.07, //	500 мм		107%
     '600': 1.14,
