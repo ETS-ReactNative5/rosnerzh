@@ -79,8 +79,9 @@ class Constructor {
   @computed
   get imgPath() {
     let path = '/img/'
-    if(this.type === 'ladder') path += `ladder/${this.form}/${+this.rack}${+this.rail}${+!this.energy && this.gate + 1}/`
-    else path += `${this.type}/${+this.rack}/`
+    // if(this.type === 'ladder') 
+    path += `${this.type}/${this.form}/${+this.rack}${+this.rail}${+!this.energy && this.gate + 1}/`
+    // else path += `${this.type}/${+this.rack}/`
     return path
   }
   @computed

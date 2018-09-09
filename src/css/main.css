@@ -220,9 +220,13 @@ svg {
     fill: #ffffff;
     stroke: #ffffff; }
 
-.main-constructor .towelDryer > *, .main-constructor .ladder > *, .main-constructor .fType > * {
+.main-constructor .towelDryer > *, .main-constructor .ladder > *, .main-constructor .fType > *, .main-constructor .gType > *, .main-constructor .mType0 > *, .main-constructor .mType1 > *, .main-constructor .mType2 > *, .main-constructor .mType3 > *, .main-constructor .pType0 > *, .main-constructor .pType1 > * {
   fill: #fe4365;
   stroke: #fe4365; }
+
+.main-constructor .pType0 > path, .main-constructor .pType1 > path {
+  fill: none;
+  stroke-width: 5; }
 
 .phone, .letter, .clock, .marker {
   width: 15px; }
@@ -258,6 +262,9 @@ svg[disabled], .main-constructor svg[disabled] {
     fill: transparent; }
   svg[disabled].volna > circle, svg[disabled].zigzag > circle, svg[disabled].duga > circle, svg[disabled].priamaia > circle, svg[disabled].skoba > circle, svg[disabled].neo1 > circle, svg[disabled].neo2 > circle, svg[disabled].trapecia > circle, svg[disabled].avrora > circle, .main-constructor svg[disabled].volna > circle, .main-constructor svg[disabled].zigzag > circle, .main-constructor svg[disabled].duga > circle, .main-constructor svg[disabled].priamaia > circle, .main-constructor svg[disabled].skoba > circle, .main-constructor svg[disabled].neo1 > circle, .main-constructor svg[disabled].neo2 > circle, .main-constructor svg[disabled].trapecia > circle, .main-constructor svg[disabled].avrora > circle {
     fill: #5b0011; }
+  svg[disabled].pType0 > path, svg[disabled].pType1 > path, .main-constructor svg[disabled].pType0 > path, .main-constructor svg[disabled].pType1 > path {
+    fill: none;
+    stroke-width: 5; }
 
 .rz_btn {
   position: relative;
@@ -867,9 +874,9 @@ svg[disabled], .main-constructor svg[disabled] {
   transition: transform 0.2s ease-out, opacity 0.2s ease-out; }
 
 .main-constructor__settings--icons {
-  transition: opacity .1s; }
+  transition: opacity .3s; }
   .main-constructor__settings--icons .main-constructor__settings--icon {
-    transition: opacity .1s; }
+    transition: opacity .3s; }
   .main-constructor__settings--icons figure {
     transition: z-index 150ms; }
     .main-constructor__settings--icons figure figcaption {

@@ -16,6 +16,7 @@ import {
   transformPreset,
   formIcons,
   formIconsLType,
+  formIconsMType,
 } from '../../settings/conf'
 // Layout component;
 @inject('constStore')
@@ -53,6 +54,7 @@ class Layout extends Component {
       setGateLength,
     } = this.props.constStore
     // console.log(' configuration __ ', this.props.constStore.title)
+    const iconsList = type === 'mType' ? formIconsMType: type ==='pType'? formIconsLType : formIcons
     return (
       <div className="main-constructor__wrap">
         <div className="main-constructor__settings">
@@ -146,8 +148,8 @@ class Layout extends Component {
           <FormList
             isCollapsed={this.state.collapsed === 'form'}
             collapse={this.collapseForms}
-            disabled={!~['ladder', 'pType'].indexOf(type)}
-            icons={type !== 'ladder' ? formIconsLType : formIcons}
+            disabled={!~['ladder', 'pType', 'mType'].indexOf(type)}
+            icons={iconsList}
           />
         </div>
       </div>

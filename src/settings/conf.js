@@ -31,17 +31,21 @@ export const formIcons = [
   {id: "trapecia_priamaya", figcaption: "Трапеция прямая"},
 ]
 export const formIconsLType = [
-  {id: "volna", figcaption: "Волна"},
-  {id: "skoba", figcaption: "Скоба"},
-  {id: "avrora", figcaption: "Аврора"},
-  {id: "duga", figcaption: "Дуга"},
-  {id: "zigzag", figcaption: "Зигзаг"},
+  {id: "pType0", figcaption: "pType0"},
+  {id: "pType1", figcaption: "pType1"},
+]
+export const formIconsMType = [
+  {id: "mType0", figcaption: "mType0"},
+  {id: "mType1", figcaption: "mType1"},
+  {id: "mType2", figcaption: "mType2"},
+  {id: "mType3", figcaption: "mType3"},
 ]
 
 export const typeIcons = [
   {id: 'mType', figcaption: 'Форма М'},
   {id: 'pType', figcaption: 'Форма П'},
   {id: 'fType', figcaption: 'Факстрот'},
+  {id: 'gType', figcaption: 'Гусли'},
   {id: 'ladder', figcaption: 'Лесенка'},
 ]
 

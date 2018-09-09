@@ -21,10 +21,14 @@ svg
     fill: #ffffff
     stroke: #ffffff
 .main-constructor
-  .towelDryer, .ladder, .fType
+  .towelDryer, .ladder, .fType, .gType, .mType0, .mType1, .mType2, .mType3, .pType0, .pType1
     & > *
       fill: $accent
       stroke: $accent
+  .pType0, .pType1
+    & > path
+      fill: none
+      stroke-width: 5
 .phone, .letter, .clock, .marker
   width: 15px
   & > *
@@ -58,6 +62,10 @@ svg[disabled], .main-constructor svg[disabled]
       fill: transparent
     & > circle
       fill: darken($accent, 45)
+  &.pType0, &.pType1
+    & > path
+      fill: none
+      stroke-width: 5
 
 // highlight hover rails
 // .main-constructor__settings--wrap
