@@ -115,7 +115,7 @@ class PreviewContent extends Component {
           }}
         >
           {store.workDescription.map(row => (
-            <p>{row}</p>
+            <div>{row}</div>
           ))}
         </article>
         <article

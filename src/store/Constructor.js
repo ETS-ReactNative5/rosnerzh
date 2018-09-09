@@ -79,9 +79,7 @@ class Constructor {
   @computed
   get imgPath() {
     let path = '/img/'
-    // if(this.type === 'ladder') 
     path += `${this.type}/${this.form}/${+this.rack}${+this.rail}${+!this.energy && this.gate + 1}/`
-    // else path += `${this.type}/${+this.rack}/`
     return path
   }
   @computed
@@ -90,6 +88,10 @@ class Constructor {
     if(this.type === 'ladder') {
       const height = this.height === 1100? 1200: this.height === 900? 1000: this.height
       name = `main-${height}-400`
+    }
+    if(~['mType', 'pType', 'gType'].indexOf(this.type)) {
+      const width = this.width === 800? 700: this.width === 320? 300: this.width
+      name = `main-500-${width}`
     }
     return name + '.jpg'
   }
