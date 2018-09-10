@@ -9,6 +9,9 @@
     background-color: $accent
     width: 50%
     padding: 20vh 5vw
+    h2
+      color: #ffffff
+      margin-bottom: 15px
     &--submit
       display: flex
       align-items: center
@@ -19,6 +22,40 @@
         color: #ffffff
         font-size: 30px
         font-weight: 700
+  .ant-form-explain, .ant-form-split
+    color: #ffffff!important
 .ant-input
   padding: 8px 11px 7px
   height: auto
+.ant-input-affix-wrapper .ant-input:not(:first-child)
+  padding-left: 36px
+// THANK YOU PAGE
+.thank-you
+  .main-thankyou
+    transform: translateY(0)
+.main
+  &-thankyou
+    cursor: default
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 10vw
+    left: 0
+    background-color: $accent
+    text-align: center
+    padding-top: 10vh
+    transform: translateY(100vh)
+    transition: $transformTrans
+    h2, p
+      color: #ffffff
+    h2
+      margin-top: 40px
+      font-size: 3rem
+    p
+      font-size: 1.5rem
+    .arrow
+      margin-top: 40px
+      width: 90px
+      transform: rotate(-90deg)
+      & > *
+        fill: #ffffff

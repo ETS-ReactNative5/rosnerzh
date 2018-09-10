@@ -7,12 +7,10 @@ class MenuStore {
   constructor() {
     this.state = 'close'
   }
-
   @action('toggle-state')
   toggleMenu = () => {
     this.state = this.state === 'close' ? 'main' : 'close'
   }
-
   @action('open-construcotr')
   openConstructor = () => {
     this.state = 'constructor'
@@ -21,10 +19,13 @@ class MenuStore {
   closeMenu = () => {
     this.state = 'close'
   }
-
   @action('open-main')
   openMain = () => {
     this.state = 'main'
+  }
+  @action('open-thank-you')
+  openTY = () => {
+    this.state = 'thank-you'
   }
 
   @action('open-order')

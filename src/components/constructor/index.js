@@ -18,7 +18,7 @@ class Constructor extends Component {
       <Motion
         style={{
           y: spring(
-            ~['constructor', 'order'].indexOf(state) ? 0 : 100,
+            ~['constructor', 'order', 'thank-you'].indexOf(state) ? 0 : 100,
             opacityFastPreset,
           ),
         }}

@@ -1,17 +1,20 @@
 import React, {Component} from 'react'
 import {inject, observer} from 'mobx-react'
-import {Form, Icon, Input, Button, Checkbox} from 'antd'
+import {Form, Icon, Input, Button} from 'antd'
 
 const FormItem = Form.Item
 
+
 // Order component;
 @inject('constStore')
+@inject('menuStore')
 @observer
 class Order extends Component {
   _handleSubmit = e => {
     e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
+        this.props.menuStore.openTY()
         console.log('Received values of form: ', values)
       }
     })
@@ -21,6 +24,7 @@ class Order extends Component {
     const {getFieldDecorator} = this.props.form
     return (
       <div className="main-constructor__order">
+        <h2>Оставьте заявку</h2>
         <Form onSubmit={this._handleSubmit} className="login-form">
           <FormItem>
             {getFieldDecorator('username', {
@@ -34,7 +38,7 @@ class Order extends Component {
           </FormItem>
           <FormItem>
             {getFieldDecorator('phone', {
-              rules: [{required: true, min: 11, message: 'Введите ваше имя'}],
+              rules: [{required: true, min: 11, message: 'Введите ваш телефон'}],
             })(
               <Input
                 placeholder="Ваш номер телефона"

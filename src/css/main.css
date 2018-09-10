@@ -228,6 +228,20 @@ svg {
   fill: none;
   stroke-width: 5; }
 
+.ty {
+  width: 200px; }
+
+.dryer path {
+  stroke: #ffffff;
+  fill: #ffffff; }
+
+.towel {
+  stroke-width: 15;
+  stroke: #ffffff;
+  fill: none; }
+  .towel path:last-child {
+    fill: #ffffff; }
+
 .phone, .letter, .clock, .marker {
   width: 15px; }
   .phone > *, .letter > *, .clock > *, .marker > * {
@@ -821,39 +835,42 @@ svg[disabled], .main-constructor svg[disabled] {
   .icons-form__set > figure > div > svg {
     width: 150px; }
 
-.main-menu__wrap.order .main-constructor__wrap {
+.main-menu__wrap.order .main-constructor__wrap, .main-menu__wrap.thank-you .main-constructor__wrap {
   width: 50%; }
 
-.main-menu__wrap.order .main-constructor__image {
+.main-menu__wrap.order .main-constructor__image, .main-menu__wrap.thank-you .main-constructor__image {
   flex-basis: 100%; }
 
-.main-menu__wrap.order .main-constructor__settings {
+.main-menu__wrap.order .main-constructor__settings, .main-menu__wrap.thank-you .main-constructor__settings {
   max-width: 0; }
 
-.main-menu__wrap.order .main-constructor__settings:first-child {
+.main-menu__wrap.order .main-constructor__settings:first-child, .main-menu__wrap.thank-you .main-constructor__settings:first-child {
   transform: translateX(-350px); }
 
-.main-menu__wrap.order .main-constructor__settings:last-child {
+.main-menu__wrap.order .main-constructor__settings:last-child, .main-menu__wrap.thank-you .main-constructor__settings:last-child {
   transform: translateX(350px); }
 
-.main-menu__wrap.order .main-constructor__order {
+.main-menu__wrap.order .main-constructor__order, .main-menu__wrap.thank-you .main-constructor__order {
   transform: translateX(-100%); }
 
-.main-menu__wrap.order .main-constructor__image--range, .main-menu__wrap.order .main-constructor__image--width-tooltip, .main-menu__wrap.order .rangeslider-horizontal {
+.main-menu__wrap.order .main-constructor__image--range, .main-menu__wrap.order .main-constructor__image--width-tooltip, .main-menu__wrap.order .rangeslider-horizontal, .main-menu__wrap.thank-you .main-constructor__image--range, .main-menu__wrap.thank-you .main-constructor__image--width-tooltip, .main-menu__wrap.thank-you .rangeslider-horizontal {
   visibility: hidden; }
 
-.main-menu__wrap.order .main-constructor__image--range {
+.main-menu__wrap.order .main-constructor__image--range, .main-menu__wrap.thank-you .main-constructor__image--range {
   max-width: 0;
   padding: 0; }
 
-.main-menu__wrap.order .main-constructor__colors {
+.main-menu__wrap.order .main-constructor__colors, .main-menu__wrap.thank-you .main-constructor__colors {
   transform: translateY(200px); }
 
-.main-menu__wrap.order .main-constructor__energy {
+.main-menu__wrap.order .main-constructor__energy, .main-menu__wrap.thank-you .main-constructor__energy {
   transform: translateY(-200px); }
 
-.main-menu__wrap.order .main-constructor__energy + div {
+.main-menu__wrap.order .main-constructor__energy + div, .main-menu__wrap.thank-you .main-constructor__energy + div {
   transform: translateY(-200px); }
+
+.main-menu__wrap.order .main-constructor__image--icons, .main-menu__wrap.thank-you .main-constructor__image--icons {
+  left: 5vw; }
 
 .main-constructor__wrap {
   transition: width .4s ease-out; }
@@ -933,6 +950,9 @@ svg[disabled], .main-constructor svg[disabled] {
   background-color: #fe4365;
   width: 50%;
   padding: 20vh 5vw; }
+  .main-constructor__order h2 {
+    color: #ffffff;
+    margin-bottom: 15px; }
   .main-constructor__order--submit {
     display: flex;
     align-items: center;
@@ -943,9 +963,44 @@ svg[disabled], .main-constructor svg[disabled] {
     font-size: 30px;
     font-weight: 700; }
 
+.main-constructor .ant-form-explain, .main-constructor .ant-form-split {
+  color: #ffffff !important; }
+
 .ant-input {
   padding: 8px 11px 7px;
   height: auto; }
+
+.ant-input-affix-wrapper .ant-input:not(:first-child) {
+  padding-left: 36px; }
+
+.thank-you .main-thankyou {
+  transform: translateY(0); }
+
+.main-thankyou {
+  cursor: default;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10vw;
+  left: 0;
+  background-color: #fe4365;
+  text-align: center;
+  padding-top: 10vh;
+  transform: translateY(100vh);
+  transition: transform 0.4s ease-out; }
+  .main-thankyou h2, .main-thankyou p {
+    color: #ffffff; }
+  .main-thankyou h2 {
+    margin-top: 40px;
+    font-size: 3rem; }
+  .main-thankyou p {
+    font-size: 1.5rem; }
+  .main-thankyou .arrow {
+    margin-top: 40px;
+    width: 90px;
+    transform: rotate(-90deg); }
+    .main-thankyou .arrow > * {
+      fill: #ffffff; }
 
 html body {
   font-family: "roboto", "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;

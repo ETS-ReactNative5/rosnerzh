@@ -3,6 +3,7 @@ import {inject, observer} from 'mobx-react'
 
 import Nav from './Nav'
 import Constructor from '../constructor'
+import TY from './ThankYou';
 
 // Menu component;
 @inject('menuStore')
@@ -16,6 +17,7 @@ class Menu extends Component {
         <Nav />
         <Constructor />
         <div className="main-menu__close" onClick={toggleMenu} />
+        <TY />
       </section>
     )
   }

@@ -3,8 +3,6 @@ $imgHeight: 420px
 $rangeSlider: $imgHeight - 50px !important
 $rangeHandleTransition: .2s
 $svgSize: 100px
-$figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
-$transformTrans: transform .4s ease-out
 
 @keyframes collapseUp
   50%
@@ -372,7 +370,7 @@ $transformTrans: transform .4s ease-out
   & > figure > div > svg
     width: $svgSize * 1.5
 // Order animation
-.main-menu__wrap.order
+.main-menu__wrap.order, .main-menu__wrap.thank-you
   .main-constructor__wrap
     width: 50%
   .main-constructor__image
@@ -396,6 +394,8 @@ $transformTrans: transform .4s ease-out
     transform: translateY(-200px)
   .main-constructor__energy + div
     transform: translateY(-200px)
+  .main-constructor__image--icons
+    left: 5vw
 
 // TRANSITIONS
 .main-constructor__wrap
