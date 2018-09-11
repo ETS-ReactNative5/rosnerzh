@@ -138,12 +138,13 @@ class Constructor {
     if(this.energy) return desc.energy.properties
     return  desc[this.type].properties
   }
+  @computed
+  get getData() {
+    const {width, height, type, form, color, energy, rail, rack, price, gate } = this
+    return  {width, height, type, form, color, energy, rail, rack, price, gate }
+  }
 }
 
-  // @observable settings = null
-  // @observable description = null
-  // @observable workDescription = null
-  // @observable properties = null
 const constructor = new Constructor()
 
 export default constructor

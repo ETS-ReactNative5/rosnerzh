@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import {inject, observer} from 'mobx-react'
+import axios from 'axios'
 import {Form, Icon, Input, Button} from 'antd'
 
+import {serelize} from '../common/utils'
 const FormItem = Form.Item
-
 
 // Order component;
 @inject('constStore')
@@ -14,8 +15,11 @@ class Order extends Component {
     e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        this.props.menuStore.openTY()
-        console.log('Received values of form: ', values)
+        const data = serelize({...values, ...this.props.constStore.getData})
+        axios
+          .post('http://localhost:5000/send.php', data)
+          .then(() => this.props.menuStore.openTY())
+          .catch(err => console.error(err))
       }
     })
   }
@@ -29,6 +33,7 @@ class Order extends Component {
           <FormItem>
             {getFieldDecorator('username', {
               rules: [{required: true, min: 3, message: 'Введите ваше имя'}],
+              initialValue: 'mail@yandex.ru',
             })(
               <Input
                 placeholder="Ваше имя"
@@ -39,6 +44,7 @@ class Order extends Component {
           <FormItem>
             {getFieldDecorator('phone', {
               rules: [{required: true, min: 11, message: 'Введите ваш телефон'}],
+              initialValue: 'mail@yandex.ru',
             })(
               <Input
                 placeholder="Ваш номер телефона"
@@ -49,6 +55,7 @@ class Order extends Component {
           <FormItem>
             {getFieldDecorator('email', {
               rules: [{type: 'email', required: true, message: 'Введите ваш e-mail'}],
+              initialValue: 'mail@yandex.ru',
             })(
               <Input
                 placeholder="Ваша e-mail"

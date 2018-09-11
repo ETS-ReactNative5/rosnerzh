@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
+import axios from 'axios';
 import {inject} from 'mobx-react'
 import {Form, Icon, Input, Button} from 'antd'
 
+import {serelize} from '../common/utils'
 const FormItem = Form.Item
 
 // Callback component;
@@ -11,8 +13,11 @@ class Callback extends Component {
     e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        this.props.menuStore.openMain()
-        console.log('Received values of form: ', values)
+        const data = serelize({...values, callback: true})
+        axios
+          .post('http://localhost:5000/send.php', data)
+          .then(() => this.props.menuStore.openMain())
+          .catch(err => console.error(err))
       }
     })
   }
