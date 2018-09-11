@@ -7,7 +7,7 @@ import Svg from '../common/Svg'
 @observer
 class Nav extends Component {
   render() {
-    const {openConstructor, closeMenu, openChain} = this.props.menuStore
+    const {openConstructor, closeMenu, openChain, openCallback} = this.props.menuStore
     return (
       <nav className="main-menu">
         <h3 className="main-menu__header">
@@ -44,7 +44,7 @@ class Nav extends Component {
           <span>Заказать</span>
           <hr />
           <ul>
-            <li>Обратный звонок</li>
+            <li onClick={openCallback}>Обратный звонок</li>
             <li onClick={openChain.bind(null, [
               'constructor',
               'order',

@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import {inject, observer} from 'mobx-react'
+import {inject} from 'mobx-react'
 
 import Svg from '../common/Svg';
 // ThankYou component;
 @inject('menuStore')
-@observer
 class ThankYou extends Component {
   static propTypes = {};
 

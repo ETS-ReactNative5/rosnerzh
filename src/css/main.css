@@ -963,7 +963,7 @@ svg[disabled], .main-constructor svg[disabled] {
     font-size: 30px;
     font-weight: 700; }
 
-.main-constructor .ant-form-explain, .main-constructor .ant-form-split {
+.ant-form-explain, .ant-form-split {
   color: #ffffff !important; }
 
 .ant-input {
@@ -1001,6 +1001,24 @@ svg[disabled], .main-constructor svg[disabled] {
     transform: rotate(-90deg); }
     .main-thankyou .arrow > * {
       fill: #ffffff; }
+
+.callback .main-callback {
+  transform: translateY(0); }
+
+.main-callback {
+  cursor: default;
+  position: absolute;
+  bottom: 0;
+  right: 10vw;
+  left: 0;
+  background-color: #fe4365;
+  padding: 45px 68px;
+  padding-left: 80px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease-out; }
+  .main-callback .ant-form {
+    display: flex;
+    justify-content: space-between; }
 
 html body {
   font-family: "roboto", "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;

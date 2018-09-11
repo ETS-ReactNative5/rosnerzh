@@ -22,8 +22,8 @@
         color: #ffffff
         font-size: 30px
         font-weight: 700
-  .ant-form-explain, .ant-form-split
-    color: #ffffff!important
+.ant-form-explain, .ant-form-split
+  color: #ffffff!important
 .ant-input
   padding: 8px 11px 7px
   height: auto
@@ -59,3 +59,22 @@
       transform: rotate(-90deg)
       & > *
         fill: #ffffff
+// CALLBACK SECTION
+.callback
+  .main-callback
+    transform: translateY(0)
+.main
+  &-callback
+    cursor: default
+    position: absolute
+    bottom: 0
+    right: 10vw
+    left: 0
+    background-color: $accent
+    padding: 45px 68px
+    padding-left: 80px
+    transform: translateY(100%)
+    transition: $transformTrans
+    .ant-form
+      display: flex
+      justify-content: space-between

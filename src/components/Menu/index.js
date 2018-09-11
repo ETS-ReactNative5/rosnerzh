@@ -4,6 +4,7 @@ import {inject, observer} from 'mobx-react'
 import Nav from './Nav'
 import Constructor from '../constructor'
 import TY from './ThankYou';
+import Callback from './Callback';
 
 // Menu component;
 @inject('menuStore')
@@ -18,6 +19,7 @@ class Menu extends Component {
         <Constructor />
         <div className="main-menu__close" onClick={toggleMenu} />
         <TY />
+        <Callback />
       </section>
     )
   }

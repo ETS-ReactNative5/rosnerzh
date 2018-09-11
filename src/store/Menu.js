@@ -27,6 +27,10 @@ class MenuStore {
   openTY = () => {
     this.state = 'thank-you'
   }
+  @action('open-call-back')
+  openCallback = () => {
+    this.state = this.state === 'callback'? 'main': 'callback'
+  }
 
   @action('open-order')
   openOrder = () => {
