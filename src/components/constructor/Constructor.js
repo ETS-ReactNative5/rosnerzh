@@ -32,6 +32,11 @@ class Layout extends Component {
     this.setState(({collapsed}) => ({collapsed: collapsed !== 'form' ? 'form' : null}))
   collapseBoth = () => this.setState(() => ({collapsed: false}))
 
+  componentDidMount() {
+    const {limits, data, fetch} = this.props.constStore
+    if(!limits || !data) fetch()
+  }
+
   render() {
     const {
       type,

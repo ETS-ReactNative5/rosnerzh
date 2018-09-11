@@ -1,8 +1,12 @@
-import React from 'react'
 import {observable, action, computed} from 'mobx'
 import {desc} from './DescriptionData';
+import axios from 'axios';
+
+import {api_limits, api_data} from '../settings/conf';
 
 class Constructor {
+
+
   @observable width = 500
   @observable height = 800
   @observable minWidth = 400 // mType: 400, pType: 400, fType: 400,gType: , ladder: 400
@@ -17,6 +21,8 @@ class Constructor {
   @observable rail = false
   @observable gate = false
   @observable rack = false
+  @observable data = null
+  @observable limits = null
 
   @action('set-width')
   setWidth = value => {
@@ -47,8 +53,23 @@ class Constructor {
   setRack = () => {
     this.rack = !this.rack
   }
+  @action('fetch')
+  fetch = () => {
+    if(!this.limits) this.fetchLimits()
+    if(!this.data) this.fetchData()
+    }
+  @action('fetch-limits')
+  fetchLimits = async () =>
+    await axios(api_limits)
+      .then(({data}) => this.limits = data)
+  @action('fetch-data')
+  fetchData = async () =>
+    await axios(api_data)
+      .then(({data}) => this.data = data)
+
   @action('set-type')
   setType = value => {
+    const limits = this.limits || fallbackLimits
     this.maxWidth = limits[value].width.max
     this.minWidth = limits[value].width.min
     this.maxHeight = limits[value].height.max
@@ -105,6 +126,9 @@ class Constructor {
   }
   @computed
   get price() {
+    const data = this.data || fallbackData
+    console.log(" LOG ___ data ", data )
+    console.log(" LOG ___ data.type ", data.type[this.type] )
     let price = data.type[this.type]
     price *= data.rail[+this.rail]
     price *= data.width[+this.width]
@@ -150,7 +174,7 @@ const constructor = new Constructor()
 export default constructor
 export {Constructor}
 
-const limits = {
+const fallbackLimits = {
   mType: {
     width: {
       min: 400,
@@ -198,15 +222,15 @@ const limits = {
     },
     height: {
       min: 500,
-      max: 1200,
+      max: 3200,
     },
   },
 }
 
-const data = {
+const fallbackData = {
   type: {
     //	Базовые цены на вид сушилки
-    ladder: 5350, //	Лесенка
+    ladder: 125350, //	Лесенка
     mType: 1750, //	Буква М
     pType: 1190, //	Буква П
     gType: 3190, //	Гусли
