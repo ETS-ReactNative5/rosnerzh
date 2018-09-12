@@ -1070,7 +1070,8 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
     z-index: -1; }
 
 .preview {
@@ -1108,7 +1109,8 @@ header {
     .preview__constructor main {
       min-height: 380px;
       background: url("../img/preview_bg.jpg");
-      background-size: cover; }
+      background-size: cover;
+      background-position: center; }
 
 .benefits {
   padding: 140px calc((100vw - 1100px) / 2) 50px; }
@@ -1235,3 +1237,20 @@ body::-webkit-scrollbar-thumb {
 
 .ant-popover-inner-content {
   padding: 6px 12px; }
+
+@media (max-width: 1024px) {
+  .grid {
+    padding: 0 40px; }
+  .preview__legend > div {
+    padding: 20px; }
+  .benefits {
+    padding: 140px calc((100vw - 768px) / 2) 50px; }
+  .footer {
+    padding: 100px calc((100vw - 768px) / 2) 400px; }
+  .preview__constructor {
+    flex: 50% 0 0; }
+  .preview__legend .rz_btn {
+    margin-right: 50px; }
+  .footer__main {
+    width: 100%;
+    right: auto; } }

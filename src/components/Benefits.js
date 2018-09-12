@@ -36,6 +36,7 @@ class Benefits extends Component {
             offsetYMin={-20}
             slowerScrollRate
             tag="figure"
+            disabled={isMobile}
           >
             <legend>
               Наша компания производит водянные и электрические полотенцесушители из нержавеющей

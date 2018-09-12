@@ -1,25 +1,3 @@
-$accent: #fe4365
-$green: #96BBAA
-$light: #D6D6BF
-$font: #323232
-$figcaptionTrans:  transform .2s ease-out, opacity .2s ease-out
-$transformTrans: transform .4s ease-out
-
-$roboto: 'roboto', serif
-$defaultFont: "roboto", "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif
-
-$sidePadding: calc((100vw - 1100px) / 2)
-
-@import _reset
-@import _humburger
-@import _logo
-@import _svg
-@import _button
-@import _sectionGrid
-@import _mainMenu
-@import _constructor
-@import _loading
-@import _order
 
 html body
   font-family: $defaultFont
@@ -69,7 +47,8 @@ header
     position: absolute
     top: 0
     left: 0
-    width: 100%
+    min-width: 100%
+    min-height: 100%
     z-index: -1
 // ________  C O N S T R U C T O R   P R E V I E W
 .preview
@@ -108,6 +87,7 @@ header
       min-height: 380px
       background: url("../img/preview_bg.jpg")
       background-size: cover
+      background-position: center
 // ________  B E N E F I T S
 .benefits
   padding: 140px $sidePadding 50px
