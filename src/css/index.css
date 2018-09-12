@@ -171,7 +171,7 @@ label {
     font-family: "roboto", serif;
     font-weight: 700;
     color: #fe4365;
-    font-size: 42px;
+    font-size: 4.2rem;
     line-height: 1;
     transition: color .65s; }
     .logo span:first-child {
@@ -288,7 +288,7 @@ svg[disabled], .main-constructor svg[disabled] {
   margin-left: 21px;
   background-color: #fe4365;
   border: none;
-  font-size: 24px;
+  font-size: 2.4rem;
   height: 42px;
   width: 17px;
   transition: width 170ms ease-in-out; }
@@ -339,7 +339,7 @@ svg[disabled], .main-constructor svg[disabled] {
   justify-content: center;
   padding: 140px calc((100vw - 1100px) / 2); }
   .grid p {
-    font-size: 18px;
+    font-size: 1.8rem;
     line-height: 28px;
     font-weight: 400; }
   .grid__item {
@@ -395,6 +395,8 @@ svg[disabled], .main-constructor svg[disabled] {
         flex: 48% 0 0; }
 
 .main-menu {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -413,7 +415,7 @@ svg[disabled], .main-constructor svg[disabled] {
       flex: 50% 0 0;
       color: #ffffff;
       padding: 15px 0;
-      font-size: 18px;
+      font-size: 1.8rem;
       font-weight: 500;
       display: flex;
       align-items: center; }
@@ -427,7 +429,7 @@ svg[disabled], .main-constructor svg[disabled] {
     align-items: center;
     color: #ffffff;
     text-transform: uppercase;
-    font-size: 90px;
+    font-size: 9rem;
     font-weight: 700;
     margin-bottom: 0;
     line-height: 1.25;
@@ -461,13 +463,13 @@ svg[disabled], .main-constructor svg[disabled] {
     .main-menu__header li {
       cursor: pointer;
       list-style: none;
-      font-size: 18px;
+      font-size: 1.8rem;
       text-transform: none;
       font-weight: 500; }
     .main-menu__header li + li {
       margin-top: 18px; }
   .main-menu > hr {
-    margin: 20px 0 30px; }
+    margin: auto 0 30px; }
   .main-menu hr {
     height: 2px;
     border: none;
@@ -527,12 +529,14 @@ svg[disabled], .main-constructor svg[disabled] {
     display: flex;
     justify-content: space-around; }
   .main-constructor__layout {
+    display: flex;
+    align-items: center;
     position: relative;
     overflow: hidden;
     height: 100%; }
   .main-constructor figcaption {
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     text-transform: uppercase; }
   .main-constructor__settings {
     flex: 25% 0 0;
@@ -698,7 +702,7 @@ svg[disabled], .main-constructor svg[disabled] {
       background-color: #fff;
       text-align: left;
       padding: 20px;
-      font-size: 14px;
+      font-size: 1.4rem;
       line-height: 1.5;
       font-weight: 400; }
       .main-constructor__image--desc-table p {
@@ -724,7 +728,7 @@ svg[disabled], .main-constructor svg[disabled] {
       bottom: 0;
       left: 0;
       color: #fe4365;
-      font-size: 2rem;
+      font-size: 3.5rem;
       line-height: 1;
       cursor: pointer;
       background-color: #ffffff;
@@ -790,7 +794,7 @@ svg[disabled], .main-constructor svg[disabled] {
     display: flex;
     align-items: center; }
     .main-constructor__price span {
-      font-size: 30px;
+      font-size: 3rem;
       font-weight: 700; }
   .main-constructor__arrow--order, .main-constructor__arrow--back, .main-constructor__arrow--main {
     width: 80px;
@@ -812,6 +816,10 @@ svg[disabled], .main-constructor svg[disabled] {
     .main-constructor__arrow--order > * {
       fill: #fe4365; }
   .main-constructor__gate-input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
     max-width: 150px;
     margin: 0 auto; }
   .main-constructor .input-range__track--active, .main-constructor .input-range__slider {
@@ -960,7 +968,7 @@ svg[disabled], .main-constructor svg[disabled] {
     padding-top: 15px; }
   .main-constructor__order--price span {
     color: #ffffff;
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: 700; }
 
 .ant-form-explain, .ant-form-split {
@@ -1020,9 +1028,12 @@ svg[disabled], .main-constructor svg[disabled] {
     display: flex;
     justify-content: space-between; }
 
+html {
+  font-size: 10px; }
+
 html body {
   font-family: "roboto", "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #323232; }
+  collor: #323232; }
 
 body {
   overflow: hidden; }
@@ -1031,7 +1042,7 @@ body {
   body h1, body h2, body h3, body h4, body h5, body p, body span, body legend {
     color: #323232; }
   body h2 {
-    font-size: 28.5px;
+    font-size: 2.85rem;
     line-height: 57.5px;
     font-weight: 700;
     text-transform: uppercase; }
@@ -1053,7 +1064,7 @@ header {
   header h1 {
     display: flex;
     justify-content: center;
-    font-size: 38px;
+    font-size: 3.8rem;
     font-weight: 700;
     line-height: 76px;
     color: #ffffff;
@@ -1063,7 +1074,7 @@ header {
   header p {
     color: #ffffff;
     font-family: 'proxima', serif;
-    font-size: 20.5px;
+    font-size: 2.05rem;
     line-height: 32px;
     margin-bottom: 0; }
   header video {
@@ -1089,7 +1100,7 @@ header {
     .preview__legend h2 {
       margin-bottom: 30px; }
     .preview__legend p {
-      font-size: 24px;
+      font-size: 2.4rem;
       line-height: 36px;
       font-weight: 400; }
     .preview__legend .rz_btn {
@@ -1145,7 +1156,7 @@ header {
     .benefits__legend legend {
       padding: 60px 80px;
       background-color: #fff;
-      font-size: 24px;
+      font-size: 2.4rem;
       line-height: 36px;
       font-weight: 400; }
 
@@ -1193,7 +1204,7 @@ header {
     top: 400px;
     right: 60px; }
     .footer__main p {
-      font-size: 18px;
+      font-size: 1.8rem;
       line-height: 28px;
       font-weight: 500; }
     .footer__main ul {
@@ -1239,10 +1250,16 @@ body::-webkit-scrollbar-thumb {
   padding: 6px 12px; }
 
 @media (max-width: 1024px) {
+  html {
+    font-size: 8px; }
   .grid {
     padding: 0 40px; }
+  .grid__item--size::before {
+    left: 0;
+    bottom: 0; }
   .preview__legend > div {
-    padding: 20px; }
+    padding: 20px;
+    padding-left: 50px; }
   .benefits {
     padding: 140px calc((100vw - 768px) / 2) 50px; }
   .footer {
@@ -1253,4 +1270,75 @@ body::-webkit-scrollbar-thumb {
     margin-right: 50px; }
   .footer__main {
     width: 100%;
-    right: auto; } }
+    right: auto; }
+  .benefits__legend {
+    right: 0;
+    left: 0;
+    margin: 0 auto; }
+  .grid__item--energy, .grid__item--design, .grid__item--size {
+    padding: 40px 34px 50px; }
+  .main-menu__header ul {
+    opacity: 1;
+    flex-grow: 1; }
+  .main-constructor__image--preview {
+    height: 280px; }
+  .main-constructor__wrap {
+    flex-direction: column;
+    justify-content: flex-start; }
+  .main-constructor__settings {
+    padding-top: 0;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    order: 2; }
+    .main-constructor__settings:last-child {
+      padding-top: 50px;
+      padding-bottom: 30px; }
+  .icons-form__set {
+    margin-top: 0; }
+  .main-constructor__price {
+    bottom: 0;
+    left: 0;
+    right: 0; }
+    .main-constructor__price span {
+      margin: 0 auto; }
+  .main-menu, .main-constructor {
+    right: 0; }
+  .main-menu__close {
+    display: none; }
+  .main-constructor__settings--icons {
+    order: 1; }
+  .icons-form__set {
+    order: 0; }
+  .main-constructor__settings--wrap:first-child {
+    order: 0; }
+  .main-constructor__settings--wrap:nth-child(1) {
+    order: 2; }
+  .main-constructor__settings--wrap:last-child {
+    order: 1; }
+  .main-constructor__arrow--order {
+    bottom: 0;
+    right: 0;
+    z-index: 5; }
+  .main-constructor__image {
+    padding: 0 80px; }
+  .main-constructor__colors {
+    top: 50px;
+    right: calc(100% + 50px);
+    left: auto;
+    flex-direction: column; }
+  .main-constructor__color {
+    margin-bottom: 10px; }
+  .main-constructor__image--range {
+    padding-bottom: 0; }
+  .main-constructor__image--desc {
+    z-index: 2; }
+  .main-constructor__image--wrap {
+    flex-grow: 0;
+    flex: 50% 0 0; }
+  .main-constructor__settings--wrap:not([disabled]) figcaption {
+    transform: translateY(-5px);
+    opacity: 1; }
+  .main-constructor__image .rangeslider-horizontal {
+    margin-bottom: 15px; } }

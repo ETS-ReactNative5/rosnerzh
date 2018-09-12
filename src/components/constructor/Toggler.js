@@ -12,7 +12,7 @@ class Toggler extends Component {
   }
 
   render() {
-    const {svgId, handler, caption, disabled} = this.props
+    const {svgId, handler, caption, disabled, children = null} = this.props
     return (
       <figure
         className="main-constructor__settings--wrap"
@@ -21,6 +21,7 @@ class Toggler extends Component {
       >
         <Svg id={svgId} disabled={disabled} />
         <figcaption>{caption}</figcaption>
+        {children}
       </figure>
     )
   }

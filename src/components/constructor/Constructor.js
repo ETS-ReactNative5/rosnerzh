@@ -19,6 +19,7 @@ import {
   formIconsMType,
 } from '../../settings/conf'
 // Layout component;
+@inject('menuStore')
 @inject('constStore')
 @observer
 class Layout extends Component {
@@ -34,7 +35,7 @@ class Layout extends Component {
 
   componentDidMount() {
     const {limits, data, fetch} = this.props.constStore
-    if(!limits || !data) fetch()
+    if (!limits || !data) fetch()
   }
 
   render() {
@@ -58,8 +59,9 @@ class Layout extends Component {
       gateLength,
       setGateLength,
     } = this.props.constStore
-    // console.log(' configuration __ ', this.props.constStore.title)
-    const iconsList = type === 'mType' ? formIconsMType: type ==='pType'? formIconsLType : formIcons
+    const {isMobile} = this.props.menuStore
+    const iconsList =
+      type === 'mType' ? formIconsMType : type === 'pType' ? formIconsLType : formIcons
     return (
       <div className="main-constructor__wrap">
         <div className="main-constructor__settings">
@@ -79,41 +81,49 @@ class Layout extends Component {
             svgId={gate ? 'ladderGate' : 'ladder'}
             handler={setGate}
             disabled={energy || type !== 'ladder'}
-          />
-          <Motion
-            style={{
-              y: spring(!gate ? -10 : 0, transformPreset),
-              opacity: spring(!gate ? 0 : 1, opacityFastPreset),
-            }}
           >
-            {({y, opacity}) => (
-              <Popover visible={gate} placement="bottom" content="Длина разъема">
-                <div
-                  className="main-constructor__gate-input"
-                  style={{transform: `translateY(${y}px)`, opacity}}
+            <Motion
+              style={{
+                y: spring(!gate ? -10 : 0, transformPreset),
+                opacity: spring(!gate ? 0 : 1, opacityFastPreset),
+              }}
+            >
+              {({y, opacity}) => (
+                <Popover
+                  placement={isMobile ? 'leftTop' : 'bottom'}
+                  content="Длина разъема"
                 >
-                  <InputRange
-                    value={gateLength}
-                    min={300}
-                    max={600}
-                    onChange={setGateLength}
-                    step={100}
-                    tooltip={false}
-                  />
-                  <div className="main-constructor__image--gate-tooltip">
-                    {`${gateLength} мм`}
+                  <div
+                    onClick={e => e.stopPropagation()}
+                    className="main-constructor__gate-input"
+                    style={{
+                      transform: `translateY(${y}px)`,
+                      opacity,
+                      visibility: opacity === 0 ? 'hidden' : 'visible',
+                    }}
+                  >
+                    <InputRange
+                      value={gateLength}
+                      min={300}
+                      max={600}
+                      onChange={setGateLength}
+                      step={100}
+                      tooltip={false}
+                    />
+                    <div className="main-constructor__image--gate-tooltip">
+                      {`${gateLength} мм`}
+                    </div>
                   </div>
-                </div>
-              </Popover>
-            )}
-          </Motion>
+                </Popover>
+              )}
+            </Motion>
+          </Toggler>
         </div>
         <div className="main-constructor__image">
           <div className="main-constructor__image--wrap">
             <Energy onClick={this.collapseBoth} />
             <Popover placement="rightBottom" content="Ширина">
               <div>
-                <div className="main-constructor__image--width-tooltip">{`${width} мм`}</div>
                 <InputRange
                   value={width}
                   max={maxWidth}

@@ -13,7 +13,7 @@ class Energy extends Component {
     onClick: PropTypes.func.isRequired,
   }
   render() {
-    const {energy, setEnergy} = this.props.constStore
+    const {energy, setEnergy, width} = this.props.constStore
     return (
       <div className="main-constructor__energy">
         <Popover placement="right" content="Водянной">
@@ -27,6 +27,7 @@ class Energy extends Component {
             <Svg id="tint" />
           </div>
         </Popover>
+        <div className="main-constructor__image--width-tooltip">{`${width} мм`}</div>
         <Popover placement="right" content="Электрический">
           <div
             className={energy ? 'active' : ''}

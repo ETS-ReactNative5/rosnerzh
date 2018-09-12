@@ -30,13 +30,14 @@ $svgSize: 100px
     display: flex
     justify-content: space-around
   &__layout
+    display: flex
+    align-items: center
     position: relative
-    // display: flex
     overflow: hidden
     height: 100%
   figcaption
     font-weight: 700
-    font-size: 0.8rem
+    font-size: 1.1rem
     text-transform: uppercase
   &__settings
     flex: 25% 0 0
@@ -205,7 +206,7 @@ $svgSize: 100px
       background-color: #fff
       text-align: left
       padding: 20px
-      font-size: 14px
+      font-size: 1.4rem
       line-height: 1.5
       font-weight: 400
       &-table
@@ -232,7 +233,7 @@ $svgSize: 100px
       bottom: 0
       left: 0
       color: $accent
-      font-size: 2rem
+      font-size: 3.5rem
       line-height: 1
       cursor: pointer
       background-color: #ffffff
@@ -298,7 +299,7 @@ $svgSize: 100px
     display: flex
     align-items: center
     span
-      font-size: 30px
+      font-size: 3rem
       font-weight: 700
   &__arrow
     &--order, &--back, &--main
@@ -321,6 +322,10 @@ $svgSize: 100px
       & > *
         fill: $accent
   &__gate-input
+    position: absolute
+    left: 0
+    right: 0
+    top: 100%
     max-width: $svgSize * 1.5
     margin: 0 auto
   .input-range__track--active, .input-range__slider
