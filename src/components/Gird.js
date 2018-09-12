@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {inject} from 'mobx-react'
+import {inject, observer} from 'mobx-react'
 import {Parallax} from 'react-scroll-parallax'
 
 import Button from './common/Button'
@@ -10,8 +10,10 @@ import srcSize from '../img/size_bg.jpg'
 
 // Gird component;
 @inject('menuStore')
+@observer
 class Gird extends Component {
   render() {
+    const {isMobile} = this.props.menuStore
     return (
       <section className="grid">
         <div className="grid__item grid__item--energy">
@@ -35,6 +37,7 @@ class Gird extends Component {
           offsetYMin={-20}
           slowerScrollRate
           tag="div"
+          disabled={isMobile}
         >
           <img src={srcEnergy} alt="" />
         </Parallax>
@@ -78,6 +81,7 @@ class Gird extends Component {
           offsetXMin={-5}
           slowerScrollRate
           tag="div"
+          disabled={isMobile}
         >
           <img src={srcSize} alt="" />
         </Parallax>

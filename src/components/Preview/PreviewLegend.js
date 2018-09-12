@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {inject} from 'mobx-react'
+import {inject, observer} from 'mobx-react'
 import {Parallax} from 'react-scroll-parallax'
 
 import Button from '../common/Button'
@@ -7,8 +7,10 @@ import Button from '../common/Button'
 //TODO: Replace this desc to benefits section
 // PreviewLegend component;
 @inject('menuStore')
+@observer
 class PreviewLegend extends Component {
   render() {
+    const {isMobile} = this.props.menuStore
     return (
       <Parallax
         className="preview__legend"
@@ -16,6 +18,7 @@ class PreviewLegend extends Component {
         offsetYMin={0}
         slowerScrollRate
         tag="figure"
+        disabled={isMobile}
       >
         <legend>
           <h2>Конструктор</h2>

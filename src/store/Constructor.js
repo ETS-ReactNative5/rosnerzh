@@ -127,8 +127,6 @@ class Constructor {
   @computed
   get price() {
     const data = this.data || fallbackData
-    console.log(" LOG ___ data ", data )
-    console.log(" LOG ___ data.type ", data.type[this.type] )
     let price = data.type[this.type]
     price *= data.rail[+this.rail]
     price *= data.width[+this.width]

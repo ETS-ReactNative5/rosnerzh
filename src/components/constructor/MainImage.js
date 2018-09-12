@@ -63,7 +63,6 @@ class MainImage extends Component {
   render() {
     const {srcCache, loading} = this.state
     const {imgName, imgPath} = this.props.constStore
-    console.log(' LOG ___ imgSrc ', imgPath, imgName)
     const src =
       imgPath + (srcCache[imgPath + imgName] === 'no-image' ? 'main.jpg' : imgName)
     if (loading)

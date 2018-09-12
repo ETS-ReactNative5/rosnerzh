@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {inject, observer} from 'mobx-react'
 import {Parallax} from 'react-scroll-parallax'
 
 import Video from './Video'
@@ -8,15 +9,18 @@ const title = 'Полотенцесушитель в вашу ванну'
   .map(char => (char === ' ' ? '\u00A0' : char))
 
 // Header component;
+@inject('menuStore')
+@observer
 class Header extends Component {
   videoSrc = {
     full: 'video/header-full.mp4',
     mob: 'video/header-mob.mp4',
   }
 
-  _getVideoSrc = () => (this.props.isMobile ? this.videoSrc.mob : this.videoSrc.full)
+  _getVideoSrc = () => (this.props.menuStore.isMobile ? this.videoSrc.mob : this.videoSrc.full)
 
   render() {
+    const {isMobile} = this.props.menuStore
     return (
       <header>
         <Video src={this._getVideoSrc()} />
@@ -26,6 +30,7 @@ class Header extends Component {
               key={`copy-${i}`}
               offsetXMax={`${4 * (i - 15)}px`}
               offsetXMin={`${-4 * (i - 15)}px`}
+              disabled={isMobile}
             >
               {char}
             </Parallax>

@@ -14,7 +14,6 @@ class App extends Component {
       <MobxProvider menuStore={menuStore} constStore={constStore}>
         <ParallaxProvider>
           <Root />
-          <DevTools />
         </ParallaxProvider>
       </MobxProvider>
     )

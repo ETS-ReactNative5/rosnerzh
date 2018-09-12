@@ -30,7 +30,7 @@ class Root extends Component {
             boxShadow: '0 0 0 50vmax rgba(0,0,0,.7)',
           }}
         >
-          <Header isMobile={false} />
+          <Header/>
           <Preview />
           <Benefits />
           <Grid />

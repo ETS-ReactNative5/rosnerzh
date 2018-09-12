@@ -1,11 +1,13 @@
 import {observable, action, computed} from 'mobx'
+import {isMobile} from 'react-device-detect'
 
 class MenuStore {
-  @observable
-  state       // close | constructor | main | order
+  @observable state // close | constructor | main | order
+  @observable isMobile = true
 
   constructor() {
     this.state = 'close'
+    this.isMobile = isMobile
   }
   @action('toggle-state')
   toggleMenu = () => {
@@ -29,7 +31,7 @@ class MenuStore {
   }
   @action('open-call-back')
   openCallback = () => {
-    this.state = this.state === 'callback'? 'main': 'callback'
+    this.state = this.state === 'callback' ? 'main' : 'callback'
   }
 
   @action('open-order')
@@ -42,10 +44,10 @@ class MenuStore {
     this.state = chain[0]
     setTimeout(() => {
       this.state = chain[1]
-    }, 900);
+    }, 900)
     setTimeout(() => {
       this.state = chain[2]
-    }, 1550);
+    }, 1550)
   }
 
   @computed
