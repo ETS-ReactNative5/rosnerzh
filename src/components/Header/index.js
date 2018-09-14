@@ -8,7 +8,7 @@ const splitByChars = str => str.split('').map(char => (char === ' ' ? '\u00A0' :
 
 const mobTitle = [
   ...splitByChars('Полотенцесушитель'),
-  <br />,
+  <br key={0}/>,
   ...splitByChars('в вашу ванну'),
 ]
 

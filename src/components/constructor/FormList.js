@@ -5,9 +5,10 @@ import PropTypes from 'prop-types'
 
 import Svg from '../common/Svg'
 import Icon from './Icon'
-import {opacityFastPreset, transformPreset} from '../../settings/conf'
+import {opacityFastPreset, transformPreset, animationRadius} from '../../settings/conf'
 
 // FormList component;
+@inject('menuStore')
 @inject('constStore')
 @observer
 class FormList extends Component {
@@ -28,6 +29,9 @@ class FormList extends Component {
 
   _getStaggedStyles = prevStyles => {
     const {isCollapsed} = this.props
+    const radius = this.props.menuStore.isMobile
+      ? animationRadius.mobile
+      : animationRadius.desktop
     const result = prevStyles.map((_, i) => {
       if (!isCollapsed)
         return i === 0
@@ -41,7 +45,7 @@ class FormList extends Component {
             }
       return i === 0
         ? {
-            unit: spring(107, transformPreset),
+            unit: spring(radius, transformPreset),
             opacity: spring(1, transformPreset),
           }
         : {
@@ -61,7 +65,7 @@ class FormList extends Component {
     const {form, setForm} = this.props.constStore
     return (
       <figure className="main-constructor__settings--icons icons-form__set">
-        <figure onClick={disabled? ()=>{}: collapse} disabled={disabled}>
+        <figure onClick={disabled ? () => {} : collapse} disabled={disabled}>
           <Motion style={figuresStyle}>
             {({s, opacity}) => (
               <div style={{transform: `scale(${s})`, filter: `saturate(${opacity})`}}>
@@ -72,7 +76,7 @@ class FormList extends Component {
           <figcaption>{icons[form].figcaption}</figcaption>
         </figure>
         <StaggeredMotion
-          key={icons.length}  // Wootaa faakk iz goin aaan ??! - Froce update
+          key={icons.length} // Wootaa faakk iz goin aaan ??! - Froce update
           defaultStyles={[...new Array(icons.length)].map(() => ({unit: 0, opacity: 0}))}
           styles={this._getStaggedStyles}
         >
@@ -82,7 +86,7 @@ class FormList extends Component {
                 <Icon
                   key={i}
                   entity={icons[i]}
-                  className={i === form? 'active': ''}
+                  className={i === form ? 'active' : ''}
                   style={this._getComuptedStyles(styles, i)}
                   onClick={() => {
                     setForm(i)

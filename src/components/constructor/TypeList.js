@@ -5,9 +5,15 @@ import PropTypes from 'prop-types'
 
 import Svg from '../common/Svg'
 import Icon from './Icon'
-import {opacityFastPreset, transformPreset, typeIcons as icons} from '../../settings/conf'
+import {
+  opacityFastPreset,
+  transformPreset,
+  typeIcons as icons,
+  animationRadius,
+} from '../../settings/conf'
 
 // TypeList component;
+@inject('menuStore')
 @inject('constStore')
 @observer
 class TypeList extends Component {
@@ -27,6 +33,9 @@ class TypeList extends Component {
 
   _getStaggedStyles = prevStyles => {
     const {isCollapsed} = this.props
+    const radius = this.props.menuStore.isMobile
+      ? animationRadius.mobile
+      : animationRadius.desktop
     const result = prevStyles.map((_, i) => {
       if (!isCollapsed)
         return i === 0
@@ -40,7 +49,7 @@ class TypeList extends Component {
             }
       return i === 0
         ? {
-            unit: spring(107, transformPreset),
+            unit: spring(radius, transformPreset),
             opacity: spring(1, transformPreset),
           }
         : {
@@ -60,11 +69,11 @@ class TypeList extends Component {
     const {type, setType} = this.props.constStore
     return (
       <figure className="main-constructor__settings--icons">
-        <figure onClick={disabled? ()=>{}: collapse} disabled={disabled}>
+        <figure onClick={disabled ? () => {} : collapse} disabled={disabled}>
           <Motion style={figuresStyle}>
             {({s, opacity}) => (
               <div style={{transform: `scale(${s})`, filter: `saturate(${opacity})`}}>
-                <Svg id={type} disabled={disabled}/>
+                <Svg id={type} disabled={disabled} />
               </div>
             )}
           </Motion>
@@ -79,7 +88,7 @@ class TypeList extends Component {
               {iconsStyle.map((styles, i) => (
                 <Icon
                   key={i}
-                  className={icons[i].id === type? 'active': ''}
+                  className={icons[i].id === type ? 'active' : ''}
                   entity={icons[i]}
                   style={this._getComuptedStyles(styles, i)}
                   onClick={() => {
