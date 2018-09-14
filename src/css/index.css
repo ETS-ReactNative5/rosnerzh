@@ -1362,3 +1362,9 @@ body::-webkit-scrollbar-thumb {
     min-height: 50vh; }
   .main-menu__wrap.order .main-constructor__image--wrap {
     flex: 100%; } }
+
+@media (max-width: 768px) {
+  .grid__item--design-img::before {
+    width: 0; }
+  .preview__constructor main {
+    min-width: 100%; } }
