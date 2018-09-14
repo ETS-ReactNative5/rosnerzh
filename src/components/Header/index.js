@@ -4,9 +4,15 @@ import {Parallax} from 'react-scroll-parallax'
 
 import Video from './Video'
 
-const title = 'Полотенцесушитель в вашу ванну'
-  .split('')
-  .map(char => (char === ' ' ? '\u00A0' : char))
+const splitByChars = str => str.split('').map(char => (char === ' ' ? '\u00A0' : char))
+
+const mobTitle = [
+  ...splitByChars('Полотенцесушитель'),
+  <br />,
+  ...splitByChars('в вашу ванну'),
+]
+
+const title = splitByChars('Полотенцесушитель в вашу ванну')
 
 // Header component;
 @inject('menuStore')
@@ -17,7 +23,8 @@ class Header extends Component {
     mob: 'video/header-mob.mp4',
   }
 
-  _getVideoSrc = () => (this.props.menuStore.isMobile ? this.videoSrc.mob : this.videoSrc.full)
+  _getVideoSrc = () =>
+    this.props.menuStore.isMobile ? this.videoSrc.mob : this.videoSrc.full
 
   render() {
     const {isMobile} = this.props.menuStore
@@ -25,16 +32,18 @@ class Header extends Component {
       <header>
         <Video src={this._getVideoSrc()} />
         <h1>
-          {title.map((char, i) => (
-            <Parallax
-              key={`copy-${i}`}
-              offsetXMax={`${4 * (i - 15)}px`}
-              offsetXMin={`${-4 * (i - 15)}px`}
-              disabled={isMobile}
-            >
-              {char}
-            </Parallax>
-          ))}
+          {isMobile
+            ? mobTitle
+            : title.map((char, i) => (
+                <Parallax
+                  key={`copy-${i}`}
+                  offsetXMax={`${4 * (i - 15)}px`}
+                  offsetXMin={`${-4 * (i - 15)}px`}
+                  disabled={isMobile}
+                >
+                  {char}
+                </Parallax>
+              ))}
         </h1>
         <p>Мы поможем найти идеальную сушку для вас</p>
         <p>большой выбор Любой формы, цвета и размера</p>

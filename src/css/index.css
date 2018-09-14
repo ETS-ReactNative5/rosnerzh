@@ -118,13 +118,13 @@ label {
       transform: translate(-50%, -50%) rotate(135deg);
       transition-delay: .2s; }
       .menu-toggler.open .menu-toggler__inner > span:nth-child(1) {
-        transform: translateY(0.425rem);
+        transform: translateY(6.55px);
         transition-delay: 0s, .2s; }
       .menu-toggler.open .menu-toggler__inner > span:nth-child(2) {
         transition-delay: .15s;
         transform: rotate(90deg); }
       .menu-toggler.open .menu-toggler__inner > span:nth-child(3) {
-        transform: translateY(-0.59375rem);
+        transform: translateY(-5.9375px);
         transition-delay: 0s, .15s;
         opacity: 0; }
     .menu-toggler.open:hover .menu-toggler__inner > span:nth-child(1) {
@@ -213,10 +213,10 @@ svg {
   .arrowRight > * {
     fill: #ffffff; }
 
-.towelDryer, .ladder, .fType {
+.towelDryer, .ladder, .fType, .gType {
   width: 36px;
   height: 42px; }
-  .towelDryer > *, .ladder > *, .fType > * {
+  .towelDryer > *, .ladder > *, .fType > *, .gType > * {
     fill: #ffffff;
     stroke: #ffffff; }
 
@@ -288,7 +288,7 @@ svg[disabled], .main-constructor svg[disabled] {
   margin-left: 21px;
   background-color: #fe4365;
   border: none;
-  font-size: 2.4rem;
+  font-size: 24px;
   height: 42px;
   width: 17px;
   transition: width 170ms ease-in-out; }
@@ -1257,6 +1257,9 @@ body::-webkit-scrollbar-thumb {
   .grid__item--size::before {
     left: 0;
     bottom: 0; }
+  .preview__constructor hgroup {
+    padding-left: 25px;
+    padding-right: 25px; }
   .preview__legend > div {
     padding: 20px;
     padding-left: 50px; }
@@ -1363,8 +1366,51 @@ body::-webkit-scrollbar-thumb {
   .main-menu__wrap.order .main-constructor__image--wrap {
     flex: 100%; } }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  html {
+    font-size: 6px; }
   .grid__item--design-img::before {
     width: 0; }
   .preview__constructor main {
-    min-width: 100%; } }
+    min-width: 100%; }
+  .preview__constructor {
+    flex: 100% 0 0; }
+  .preview__legend {
+    order: 1; }
+  .grid {
+    padding-left: 20px;
+    padding-right: 30px; }
+    .grid__item {
+      flex: 100% 0 0; }
+  .footer__about > div, .footer__copy, .benefits__legend legend, .preview__legend > div, .preview__constructor hgroup {
+    padding-left: 10px;
+    padding-right: 10px; }
+  header h1 {
+    line-height: 35px;
+    margin-bottom: 30px; }
+  .logo {
+    width: 180px; }
+  .logo, .menu-toggler {
+    height: 50px; }
+  .preview__legend h2 {
+    margin-bottom: 0; }
+  .grid__item--energy, .grid__item--design, .grid__item--size {
+    padding: 10px 15px 45px; }
+  .grid__item--energy-img {
+    order: 0; }
+  .grid__item--energy {
+    order: 1; }
+  .grid__item--design-img {
+    order: 2; }
+  .grid__item--design {
+    order: 3; }
+  .grid__item--size-img {
+    order: 4; }
+  .grid__item--size {
+    order: 5; }
+  .grid__item--size::before {
+    top: -50px;
+    left: -20px; }
+  .grid__item--design::before {
+    left: -20px;
+    bottom: -300px; } }

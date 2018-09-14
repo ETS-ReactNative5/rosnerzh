@@ -13,7 +13,7 @@ class Constructor extends Component {
           <Svg id="ladder" />
           <Svg id="fType" />
           <Svg id="pType" />
-          <Svg id="mType" />
+          <Svg id="gType" />
         </hgroup>
         <main></main>
       </section>
