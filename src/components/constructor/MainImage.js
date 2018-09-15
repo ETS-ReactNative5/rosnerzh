@@ -16,6 +16,7 @@ class MainImage extends Component {
 
   _cacheImg = ({imgPath, imgName}) => {
     const src = imgPath + imgName
+    console.log(`${imageCDN}${src}` )
     axios
       .get(`${imageCDN}${src}`, {
         responseType: 'arraybuffer',

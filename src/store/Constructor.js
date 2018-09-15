@@ -105,9 +105,7 @@ class Constructor {
 
   @computed
   get imgPath() {
-    let path = '/img/'
-    path += `${this.type}/${this.form}/${+this.rack}${+this.rail}${+!this.energy && this.gate + 1}/`
-    return path
+    return `${this.type}/${this.form}/${+this.rack}${+this.rail}${+!this.energy && this.gate + 1}/`
   }
   @computed
   get imgName() {

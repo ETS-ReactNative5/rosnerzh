@@ -31,7 +31,7 @@ class Nav extends Component {
                     ? Math.max(w - progress / V, w + top)
                     : Math.min(w + progress / V, w + top)
                 window.scrollTo(0, r)
-                if (r != w + top) {
+                if (r !== w + top) {
                   requestAnimationFrame(step)
                 }
               }

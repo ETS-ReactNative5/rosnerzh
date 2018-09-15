@@ -55,12 +55,17 @@ export const typeIcons = [
   {id: 'ladder', figcaption: 'Лесенка'},
 ]
 
+const {
+  REACT_APP_API_PROTOCOL,
+  REACT_APP_API_DATA_HOST,
+  REACT_APP_API_LIMITS_HOST,
+  REACT_APP_API_DESC_HOST,
+  REACT_APP_IMG,
+} = process.env
 // Domain name with images
-// TODO: add to procces vars
-// export const imageCDN = process.env.REACT_APP_IMG
-export const imageCDN = 'http://localhost:3000/'
+export const imageCDN = `${REACT_APP_API_PROTOCOL}${REACT_APP_IMG}`
 
 //ENDPOINTS
-export const api_limits = 'http://api.localhost:5000/limits'
-export const api_data = 'http://api.localhost:5000/data'
-export const api_desc = 'http://api.localhost:5000/desc'
+export const api_data = `${REACT_APP_API_PROTOCOL}${REACT_APP_API_DATA_HOST}/data`
+export const api_limits = `${REACT_APP_API_PROTOCOL}${REACT_APP_API_LIMITS_HOST}/limits`
+export const api_desc = `${REACT_APP_API_PROTOCOL}${REACT_APP_API_DESC_HOST}/desc`
