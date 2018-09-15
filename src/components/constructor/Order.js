@@ -33,7 +33,6 @@ class Order extends Component {
           <FormItem>
             {getFieldDecorator('username', {
               rules: [{required: true, min: 3, message: 'Введите ваше имя'}],
-              initialValue: 'mail@yandex.ru',
             })(
               <Input
                 placeholder="Ваше имя"
@@ -44,7 +43,6 @@ class Order extends Component {
           <FormItem>
             {getFieldDecorator('phone', {
               rules: [{required: true, min: 11, message: 'Введите ваш телефон'}],
-              initialValue: 'mail@yandex.ru',
             })(
               <Input
                 placeholder="Ваш номер телефона"
@@ -55,7 +53,6 @@ class Order extends Component {
           <FormItem>
             {getFieldDecorator('email', {
               rules: [{type: 'email', required: true, message: 'Введите ваш e-mail'}],
-              initialValue: 'mail@yandex.ru',
             })(
               <Input
                 placeholder="Ваша e-mail"

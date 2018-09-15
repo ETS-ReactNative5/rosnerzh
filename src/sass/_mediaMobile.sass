@@ -2,6 +2,8 @@
 @media (max-width: 767px)//-xs
 	html
 		font-size: 6px
+	header p, .benefits__legend legend
+		line-height: 28px
 	.grid__item--design-img::before
 		width: 0
 	.preview__constructor main
@@ -9,6 +11,7 @@
 	.preview__constructor
 		flex: 100% 0 0
 	.preview__legend
+		padding-top: 50px
 		order: 1
 	.grid
 		padding-left: 20px
@@ -30,7 +33,7 @@
 	.preview__legend h2
 		margin-bottom: 0
 	.grid__item--energy, .grid__item--design, .grid__item--size
-		padding: 10px 15px 45px
+		padding: 40px 15px 65px
 	.grid__item--energy-img
 		order: 0
 	.grid__item--energy
@@ -72,10 +75,11 @@
 		font-size: 8rem
 	.main-constructor			// C O N S T R U C T O R
 		left: 0
-	.main-constructor__arrow--order, .main-constructor__arrow--back
+	.main-constructor__arrow--order, .main-constructor__arrow--back, .main-constructor__arrow--main
 		width: 50px
 		bottom: 0
 	.main-constructor__arrow--back
+		z-index: 5
 		right: auto
 		left: 10px
 		& > *
@@ -131,3 +135,14 @@
 		flex-wrap: wrap
 	.main-callback .ant-form
 		flex-direction: column
+	.main-constructor__image--desc
+		top: 10%
+		font-size: 1.2rem
+	.main-constructor__order  // O R D E R
+		padding-left: 5px
+		padding-right: 5px
+	.main-constructor__order--price
+		margin: 0 auto
+		order: 1
+	.main-constructor__order .ant-btn
+		width: 100%
