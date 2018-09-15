@@ -7,7 +7,7 @@ class MenuStore {
 
   constructor() {
     this.state = 'close'
-    // this.isMobile = isMobile
+    this.isMobile = isMobile
   }
   @action('toggle-state')
   toggleMenu = () => {

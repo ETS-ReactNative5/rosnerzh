@@ -1,8 +1,8 @@
 import {observable, action, computed} from 'mobx'
-import {desc} from './DescriptionData';
+import {desc as fallbackDesk} from './DescriptionData';
 import axios from 'axios';
 
-import {api_limits, api_data} from '../settings/conf';
+import {api_limits, api_data, api_desc} from '../settings/conf';
 
 class Constructor {
 
@@ -23,6 +23,7 @@ class Constructor {
   @observable rack = false
   @observable data = null
   @observable limits = null
+  @observable desc = null
 
   @action('set-width')
   setWidth = value => {
@@ -57,6 +58,7 @@ class Constructor {
   fetch = () => {
     if(!this.limits) this.fetchLimits()
     if(!this.data) this.fetchData()
+    if(!this.desc) this.fetchDesc()
     }
   @action('fetch-limits')
   fetchLimits = async () =>
@@ -66,6 +68,10 @@ class Constructor {
   fetchData = async () =>
     await axios(api_data)
       .then(({data}) => this.data = data)
+  @action('fetch-desc')
+  fetchDesc = async () =>
+    await axios(api_desc)
+      .then(({data}) => this.desc = data)
 
   @action('set-type')
   setType = value => {
@@ -142,21 +148,25 @@ class Constructor {
   }
   @computed
   get settings() {
+    const desc = this.desc || fallbackDesk
     if(this.energy) return desc.energy.settings
     return desc[this.type].settings
   }
   @computed
   get description() {
+    const desc = this.desc || fallbackDesk
     if(this.energy) return desc.energy.description
     return  desc[this.type].description
   }
   @computed
   get workDescription() {
+    const desc = this.desc || fallbackDesk
     if(this.energy) return desc.energy.workDescription
     return  desc[this.type].workDescription
   }
   @computed
   get properties() {
+    const desc = this.desc || fallbackDesk
     if(this.energy) return desc.energy.properties
     return  desc[this.type].properties
   }

@@ -14,6 +14,7 @@ class App extends Component {
       <MobxProvider menuStore={menuStore} constStore={constStore}>
         <ParallaxProvider>
           <Root />
+          {process.env.NODE_ENV === 'development' && <DevTools/>}
         </ParallaxProvider>
       </MobxProvider>
     )

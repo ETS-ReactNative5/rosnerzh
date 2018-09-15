@@ -63,3 +63,4 @@ export const imageCDN = 'http://localhost:3000/'
 //ENDPOINTS
 export const api_limits = 'http://api.localhost:5000/limits'
 export const api_data = 'http://api.localhost:5000/data'
+export const api_desc = 'http://api.localhost:5000/desc'
