@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {inject, observer} from 'mobx-react'
-import axios from 'axios'
+import axios from 'axios-jsonp-pro'
 import {imageCDN} from '../../settings/conf'
 
 import {noImg} from '../common/noImage'
@@ -16,7 +16,6 @@ class MainImage extends Component {
 
   _cacheImg = ({imgPath, imgName}) => {
     const src = imgPath + imgName
-    console.log(`${imageCDN}${src}` )
     axios
       .get(`${imageCDN}${src}`, {
         responseType: 'arraybuffer',

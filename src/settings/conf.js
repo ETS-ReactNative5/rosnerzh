@@ -55,17 +55,22 @@ export const typeIcons = [
   {id: 'ladder', figcaption: 'Лесенка'},
 ]
 
-const {
-  REACT_APP_API_PROTOCOL,
-  REACT_APP_API_DATA_HOST,
-  REACT_APP_API_LIMITS_HOST,
-  REACT_APP_API_DESC_HOST,
-  REACT_APP_IMG,
-} = process.env
+const { NODE_ENV } = process.env
+export let imageCDN, api_data, api_limits, api_desc, mailSender
+if(NODE_ENV === 'development') {
 // Domain name with images
-export const imageCDN = `${REACT_APP_API_PROTOCOL}${REACT_APP_IMG}`
+  imageCDN = 'http://localhost:3000/img/'
 
 //ENDPOINTS
-export const api_data = `${REACT_APP_API_PROTOCOL}${REACT_APP_API_DATA_HOST}/data`
-export const api_limits = `${REACT_APP_API_PROTOCOL}${REACT_APP_API_LIMITS_HOST}/limits`
-export const api_desc = `${REACT_APP_API_PROTOCOL}${REACT_APP_API_DESC_HOST}/desc`
+  mailSender = 'http://localhost:5000/send.php'
+  api_data = 'http://api.localhost:5000/data'
+  api_limits = 'http://api.localhost:5000/limits'
+  api_desc = 'http://api.localhost:5000/desc'
+} else {
+  mailSender = 'http://rosnerzh/send.php'
+  imageCDN = 'http://rosnerzh.ru/img/'
+  api_data = 'http://api.rosnerzh.ru/data'
+  api_data = 'http://api.rosnerzh.ru/data'
+  api_limits = 'http://api.rosnerzh.ru/limits'
+  api_desc = 'http://api.rosnerzh.ru/desc'
+}

@@ -1,6 +1,6 @@
 import {observable, action, computed} from 'mobx'
 import {desc as fallbackDesk} from './DescriptionData';
-import axios from 'axios';
+import axios from 'axios-jsonp-pro';
 
 import {api_limits, api_data, api_desc} from '../settings/conf';
 
@@ -62,15 +62,15 @@ class Constructor {
     }
   @action('fetch-limits')
   fetchLimits = async () =>
-    await axios(api_limits)
+    await axios.jsonp(api_limits)
       .then(({data}) => this.limits = data)
   @action('fetch-data')
   fetchData = async () =>
-    await axios(api_data)
+    await axios.jsonp(api_data)
       .then(({data}) => this.data = data)
   @action('fetch-desc')
   fetchDesc = async () =>
-    await axios(api_desc)
+    await axios.jsonp(api_desc)
       .then(({data}) => this.desc = data)
 
   @action('set-type')

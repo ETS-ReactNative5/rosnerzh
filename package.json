@@ -7,6 +7,7 @@
   "dependencies": {
     "antd": "^3.7.3",
     "axios": "^0.18.0",
+    "axios-jsonp-pro": "^1.1.4",
     "babel-plugin-import": "^1.8.0",
     "babel-plugin-styled-components": "^1.5.1",
     "dotenv": "^6.0.0",
@@ -36,7 +37,7 @@
     "build-css": "node-sass-chokidar src/sass/ -o src/css",
     "watch-css": "npm run build-css && node-sass-chokidar src/sass/ -o src/css --watch --recursive",
     "start-js": "react-app-rewired start dotenv_config_path=.env",
-    "build-js": "react-app-rewired build dotenv_config_path=.env.prod",
+    "build-js": "react-app-rewired build",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
     "test": "react-app-rewired test --env=jsdom",

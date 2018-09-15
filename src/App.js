@@ -9,7 +9,8 @@ import constStore from './store/Constructor'
 
 class App extends Component {
   render() {
-    console.log(' LOG ___ process.env ', process.env)
+    if(process.env === 'development')
+      console.log(' LOG ___ process.env ', process.env)
     return (
       <MobxProvider menuStore={menuStore} constStore={constStore}>
         <ParallaxProvider>

@@ -3,6 +3,7 @@ import {inject, observer} from 'mobx-react'
 import axios from 'axios'
 import {Form, Icon, Input, Button} from 'antd'
 
+import {mailSender} from '../../settings/conf'
 import {serelize} from '../common/utils'
 const FormItem = Form.Item
 
@@ -17,7 +18,7 @@ class Order extends Component {
       if (!err) {
         const data = serelize({...values, ...this.props.constStore.getData})
         axios
-          .post('http://localhost:5000/send.php', data)
+          .post(mailSender, data)
           .then(() => this.props.menuStore.openTY())
           .catch(err => console.error(err))
       }
