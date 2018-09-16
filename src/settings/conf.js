@@ -67,7 +67,7 @@ if(NODE_ENV === 'development') {
   api_limits = 'http://api.localhost:5000/limits'
   api_desc = 'http://api.localhost:5000/desc'
 } else {
-  mailSender = 'http://rosnerzh/send.php'
+  mailSender = 'http://rosnerzh.ru/send.php'
   imageCDN = 'http://rosnerzh.ru/img/'
   api_data = 'http://api.rosnerzh.ru/data'
   api_data = 'http://api.rosnerzh.ru/data'

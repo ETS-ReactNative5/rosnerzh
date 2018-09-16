@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
-import axios from 'axios';
+import axios from 'axios'
 import {inject} from 'mobx-react'
 import {Form, Icon, Input, Button} from 'antd'
 
+import {mailSender} from '../../settings/conf'
 import {serelize} from '../common/utils'
 const FormItem = Form.Item
 
@@ -15,7 +16,7 @@ class Callback extends Component {
       if (!err) {
         const data = serelize({...values, callback: true})
         axios
-          .post('http://localhost:5000/send.php', data)
+          .post(mailSender, data)
           .then(() => this.props.menuStore.openMain())
           .catch(err => console.error(err))
       }
