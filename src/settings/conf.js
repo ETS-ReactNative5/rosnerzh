@@ -36,10 +36,12 @@ export const formIcons = [
   {id: 'skoba_priamaya', figcaption: 'Скоба прямая'},
   {id: 'trapecia_priamaya', figcaption: 'Трапеция прямая'},
 ]
+// FIXME: Fix caption
 export const formIconsLType = [
   {id: 'pType0', figcaption: 'pType0'},
   {id: 'pType1', figcaption: 'pType1'},
 ]
+// FIXME: Fix caption
 export const formIconsMType = [
   {id: 'mType0', figcaption: 'mType0'},
   {id: 'mType1', figcaption: 'mType1'},
