@@ -20,26 +20,17 @@ const marker = {
     iconColor: '#fe4365',
   },
 }
-// TODO: Disallow map scrolling 
+// TODO: Disallow map scrolling
 // FooterMap component;
 class FooterMap extends Component {
-  state = {
-    showMap: true,
-  }
-
-  _toggleMap = () => this.setState(({showMap}) => ({showMap: !showMap}))
-
+  
   render() {
-    const {showMap} = this.state
-
     return (
       <YMaps>
         <div className="footer__map">
-          {showMap && (
-            <Map state={mapState} width="100%" height="620px">
-              <Placemark {...marker} />
-            </Map>
-          )}
+          <Map instanceRef={ map => {map && map.behaviors.disable('scrollZoom')}} state={mapState} width="100%" height="620px">
+            <Placemark {...marker} />
+          </Map>
         </div>
       </YMaps>
     )
