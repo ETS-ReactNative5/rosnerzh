@@ -38,20 +38,20 @@ export const formIcons = [
 ]
 // FIXME: Fix caption
 export const formIconsLType = [
-  {id: 'pType0', figcaption: 'pType0'},
-  {id: 'pType1', figcaption: 'pType1'},
+  {id: 'pType0', figcaption: 'П образный'},
+  {id: 'pType1', figcaption: 'П образный нео'},
 ]
 // FIXME: Fix caption
 export const formIconsMType = [
-  {id: 'mType0', figcaption: 'mType0'},
-  {id: 'mType1', figcaption: 'mType1'},
-  {id: 'mType2', figcaption: 'mType2'},
-  {id: 'mType3', figcaption: 'mType3'},
+  {id: 'mType0', figcaption: 'М образный'},
+  {id: 'mType1', figcaption: 'Модерн'},
+  {id: 'mType2', figcaption: 'М образный ПМ 1'},
+  {id: 'mType3', figcaption: 'М образный ПМ 2'},
 ]
 
 export const typeIcons = [
-  {id: 'mType', figcaption: 'Форма М'},
-  {id: 'pType', figcaption: 'Форма П'},
+  {id: 'mType', figcaption: 'М образный'},
+  {id: 'pType', figcaption: 'П образный'},
   {id: 'fType', figcaption: 'Факстрот'},
   {id: 'gType', figcaption: 'Гусли'},
   {id: 'ladder', figcaption: 'Лесенка'},

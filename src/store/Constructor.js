@@ -204,21 +204,21 @@ const fallbackLimits = {
   fType: {
     width: {
       min: 400,
-      max: 600,
+      max: 800,
     },
     height: {
       min: 500,
-      max: 1200,
+      max: 600,
     },
   },
   gType: {
     width: {
       min: 400,
-      max: 600,
+      max: 800,
     },
     height: {
-      min: 500,
-      max: 1200,
+      min: 300,
+      max: 300,
     },
   },
   ladder: {
