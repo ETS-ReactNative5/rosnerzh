@@ -71,8 +71,8 @@ if(NODE_ENV === 'development') {
 } else {
   mailSender = '//xn--e1actdjde.xn--p1ai/send.php'
   imageCDN = '//xn--e1actdjde.xn--p1ai/img/'
-  api_data = 'http://api.rosnerzh.ru/data'
-  api_data = 'http://api.rosnerzh.ru/data'
-  api_limits = 'http://api.rosnerzh.ru/limits'
-  api_desc = 'http://api.rosnerzh.ru/desc'
+  api_data = 'https://api.rosnerzh.ru/data'
+  api_data = 'https://api.rosnerzh.ru/data'
+  api_limits = 'https://api.rosnerzh.ru/limits'
+  api_desc = 'https://api.rosnerzh.ru/desc'
 }
