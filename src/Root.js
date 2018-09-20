@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import {inject, observer} from 'mobx-react'
+import jsonp from 'jsonp-promise';
 
 import Header from './components/header'
 import Preview from './components/preview'
@@ -15,6 +16,9 @@ import './css/index.css'
 @inject('menuStore')
 @observer
 class Root extends Component {
+  componentDidMount() {
+    window.jsonp = jsonp
+  }
   render() {
     const {isOpen} = this.props.menuStore
     if (isOpen) document.body.classList.remove('inactive-menu')

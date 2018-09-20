@@ -4538,6 +4538,10 @@ jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
 
+jsonp-promise@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/jsonp-promise/-/jsonp-promise-0.1.2.tgz#5c4365d9cbee99c79893a9c750a95f6db468997d"
+
 jsprim@^1.2.2:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsprim/-/jsprim-1.4.1.tgz#313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2"
@@ -6782,9 +6786,9 @@ react-slick@~0.23.1:
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
 
-react-yandex-maps@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-yandex-maps/-/react-yandex-maps-2.2.0.tgz#032a51e5c3dd8ad40d93650128f0a10099300feb"
+react-yandex-maps@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-yandex-maps/-/react-yandex-maps-2.3.0.tgz#b8034201f4a633397ec8d218f090e5286442a49f"
   dependencies:
     prop-types "^15.6.1"
 

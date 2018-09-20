@@ -11,6 +11,7 @@
     "babel-plugin-import": "^1.8.0",
     "babel-plugin-styled-components": "^1.5.1",
     "dotenv": "^6.0.0",
+    "jsonp-promise": "^0.1.2",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "mobx": "^5.0.3",
