@@ -22,12 +22,18 @@ const marker = {
 }
 // FooterMap component;
 class FooterMap extends Component {
-  
   render() {
     return (
       <YMaps>
         <div className="footer__map">
-          <Map instanceRef={ map => {map && map.behaviors.disable('scrollZoom')}} state={mapState} width="100%" height="620px">
+          <Map
+            instanceRef={map => {
+              map && map.behaviors.disable('scrollZoom')
+            }}
+            state={mapState}
+            width="100%"
+            height="620px"
+          >
             <Placemark {...marker} />
           </Map>
         </div>
