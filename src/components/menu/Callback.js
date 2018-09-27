@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import {inject} from 'mobx-react'
-import {Form, Icon, Input, Button} from 'antd'
+import {Form, Icon, Input, Button, message} from 'antd'
 
 import {mailSender} from '../../settings/conf'
 import {serelize} from '../common/utils'
@@ -18,7 +18,10 @@ class Callback extends Component {
         axios
           .post(mailSender, data)
           .then(() => this.props.menuStore.openMain())
-          .catch(err => console.error(err))
+          .catch(err => {
+            message.error('Ошибка сети')
+            console.error(err)
+          })
       }
     })
   }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {inject, observer} from 'mobx-react'
 import axios from 'axios'
-import {Form, Icon, Input, Button} from 'antd'
+import {Form, Icon, Input, Button, message} from 'antd'
 
 import {mailSender} from '../../settings/conf'
 import {serelize} from '../common/utils'
@@ -20,7 +20,10 @@ class Order extends Component {
         axios
           .post(mailSender, data)
           .then(() => this.props.menuStore.openTY())
-          .catch(err => console.error(err))
+          .catch(err => {
+            message.error('Ошибка сети')
+            console.error(err)
+          })
       }
     })
   }
