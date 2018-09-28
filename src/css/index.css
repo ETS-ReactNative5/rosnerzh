@@ -816,7 +816,8 @@ svg[disabled], .main-constructor svg[disabled] {
     .main-constructor__arrow--back > * {
       fill: #ffffff; }
   .main-constructor__arrow--order {
-    right: 5vw;
+    right: 1vw;
+    bottom: 0;
     transform: rotate(-180deg); }
     .main-constructor__arrow--order > * {
       fill: #fe4365; }
