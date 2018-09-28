@@ -4,8 +4,20 @@ import {Parallax} from 'react-scroll-parallax'
 
 import Video from './Video'
 
+/**
+* Returns array of chars
+* @param str{String}
+* @return array of chars{Array}
+* @private
+*/
 const splitByChars = str => str.split('').map(char => (char === ' ' ? '\u00A0' : char))
 
+/**
+* Returns title with br
+* @param 
+* @return {Void}
+* @private
+*/
 const mobTitle = [
   ...splitByChars('Полотенцесушитель'),
   <br key={0}/>,
@@ -14,7 +26,7 @@ const mobTitle = [
 
 const title = splitByChars('Полотенцесушитель в вашу ванну')
 
-// Header component;
+// Header component; Includes title, video and subtitle
 @inject('menuStore')
 @observer
 class Header extends Component {
@@ -23,6 +35,11 @@ class Header extends Component {
     mob: 'video/header-mob.mp4',
   }
 
+  /**
+  * Returns different src of video within mob or desctop screen is
+  * @return {Void}
+  * @private
+  */
   _getVideoSrc = () =>
     this.props.menuStore.isMobile ? this.videoSrc.mob : this.videoSrc.full
 

@@ -7,7 +7,8 @@ import Svg from '../common/Svg'
 import Icon from './Icon'
 import {opacityFastPreset, transformPreset, animationRadius} from '../../settings/conf'
 
-// FormList component;
+// FormList component; Awesome animations by clicking
+// For choose the form of dryer
 @inject('menuStore')
 @inject('constStore')
 @observer
@@ -19,6 +20,13 @@ class FormList extends Component {
     icons: PropTypes.array.isRequired,
   }
 
+  /**
+  * Returns styles of the end stage
+  * And arrange them by circle
+  * @param Object{Object}, i{Number}
+  * @return Styles{String}
+  * @private
+  */
   _getComuptedStyles = ({unit, opacity}, i) => {
     const angle = (2 * Math.PI) / this.props.icons.length
     return {
@@ -27,6 +35,16 @@ class FormList extends Component {
     }
   }
 
+  /**
+  * Stagged animation, returns the style depends by id
+  * In first stage we update 1st element
+  * Second we update 1st element to 2nd stage, and 2nd el to 1st stage ...
+  * Third 1 el to 3 st, 2 el to 2 st, 3 el to 1 st
+  * ...until last el would be the last staged
+  * @param prevStyels{Array}
+  * @return Array of styles{Array}
+  * @private
+  */
   _getStaggedStyles = prevStyles => {
     const {isCollapsed} = this.props
     const radius = this.props.menuStore.isMobile
@@ -76,7 +94,8 @@ class FormList extends Component {
           <figcaption>{icons[form].figcaption}</figcaption>
         </figure>
         <StaggeredMotion
-          key={icons.length} // Wootaa faakk iz goin aaan ??! - Froce update
+          key={icons.length} // Wootaa faakk iz goin aaan ??! - Force update
+                             //... so, when icons array have changed, we re-render <StaggeredMotion/>...
           defaultStyles={[...new Array(icons.length)].map(() => ({unit: 0, opacity: 0}))}
           styles={this._getStaggedStyles}
         >

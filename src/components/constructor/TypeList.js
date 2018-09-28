@@ -12,7 +12,8 @@ import {
   animationRadius,
 } from '../../settings/conf'
 
-// TypeList component;
+// TypeList component; Awesome animation by clicking
+// For choose the rack type of the dryer
 @inject('menuStore')
 @inject('constStore')
 @observer
@@ -23,6 +24,13 @@ class TypeList extends Component {
     disabled: PropTypes.bool.isRequired,
   }
 
+  /**
+  * Returns styles of the end stage
+  * And arrange them by circle
+  * @param Object{Object}, i{Number}
+  * @return Styles{String}
+  * @private
+  */
   _getComuptedStyles = ({unit, opacity}, i) => {
     const angle = (2 * Math.PI) / icons.length
     return {
@@ -31,6 +39,16 @@ class TypeList extends Component {
     }
   }
 
+  /**
+  * Stagged animation, returns the style depends by id
+  * In first stage we update 1st element
+  * Second we update 1st element to 2nd stage, and 2nd el to 1st stage ...
+  * Third 1 el to 3 st, 2 el to 2 st, 3 el to 1 st
+  * ...until last el would be the last staged
+  * @param prevStyels{Array}
+  * @return Array of styles{Array}
+  * @private
+  */
   _getStaggedStyles = prevStyles => {
     const {isCollapsed} = this.props
     const radius = this.props.menuStore.isMobile

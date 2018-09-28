@@ -1,6 +1,7 @@
 import React from 'react'
 
 // FormattedDesc stateless component;
+// Parse data
 function FormattedDesc({content}) {
   return (
     <div className="main-constructor__image--desc-table">

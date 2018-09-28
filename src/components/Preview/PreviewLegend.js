@@ -4,7 +4,6 @@ import {Parallax} from 'react-scroll-parallax'
 
 import Button from '../common/Button'
 
-//TODO: Replace this desc to benefits section
 // PreviewLegend component;
 @inject('menuStore')
 @observer

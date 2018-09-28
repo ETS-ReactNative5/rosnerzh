@@ -6,9 +6,6 @@ import {api_limits, api_data, api_desc} from '../settings/conf';
 
 class Constructor {
 
-  constructor() {
-    window.axios = axios
-  }
   @observable width = 500
   @observable height = 800
   @observable minWidth = 400 // mType: 400, pType: 400, fType: 400,gType: , ladder: 400
@@ -17,64 +14,79 @@ class Constructor {
   @observable maxHeight = 1200 // mType: 600, pType: 600, fType: 1200,gType: , ladder: 1200
   @observable gateLength = 400
   @observable type = 'ladder' // ladder | mType | pType | fType | gType
-  @observable form = 0
-  @observable color = 0
-  @observable energy = false
-  @observable rail = false
-  @observable gate = false
-  @observable rack = false
-  @observable data = null
-  @observable limits = null
-  @observable desc = null
+  @observable form = 0 // form type: 0, 1, 2, 3, 4 ...
+  @observable color = 0 // color: 0, 1, 2, 3, 4 ... (watch more in settings/conf.js)
+  @observable energy = false // is electro power included
+  @observable rail = false // is grouping rails 
+  @observable gate = false // is side connection
+  @observable rack = false // is rack available
+  @observable data = null // pricing data from the backend or fallback
+  @observable limits = null // limits data from the backend or fallback
+  @observable desc = null // descriptions data from the backend or fallback
 
+  // Set the custom widht, if width equals 300 change it into 320
   @action('set-width')
   setWidth = value => {
     this.width = value === 300? 320: value
   }
+  //Set the custom height
   @action('set-height')
   setHeight = value => {
     this.height = value
   }
+  // Set the length of the pipe that is responsible for teh connection
   @action('set-gate-length')
   setGateLength = value => {
     this.gateLength = value
   }
+  // Set the custom color
   @action('set-color')
   setColor = value => {
     if (value === this.color) return (this.color = 0)
     this.color = value
   }
+  // Set grouping rails or not
   @action('set-rail')
   setRail = () => {
     this.rail = !this.rail
   }
+  // Set custom side connections or not
   @action('set-gate')
   setGate = () => {
     this.gate = !this.gate
   }
+  // Set is available rack
   @action('set-rack')
   setRack = () => {
     this.rack = !this.rack
   }
+  // fetching all data from the backend
   @action('fetch')
   fetch = () => {
     if(!this.limits) this.fetchLimits()
     if(!this.data) this.fetchData()
     if(!this.desc) this.fetchDesc()
     }
+  // fetch widht and height limits from the backend
   @action('fetch-limits')
   fetchLimits = async () =>
     await axios.get(api_limits)
       .then(({data}) => this.limits = data)
+  // fetch pricing data from the backend
   @action('fetch-data')
   fetchData = async () =>
     await axios.get(api_data)
       .then(({data}) => this.data = data)
+  // fetch description data from the backend
   @action('fetch-desc')
   fetchDesc = async () =>
     await axios.get(api_desc)
       .then(({data}) => this.desc = data)
-
+  
+  // set type of dryer
+  //    change limit sizes
+  //    fix the current width and height with available limits
+  //    fix the additional options with available type
   @action('set-type')
   setType = value => {
     const limits = this.limits || fallbackLimits
@@ -92,12 +104,16 @@ class Constructor {
       this.form = 0
     }
     this.type = value
+    // if type icons is stil not disappeared, you can clickem, 
+    // and set unavaiable type with that energy type
     if(this.energy) this.type = 'ladder'
   }
+  // Set the form
   @action('set-form')
   setForm = value => {
     this.form = value
   }
+  // Set energy type, and change the dryer type available options
   @action('set-energy')
   setEnergy = value => {
     this.gate = false
@@ -105,10 +121,14 @@ class Constructor {
     this.energy = value
   }
 
+  // returns img path
+  // format 'ladder/0/001/'
   @computed
   get imgPath() {
     return `${this.type}/${this.form}/${+this.rack}${+this.rail}${+!this.energy && this.gate + 1}/`
   }
+  // returns the image name, with width and height, if it is neccessary
+  // format 'main-500-300.jpg'
   @computed
   get imgName() {
     let name = 'main'
@@ -122,6 +142,7 @@ class Constructor {
     }
     return name + '.jpg'
   }
+  // return title
   @computed
   get title() {
     let res = `${this.width}x${this.height} ${this.type} ${this.form} ${this.energy}`
@@ -130,6 +151,7 @@ class Constructor {
     if (this.rack) res += ' rack'
     return `${res} ${this.color}`
   }
+  // returns price
   @computed
   get price() {
     const data = this.data || fallbackData
@@ -146,30 +168,35 @@ class Constructor {
     const formatter = new Intl.NumberFormat('ru', 'currency')
     return formatter.format(Math.round(price / 50) * 50)
   }
+  // returns settings descriptions
   @computed
   get settings() {
     const desc = this.desc || fallbackDesk
     if(this.energy) return desc.energy.settings
     return desc[this.type].settings
   }
+  // returns descriptions
   @computed
   get description() {
     const desc = this.desc || fallbackDesk
     if(this.energy) return desc.energy.description
     return  desc[this.type].description
   }
+  // returns work desc descriptions
   @computed
   get workDescription() {
     const desc = this.desc || fallbackDesk
     if(this.energy) return desc.energy.workDescription
     return  desc[this.type].workDescription
   }
+  // returns properties descriptions
   @computed
   get properties() {
     const desc = this.desc || fallbackDesk
     if(this.energy) return desc.energy.properties
     return  desc[this.type].properties
   }
+  // returns data
   @computed
   get getData() {
     const {width, height, type, form, color, energy, rail, rack, price, gate } = this
@@ -181,6 +208,12 @@ const constructor = new Constructor()
 
 export default constructor
 export {Constructor}
+
+/**
+* 
+* F A L L B A C K S
+*
+*/
 
 const fallbackLimits = {
   mType: {
@@ -298,21 +331,3 @@ const fallbackData = {
   }, //	Боковое 110%
   color: 4000, //	Цена за перекраску
 }
-
-/*
-
-gType
-0 g
-0 UL
-
-mType form
-0 m
-1 M1Neo
-2 UM1
-3 UM2
-
-pType
-0 U
-1 U1
-
-*/

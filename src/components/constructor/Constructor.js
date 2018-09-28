@@ -18,6 +18,7 @@ import {
   formIconsLType,
   formIconsMType,
 } from '../../settings/conf'
+
 // Layout component;
 @inject('menuStore')
 @inject('constStore')
@@ -26,11 +27,13 @@ class Layout extends Component {
   state = {
     collapsed: null,
   }
-
+  // hide all type options
   collapseIcons = () =>
     this.setState(({collapsed}) => ({collapsed: collapsed !== 'icon' ? 'icon' : null}))
+  // hide all form options
   collapseForms = () =>
     this.setState(({collapsed}) => ({collapsed: collapsed !== 'form' ? 'form' : null}))
+  // hide all icons
   collapseBoth = () => this.setState(() => ({collapsed: false}))
 
   componentDidMount() {
