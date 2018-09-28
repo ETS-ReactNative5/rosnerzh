@@ -1,7 +1,6 @@
 const {injectBabelPlugin} = require('react-app-rewired')
 const rewireMobx = require('react-app-rewire-mobx')
 const rewireLess = require('react-app-rewire-less')
-const rewireSass = require('react-app-rewire-sass-modules')
 const webpackBundleAnalyzer = require('react-app-rewire-webpack-bundle-analyzer')
 const theme = require('./src/theme')
 
@@ -13,7 +12,6 @@ module.exports = function override(config, env) {
     modifyVars: theme,
     javascriptEnabled: true,
   })(config, env)
-  config = rewireSass(config, env)
   if (env === 'production') {
     config = webpackBundleAnalyzer(config, env, {
       analyzerMode: 'static',
