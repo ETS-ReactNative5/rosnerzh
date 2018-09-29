@@ -1,5 +1,5 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
-
+yarn.lock
 # dependencies
 /node_modules
 
@@ -16,6 +16,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+
 
 yarn.lock
 npm-debug.log*

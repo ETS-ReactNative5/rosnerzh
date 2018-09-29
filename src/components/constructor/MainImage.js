@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {inject, observer} from 'mobx-react'
-import axios from 'axios-jsonp-pro'
+import axios from 'axios'
 import {imageCDN} from '../../settings/conf'
 
 import {noImg} from '../common/noImage'
