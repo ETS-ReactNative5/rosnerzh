@@ -705,7 +705,7 @@ svg[disabled], .main-constructor svg[disabled] {
       height: 300px !important; }
     .main-constructor__image--desc {
       position: absolute;
-      top: 30%;
+      top: 0;
       bottom: 0;
       right: 0;
       left: 0;
