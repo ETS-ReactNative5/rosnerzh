@@ -206,7 +206,7 @@ class PreviewContent extends Component {
             this.state.loading ? (
               <Loading />
             ) : (
-              <img className="preview--schema" src={this.state.srcCache[src]} />
+              <img className="preview--schema" src={this.state.srcCache[src]} alt="Чертеж полотенцесушителя"/>
             )
           ) : null}
         </article>

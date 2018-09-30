@@ -46,9 +46,14 @@ class About extends React.Component {
         </Parallax>
         <div className="footer__copy">
           <p>
-            Рос Нерж © 2018<br />
+            Рос Нерж © 2018
+            <br />
             <span>
-              Создание сайта: <a href="https://vk.com/didex" target="_blank"> DiDex</a>
+              Создание сайта:
+              <a href="https://vk.com/didex" target="_blank" rel="noopener noreferrer">
+                {' '}
+                DiDex
+              </a>
             </span>
           </p>
           <div className="footer__social">
