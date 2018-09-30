@@ -40,7 +40,6 @@ class MainImage extends Component {
             srcCache: {...this.state.srcCache, [src]: 'no-image'},
           })
         }
-        console.error(error.response)
       })
   }
 

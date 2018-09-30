@@ -127,7 +127,7 @@ class Constructor {
   get imgPath() {
     return `${this.type}/${this.form}/${+this.rack}${+this.rail}${+!this.energy && this.gate + 1}/`
   }
-  // returns the image name, with width and height, if it is neccessary
+  // returns the image name, with width and height, if neccessary
   // format 'main-500-300.jpg'
   @computed
   get imgName() {
@@ -141,6 +141,12 @@ class Constructor {
       name = `main-500-${width}`
     }
     return name + '.jpg'
+  }
+  // returns the image schema, with width and height, if neccessary
+  // format 'schema/500-300.jpg'
+  @computed
+  get imgSchema() {
+    return `schema/${this.height}-${this.width}.jpg`
   }
   // return title
   @computed
