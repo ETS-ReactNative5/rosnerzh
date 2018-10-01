@@ -1,18 +1,34 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Provider as MobxProvider} from 'mobx-react'
+import {Provider, inject, observer} from 'mobx-react'
+import {render, fireEvent} from 'react-testing-library'
 
 import MainImage from '../MainImage'
-import menuStore from '../../../store/Menu'
+import constStore from '../../../store/Constructor'
+import Icon from '../Icon'
 
-it('Render MainImage', () => {
-  // const div = document.createElement('div')
-  // ReactDOM.render(
-  //   <MobxProvider menuStore={menuStore}>
-  //     <MainImage />
-  //   </MobxProvider>,
-  //   div,
-  // )
-  // ReactDOM.unmountComponentAtNode(div)
-  expect(1).toBe(1)
+const renderWithProvider = (routerStore) => (ChildComponent) => render(
+  <Provider routerStore={routerStore}>
+    <ChildComponent />
+  </Provider>
+);
+
+describe('MainImage', () => {
+  it('Render MainImage', () => {
+    // const div = document.createElement('div')
+    // ReactDOM.render(
+    //   <Provider menuStore={menuStore}>
+    //     <MainImage menuStore={menuStore}/>
+    //   </Provider>,
+    //   div,
+    // )
+    // const {container} = render(<Icon onClick={() => {}} entity={{}}/>)
+    const {container, getByLabelText} = render(
+      <Provider constStore={constStore}>
+        <span>{inject('constStore')(<MainImage />)}</span>
+      </Provider>,
+    )
+    console.log(' LOG ___  ', container.querySelectorAll('div'))
+    expect(1).toBe(1)
+  })
 })

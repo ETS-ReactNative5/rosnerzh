@@ -6,7 +6,7 @@ import {imageCDN} from '../../settings/conf'
 import {noImg} from '../common/noImage'
 import Loading from '../common/Loading'
 // MainImage component;
-@inject('constStore')
+// @inject('constStore')
 @observer
 class MainImage extends Component {
   state = {
@@ -72,6 +72,7 @@ class MainImage extends Component {
       )
     return (
       <figure
+        id="main-image"
         onClick={this.props.onClick}
         style={{
           backgroundImage: `url(${srcCache[src]})`,
@@ -83,4 +84,4 @@ class MainImage extends Component {
   }
 }
 
-export default MainImage
+export default inject('constStore')(MainImage)
