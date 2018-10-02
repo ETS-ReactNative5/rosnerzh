@@ -10,6 +10,7 @@
     "babel-plugin-import": "^1.8.0",
     "babel-plugin-styled-components": "^1.5.1",
     "dotenv": "^6.0.0",
+    "enzyme": "^3.6.0",
     "jsonp-promise": "^0.1.2",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
@@ -41,7 +42,8 @@
     "build-js": "react-app-rewired build dotenv_config_path=.env.production",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "react-app-rewired test --env=jsdom --watch",
+    "test:coverage": "react-app-rewired test --env=jsdom --coverage",
     "eject": "react-app-rewired eject"
   }
 }

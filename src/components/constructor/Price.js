@@ -8,7 +8,7 @@ class Price extends Component {
   render() {
     const {price} = this.props.constStore
     return (
-      <div className="main-constructor__price">
+      <div data-testid="price" className="main-constructor__price">
         <span>{`${price} руб.`}</span>
       </div>
     )

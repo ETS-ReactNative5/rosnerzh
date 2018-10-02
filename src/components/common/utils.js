@@ -1,3 +1,8 @@
+import React from 'react';
+import {Provider} from 'mobx-react'
+
+import menuStore from '../../store/Menu';
+import constStore from '../../store/Constructor';
 /**
 * Serelize obj to form data 
 * @param obj{Object}
@@ -11,3 +16,9 @@ export const serelize = obj => {
   })
   return res
 }
+
+export const withProvider = store => Child => (
+  <Provider {...store} menuStore={menuStore} constStore={constStore}>
+    <Child />
+  </Provider>
+) 

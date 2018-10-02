@@ -11,12 +11,12 @@ class ThankYou extends Component {
     const {openMain} = this.props.menuStore
     return (
       <div className="main-thankyou">
-        <div onClick={openMain}>
+        <div data-testid="open-main__svg" onClick={openMain}>
           <Svg id="ty" />
         </div>
         <h2>Спасибо за ваш заказ!</h2>
         <p> Наш оператор скоро с Вами свяжется</p>
-        <div onClick={openMain}>
+        <div data-testid="open-main__arrow" onClick={openMain}>
           <Svg id="arrow" />
         </div>
       </div>

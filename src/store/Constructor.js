@@ -4,25 +4,45 @@ import axios from 'axios';
 
 import {api_limits, api_data, api_desc} from '../settings/conf';
 
-class Constructor {
+class ConstStore {
 
-  @observable width = 500
-  @observable height = 800
-  @observable minWidth = 400 // mType: 400, pType: 400, fType: 400,gType: , ladder: 400
-  @observable maxWidth = 600 // mType: 800, pType: 700, fType: 600,gType: , ladder: 600
-  @observable minHeight = 500 // mType: 500, pType: 400, fType: 500,gType: , ladder: 500
-  @observable maxHeight = 1200 // mType: 600, pType: 600, fType: 1200,gType: , ladder: 1200
-  @observable gateLength = 400
-  @observable type = 'ladder' // ladder | mType | pType | fType | gType
-  @observable form = 0 // form type: 0, 1, 2, 3, 4 ...
-  @observable color = 0 // color: 0, 1, 2, 3, 4 ... (watch more in settings/conf.js)
-  @observable energy = false // is electro power included
-  @observable rail = false // is grouping rails 
-  @observable gate = false // is side connection
-  @observable rack = false // is rack available
-  @observable data = null // pricing data from the backend or fallback
-  @observable limits = null // limits data from the backend or fallback
-  @observable desc = null // descriptions data from the backend or fallback
+  @observable width
+  @observable height
+  @observable minWidth // mType: 400, pType: 400, fType: 400,gType: , ladder: 400
+  @observable maxWidth // mType: 800, pType: 700, fType: 600,gType: , ladder: 600
+  @observable minHeight // mType: 500, pType: 400, fType: 500,gType: , ladder: 500
+  @observable maxHeight // mType: 600, pType: 600, fType: 1200,gType: , ladder: 1200
+  @observable gateLength
+  @observable type // ladder | mType | pType | fType | gType
+  @observable form  // form type: 0, 1, 2, 3, 4 ...
+  @observable color  // color: 0, 1, 2, 3, 4 ... (watch more in settings/conf.js)
+  @observable energy  // is electro power included
+  @observable rail  // is grouping rails 
+  @observable gate  // is side connection
+  @observable rack  // is rack available
+  @observable data  // pricing data from the backend or fallback
+  @observable limits  // limits data from the backend or fallback
+  @observable desc  // descriptions data from the backend or fallback
+
+  constructor() {
+    this.width = 500
+    this.height = 800
+    this.minWidth = 400
+    this.maxWidth = 600 
+    this.minHeight = 500 
+    this.maxHeight = 1200 
+    this.gateLength = 400
+    this.type = 'ladder' 
+    this.form = 0 
+    this.color = 0 
+    this.energy = false
+    this.rail = false
+    this.gate = false
+    this.rack = false
+    this.data = null
+    this.limits = null
+    this.desc = null 
+  }
 
   // Set the custom widht, if width equals 300 change it into 320
   @action('set-width')
@@ -208,12 +228,16 @@ class Constructor {
     const {width, height, type, form, color, energy, rail, rack, price, gate } = this
     return  {width, height, type, form, color, energy, rail, rack, price, gate }
   }
+  @computed
+  get testMobx() {
+    return 1
+  }
 }
 
-const constructor = new Constructor()
+const constStore = new ConstStore()
 
-export default constructor
-export {Constructor}
+export default constStore
+export {ConstStore}
 
 /**
 * 
