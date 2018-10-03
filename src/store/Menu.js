@@ -60,7 +60,7 @@ class MenuStore {
   // returns true when menu is opened
   @computed
   get isOpen() {
-    return this.state !== 'close' ? true : false
+    return this.state !== 'close'
   }
 }
 
