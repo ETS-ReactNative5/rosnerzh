@@ -46,12 +46,16 @@ class ConstStore {
 
   // Set the custom widht, if width equals 300 change it into 320
   @action('set-width')
-  setWidth = value => {
+  setWidth = (value = 500) => {
+    if(value > this.maxWidth) value = this.maxWidth
+    if(value < this.minWidth) value = this.minWidth
     this.width = value === 300? 320: value
   }
   //Set the custom height
   @action('set-height')
-  setHeight = value => {
+  setHeight = (value = 800) => {
+    if(value > this.maxHeight) value = this.maxHeight
+    if(value < this.minHeight) value = this.minHeight
     this.height = value
   }
   // Set the length of the pipe that is responsible for teh connection
