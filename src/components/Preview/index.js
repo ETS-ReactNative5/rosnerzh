@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Constructor from './Constructor';
+import Constructor from './constructor';
 import PreviewLegend from './PreviewLegend';
 
 // Preview component;
