@@ -13,7 +13,7 @@ import './css/index.css'
 
 const LoadableMenu = Loadable({
   loader: () => import('./components/menu'),
-  loading: () => <span></span>,
+  loading: () => <span>Loading</span>,
 })
 
 // Root component;
