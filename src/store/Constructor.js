@@ -3,6 +3,19 @@ import {desc as fallbackDesk} from './DescriptionData'
 import axios from 'axios'
 
 import {api_limits, api_data, api_desc} from '../settings/conf'
+import {decodeConfig, encodeConfig} from '../services'
+
+const initalStore = {
+  width: 500,
+  height: 800,
+  gateLength: 400,
+  type: 'ladder',
+  form: 0,
+  energy: false,
+  rail: false,
+  gate: false,
+  rack: false,
+}
 
 class ConstStore {
   @observable width
@@ -23,25 +36,41 @@ class ConstStore {
   @observable limits // limits data from the backend or fallback
   @observable desc // descriptions data from the backend or fallback
 
-  constructor(data) {
-    console.log('TCL: ConstStore -> constructor -> data', data)
-    this.width = 500
-    this.height = 800
+  constructor(data, push = () => {}) {
+    this.historyPush = push
+    // configurable variables
+    Object.entries(initalStore).forEach(([key, value]) => (this[key] = value))
+
     this.minWidth = 400
     this.maxWidth = 600
     this.minHeight = 500
     this.maxHeight = 1200
-    this.gateLength = 400
-    this.type = 'ladder'
-    this.form = 0
-    this.color = 0
-    this.energy = false
-    this.rail = false
-    this.gate = false
-    this.rack = false
     this.data = null
     this.limits = null
     this.desc = null
+    // TODO: Remove color
+    this.color = 0
+
+    const [isValid, config] = decodeConfig(data)
+    if (isValid) {
+      this.setInitialConfig(config)
+    }
+  }
+
+  // Load dryer configuration
+  @action('set-initial-config')
+  setInitialConfig(config) {
+    Object.entries(initalStore).forEach(
+      ([key, value]) => (this[key] = key in config ? config[key] : value),
+    )
+  }
+  @action('save-config')
+  saveConfig() {
+    const config = Object.keys(initalStore).reduce(
+      (acc, key) => ({...acc, [key]: this[key]}),
+      {},
+    )
+    window.history.replaceState({}, '', encodeConfig(config))
   }
 
   // Set the custom widht, if width equals 300 change it into 320
@@ -50,6 +79,7 @@ class ConstStore {
     if (value > this.maxWidth) value = this.maxWidth
     if (value < this.minWidth) value = this.minWidth
     this.width = value === 300 ? 320 : value
+    this.saveConfig()
   }
   //Set the custom height
   @action('set-height')
@@ -57,6 +87,7 @@ class ConstStore {
     if (value > this.maxHeight) value = this.maxHeight
     if (value < this.minHeight) value = this.minHeight
     this.height = value
+    this.saveConfig()
   }
   // Set the length of the pipe that is responsible for teh connection
   @action('set-gate-length')

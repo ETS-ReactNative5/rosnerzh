@@ -97,11 +97,16 @@ const Base64 = {
 }
 
 export function decodeConfig(token) {
+  const notValid = [false, null]
   try {
     const config = JSON.parse(Base64.decode(token))
-    return [true, config]
+    if (typeof config !== 'object') {
+      return notValid
+    } else {
+      return [true, config]
+    }
   } catch (error) {
-    return [false, null]
+    return notValid
   }
 }
 

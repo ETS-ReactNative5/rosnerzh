@@ -6,11 +6,9 @@ import {MenuStore} from './Menu'
 import {ConstStore} from './Constructor'
 
 // MobxProvider stateless component;
-const MobxProvider = data => {
-  const {children} = data
-  console.log('TCL: data', data)
+const MobxProvider = ({children, match, history}) => {
   const menuStore = new MenuStore()
-  const constStore = new ConstStore({test: true})
+  const constStore = new ConstStore(match.params.token, history.push)
   return (
     <Provider menuStore={menuStore} constStore={constStore}>
       {children}
