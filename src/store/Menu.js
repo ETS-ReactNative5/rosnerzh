@@ -1,21 +1,27 @@
 import {observable, action, computed} from 'mobx'
 import {isMobile} from 'react-device-detect'
+import {decodeConfig} from '../services'
 
 // menu state
 class MenuStore {
   @observable state // close | constructor | main | order
   @observable isMobile = true
 
-  constructor() {
-    this.state = 'close'
+  constructor(data) {
+    this.state = 'close' // constructor | close | main | thank-you | callback | order
     this.isMobile = isMobile
+
+    const [isValid] = decodeConfig(data)
+    if (isValid) {
+      this.openChain(['main', 'constructor', 'constructor'])
+    }
   }
   // triggers opening or closing menu
   @action('toggle-state')
   toggleMenu = () => {
     this.state = this.state === 'close' ? 'main' : 'close'
   }
-  // open consturctor 
+  // open consturctor
   @action('open-constructor')
   openConstructor = () => {
     this.state = 'constructor'

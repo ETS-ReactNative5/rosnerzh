@@ -35,8 +35,7 @@ class ConstStore {
   @observable limits // limits data from the backend or fallback
   @observable desc // descriptions data from the backend or fallback
 
-  constructor(data, push = () => {}) {
-    this.historyPush = push
+  constructor(data) {
     // configurable variables
     Object.entries(initalStore).forEach(([key, value]) => (this[key] = value))
 
