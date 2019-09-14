@@ -7,7 +7,6 @@ import './rangeSlider.css'
 
 import IconList from './TypeList'
 import Toggler from './Toggler'
-import ColorList from './ColorList'
 import FormList from './FormList'
 import Energy from './Energy'
 import PreviewContent from './PreviewContent'
@@ -138,7 +137,6 @@ class Layout extends Component {
               </div>
             </Popover>
             <PreviewContent />
-            <ColorList />
           </div>
           <Popover placement="rightTop" content="Высота">
             <div className="main-constructor__image--range">

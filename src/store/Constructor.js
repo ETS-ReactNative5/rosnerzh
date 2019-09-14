@@ -27,7 +27,6 @@ class ConstStore {
   @observable gateLength
   @observable type // ladder | mType | pType | fType | gType
   @observable form // form type: 0, 1, 2, 3, 4 ...
-  @observable color // color: 0, 1, 2, 3, 4 ... (watch more in settings/conf.js)
   @observable energy // is electro power included
   @observable rail // is grouping rails
   @observable gate // is side connection
@@ -48,8 +47,6 @@ class ConstStore {
     this.data = null
     this.limits = null
     this.desc = null
-    // TODO: Remove color
-    this.color = 0
 
     const [isValid, config] = decodeConfig(data)
     if (isValid) {
@@ -93,12 +90,6 @@ class ConstStore {
   @action('set-gate-length')
   setGateLength = value => {
     this.gateLength = value
-  }
-  // Set the custom color
-  @action('set-color')
-  setColor = value => {
-    if (value === this.color) return (this.color = 0)
-    this.color = value
   }
   // Set grouping rails or not
   @action('set-rail')
@@ -207,7 +198,7 @@ class ConstStore {
     if (this.rail) res += ' rail'
     if (this.gate) res += ' gate'
     if (this.rack) res += ' rack'
-    return `${res} ${this.color}`
+    return res
   }
   // returns price
   @computed
@@ -221,7 +212,6 @@ class ConstStore {
     price += data.form[this.form]
     price += data.energy[+this.energy]
     price += data.gate[+this.gate]
-    if (this.color) price += data.color
 
     const formatter = new Intl.NumberFormat('ru', 'currency')
     return formatter.format(Math.round(price / 50) * 50)
@@ -257,8 +247,8 @@ class ConstStore {
   // returns data
   @computed
   get getData() {
-    const {width, height, type, form, color, energy, rail, rack, price, gate} = this
-    return {width, height, type, form, color, energy, rail, rack, price, gate}
+    const {width, height, type, form, energy, rail, rack, price, gate} = this
+    return {width, height, type, form, energy, rail, rack, price, gate}
   }
   @computed
   get testMobx() {
@@ -391,5 +381,4 @@ const fallbackData = {
     '0': 0, // Универсальное
     '1': 1000,
   }, // Боковое 110%
-  color: 4000, // Цена за перекраску
 }
