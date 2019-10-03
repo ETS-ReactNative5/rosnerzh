@@ -6,8 +6,8 @@ import {MenuStore} from './Menu'
 import {ConstStore} from './Constructor'
 
 // MobxProvider stateless component;
-const MobxProvider = ({children, match}) => {
-  const token = match && match.params && match.params.token || null
+const MobxProvider = ({children, match = {}}) => {
+  const token = match.params && match.params.token
   const menuStore = new MenuStore(token)
   const constStore = new ConstStore(token)
   return (
